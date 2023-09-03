@@ -22,12 +22,15 @@
           <div class="w-full h-fit sm:h-[700px] md:w-1/2 md:h-[500px] xl:w-[700px] xl:h-[600px]" >
             <template v-if="innerWidth >= 640 || $isDesktop()">
               <ThreejsLittlestTokyo 
-                :class="'w-full h-full'"
+                ref="threejs-object"
+                :class="'w-full h-full cursor-grab'"
                 :isZoom="false"
                 :isAutoRotate="true"
                 :isAutoRotateSpeed="-3.0"
-                @mouseover="toggleLenisScroll('in')"
-                @mouseout="toggleLenisScroll('out')"
+                @mousedown="toggleLenisScroll('stop')"
+                @mouseup="toggleLenisScroll('start')"
+                @touchstart="toggleLenisScroll('stop')"
+                @touchend="toggleLenisScroll('start')"
               />
             </template>
             <template v-else>
@@ -71,6 +74,8 @@
 </template>
 
 <script>
+import { useIndexStore } from '@/store'
+
 export default {
   setup() {
     useHead({
@@ -86,9 +91,15 @@ export default {
   },
   data() {
     return {
+      store: {
+        index: useIndexStore()
+      },
       innerWidth: 0,
       innerHeight: 0,
     }
+  },
+  beforeMount() {
+    this.store.index.setRootPage('index_page', this)
   },
   mounted() {
     this.$nextTick(() => {
@@ -98,25 +109,21 @@ export default {
     })
   },
   beforeUnmount() {
-    window.removeEventListener('resize', this.handleResize);
+    window.removeEventListener('resize', this.handleResize)
   },
   methods: {
-    toggleLenisScroll(state) {
-      if (state == 'in') {
-        console.log('stop')
-      } else {
-        console.log('start')
-      }
-    },
     initGsap() {
       const { $Lenis, $LocomotiveScroll, $gsap, $ScrollTrigger } = useNuxtApp()
-
+      
       // Gsap logic
     },
     handleResize() {
       this.innerWidth = window.innerWidth
       this.innerHeight = window.innerHeight
-    }
+    },
+    toggleLenisScroll(state) {
+      this.store.index.$state.layout['default_layout'].scrollerStatus(state)
+    },
   }
 }
 </script>

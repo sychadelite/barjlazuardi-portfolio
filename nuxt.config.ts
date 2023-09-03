@@ -11,7 +11,8 @@ export default defineNuxtConfig({
     '@/assets/scss/_main.scss',
   ],
   modules: [
-    '@nuxtjs/tailwindcss'
+    '@nuxtjs/tailwindcss',
+    '@pinia/nuxt',
   ],
   plugins: [
     { src: '~/plugins/@core/helpers.ts', mode: 'client' },
@@ -27,4 +28,10 @@ export default defineNuxtConfig({
   },
   ssr: false,
   spaLoadingTemplate: 'spa-loading-template.html',
+  pinia: {
+    autoImports: [
+      'defineStore',
+      ['defineStore', 'definePiniaStore'],
+    ],
+  },
 })

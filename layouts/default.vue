@@ -6,11 +6,19 @@
 </template>
 
 <script>
+import { useIndexStore } from '@/store'
+
 export default {
   data() {
     return {
+      store: {
+        index: useIndexStore()
+      },
       lenis: null
     }
+  },
+  beforeMount() {
+    this.store.index.setRootLayout('default_layout', this)
   },
   mounted() {
     this.$nextTick(() => {
@@ -68,6 +76,15 @@ export default {
           })
         })
       })
+    },
+    scrollerStatus(state) {
+      if (this.lenis) {
+        if (state == 'stop') {
+          this.lenis.stop()
+        } else {
+          this.lenis.start()
+        }
+      }
     }
   }
 }

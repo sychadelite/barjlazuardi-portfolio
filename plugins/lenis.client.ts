@@ -9,7 +9,6 @@ export default defineNuxtPlugin((nuxtApp) => {
         gestureOrientation: 'both',
         smoothWheel: true,
         smoothTouch: true,
-        touchMultiplier: 2,
       })
     },
   }
