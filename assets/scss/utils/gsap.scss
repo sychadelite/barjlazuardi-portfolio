@@ -1,0 +1,45 @@
+/* HORIZONTAL SCROLL */
+section.horizontal {
+  overflow: hidden;
+  
+  .pin-wrap,
+  .animation-wrap {
+    display: flex;
+    position: relative;
+    z-index: 1;
+    height: 100vh;
+  }
+  
+  .item {
+    position: relative;
+    display: flex;
+    align-items: center;
+    flex: 0 0 500px;
+    padding: 150px 80px;
+    // height: calc(100vh - 300px);
+    background-color: transparent;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }
+  
+  .item:before {
+    position: absolute;
+    font-size: 100px;
+    opacity: .13;
+    font-weight: bold;
+    z-index: -1;
+    -webkit-transform: translate(-30px, -50px);
+    transform: translate(-30px, -50px);
+    line-height: 1;
+  }
+  
+  .animation-wrap .item:nth-child(2n+2) {
+    align-items: flex-start;
+  }
+  
+  .animation-wrap .item:nth-child(4n+4) {
+    align-items: flex-end;
+  }
+}

@@ -7,8 +7,14 @@ export default defineNuxtConfig({
       viewport: 'width=device-width, initial-scale=1',
     }
   },
+  css: [
+    '@/assets/scss/_main.scss',
+  ],
   modules: [
     '@nuxtjs/tailwindcss'
+  ],
+  plugins: [
+    { src: '~/plugins/@core/helpers.ts', mode: 'client' },
   ],
   tailwindcss: {
     cssPath: '~/assets/css/tailwind.css',
@@ -18,5 +24,7 @@ export default defineNuxtConfig({
     config: {},
     injectPosition: 'first',
     viewer: true,
-  }
+  },
+  ssr: false,
+  spaLoadingTemplate: 'spa-loading-template.html',
 })
