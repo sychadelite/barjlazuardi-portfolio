@@ -19,13 +19,15 @@
             />
             <h2 class="text-2xl sm:text-5xl font-bold">Portal</h2>
           </div>
-          <div class="w-full h-fit sm:h-72 md:w-1/2 md:h-[500px] xl:w-[700px] xl:h-[600px]" >
+          <div class="w-full h-fit sm:h-[700px] md:w-1/2 md:h-[500px] xl:w-[700px] xl:h-[600px]" >
             <template v-if="innerWidth >= 640 || $isDesktop()">
               <ThreejsLittlestTokyo 
                 :class="'w-full h-full'"
                 :isZoom="false"
                 :isAutoRotate="true"
                 :isAutoRotateSpeed="-3.0"
+                @mouseover="toggleLenisScroll('in')"
+                @mouseout="toggleLenisScroll('out')"
               />
             </template>
             <template v-else>
@@ -99,6 +101,13 @@ export default {
     window.removeEventListener('resize', this.handleResize);
   },
   methods: {
+    toggleLenisScroll(state) {
+      if (state == 'in') {
+        console.log('stop')
+      } else {
+        console.log('start')
+      }
+    },
     initGsap() {
       const { $Lenis, $LocomotiveScroll, $gsap, $ScrollTrigger } = useNuxtApp()
 

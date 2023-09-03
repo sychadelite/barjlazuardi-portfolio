@@ -12,11 +12,20 @@ import { RoomEnvironment } from 'three/addons/environments/RoomEnvironment.js';
 import { GUI } from 'three/addons/libs/lil-gui.module.min.js';
 
 export default {
-	props: [
-		'isZoom',
-		'isAutoRotate',
-		'isAutoRotateSpeed',
-	],
+	props: {
+		isZoom: {
+			type: Boolean,
+			default: true
+		},
+		isAutoRotate: {
+			type: Boolean,
+			default: false
+		},
+		isAutoRotateSpeed: {
+			type: Number,
+			default: 2.0
+		}
+	},
   mounted() {
     this.$nextTick(() => {
       this.initThreeLoad()

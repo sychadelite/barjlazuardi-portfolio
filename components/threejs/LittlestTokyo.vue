@@ -15,11 +15,20 @@ import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
 import { DRACOLoader } from 'three/addons/loaders/DRACOLoader.js';
 
 export default {
-  props: [
-    'isZoom',
-    'isAutoRotate',
-		'isAutoRotateSpeed',
-  ],
+  props: {
+    isZoom: {
+      type: Boolean,
+      default: true
+    },
+    isAutoRotate: {
+      type: Boolean,
+      default: false
+    },
+    isAutoRotateSpeed: {
+      type: Number,
+      default: 2.0
+    }
+  },
   mounted() {
     this.$nextTick(() => {
       this.initThreeLoad()
