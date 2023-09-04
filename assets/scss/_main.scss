@@ -4,6 +4,8 @@
 @import '@/assets/scss/utils/gsap';
 @import '@/assets/scss/utils/lenis';
 
+@import url('https://fonts.googleapis.com/css?family=Signika+Negative:300,400&display=swap');
+
 * {
   box-sizing: border-box;
   -webkit-tap-highlight-color: transparent;
@@ -52,6 +54,13 @@ html {
     &.index-page {
       background-color: #b9b3a9;
       // background-image: radial-gradient(at 94% 21%, rgb(63, 98, 18) 0, transparent 83%), radial-gradient(at 71% 95%, rgb(55, 48, 163) 0, transparent 91%), radial-gradient(at 53% 79%, rgb(196, 181, 253) 0, transparent 97%), radial-gradient(at 78% 59%, rgb(226, 232, 240) 0, transparent 56%), radial-gradient(at 65% 51%, rgb(124, 58, 237) 0, transparent 7%), radial-gradient(at 79% 83%, rgb(67, 56, 202) 0, transparent 96%);
+    }
+
+    &.ui-bidirective-page {
+      font-family: "Signika Negative", sans-serif;
+      font-weight: 300;
+      margin: 0;
+      padding: 0;
     }
   }
 }

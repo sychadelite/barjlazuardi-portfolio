@@ -8,7 +8,7 @@
             <h1 class="text-4xl sm:text-7xl font-extrabold mb-3">Barj Lazuardi</h1>
             <UtilityTypedText 
               :id="1" 
-              :class="'justify-center min-h-[32px] sm:min-h-[48px] !p-0'"
+              :class="'justify-center min-h-[35px] sm:min-h-[50px] !p-0'"
               :options="[
                 `<h2 class='text-2xl sm:text-5xl font-bold'>Website</h2>`,
                 `<h2 class='text-2xl sm:text-5xl font-bold'>Portfolio</h2>`,
@@ -32,9 +32,6 @@
                 @touchstart="toggleLenisScroll('stop')"
                 @touchend="toggleLenisScroll('start')"
               />
-            </template>
-            <template v-else>
-              <Skills />
             </template>
           </div>
         </div>

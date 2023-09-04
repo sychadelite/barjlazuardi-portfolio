@@ -119,7 +119,7 @@ export default {
     useHead({
       title: 'Barjlazuardi | UI - Bidirective',
       meta: [
-        { name: 'description', content: 'My amazing portfolio site.' }
+        { name: 'description', content: 'My amazing ui bidirective site.' }
       ],
       bodyAttrs: {
         class: 'ui-bidirective-page'
@@ -129,61 +129,51 @@ export default {
 }
 </script>
 
-<style lang="scss">
-@import url('https://fonts.googleapis.com/css?family=Signika+Negative:300,400&display=swap');
+<style lang="scss" scoped>
+h1 {
+  margin: 0;
+  // padding: 50px 0 0 50px;
+}
 
-body {
-  &.ui-bidirective-page {
-    font-family: "Signika Negative", sans-serif;
-    font-weight: 300;
-    margin: 0;
-    padding: 0;
-    h1 {
-      margin: 0;
-      // padding: 50px 0 0 50px;
-    }
+p {
+  margin: 0;
+  // padding: 50px 0 50px 50px;
+}
 
-    p {
-      margin: 0;
-      // padding: 50px 0 50px 50px;
-    }
+.item {
+  // flex: 0 0 300px;
+  // padding: 150px 80px;
+  height: calc(100vh - 300px);
+  line-height: 1.7;
+  border-right: 1px solid rgba(0, 0, 0, 0.06);
+  color: #333;
+}
 
-    .item {
-      // flex: 0 0 300px;
-      // padding: 150px 80px;
-      height: calc(100vh - 300px);
-      line-height: 1.7;
-      border-right: 1px solid rgba(0, 0, 0, 0.06);
-      color: #333;
-    }
+.animation-wrap.to-right {
+  counter-reset: item;
+  float: left;
+}
 
-    .animation-wrap.to-right {
-      counter-reset: item;
-      float: left;
-    }
-    
-    .animation-wrap.to-left {
-      counter-reset: item 11;
-      float: right;
-    }
-    
-    .animation-wrap.to-right .item:before {
-      counter-increment: item;
-      content: counter(item);
-    }
-    
-    .animation-wrap.to-left .item:before {
-      counter-increment: item -1;
-      content: counter(item);
-    }
+.animation-wrap.to-left {
+  counter-reset: item 11;
+  float: right;
+}
 
-    section:nth-of-type(odd) {
-      background-color: #f0f0f0;
-    }
+.animation-wrap.to-right .item:before {
+  counter-increment: item;
+  content: counter(item);
+}
 
-    section:nth-of-type(even) {
-      background-color: #ffffff;
-    }
-  }
+.animation-wrap.to-left .item:before {
+  counter-increment: item -1;
+  content: counter(item);
+}
+
+section:nth-of-type(odd) {
+  background-color: #f0f0f0;
+}
+
+section:nth-of-type(even) {
+  background-color: #ffffff;
 }
 </style>

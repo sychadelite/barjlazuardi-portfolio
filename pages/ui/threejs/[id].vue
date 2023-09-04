@@ -17,6 +17,17 @@ import SheenChair from '@/components/threejs/SheenChair'
 import Lod from '@/components/threejs/Lod'
 
 export default {
+  setup() {
+    useHead({
+      title: 'Barjlazuardi | UI - ' + useNuxtApp().$convertToCamelCase(this.$route.params.id),
+      meta: [
+        { name: 'description', content: `My amazing ui threejs ${this.$route.params.id} site.` }
+      ],
+      bodyAttrs: {
+        class: 'ui-threejs-page'
+      },
+    })
+  },
   components: {
     Examples,
     LittlestTokyo,
@@ -52,6 +63,6 @@ export default {
 }
 </script>
 
-<style>
+<style lang="scss" scoped>
 
 </style>
