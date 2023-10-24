@@ -34,7 +34,6 @@ export default {
 <style scoped>
 .typing-animation {
   display: flex;
-  font-size: 18px;
   padding: 20px;
 }
 </style>

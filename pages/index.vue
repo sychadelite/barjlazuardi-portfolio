@@ -1,80 +1,84 @@
 <template>
   <div>
-    <div class="relative flex flex-col justify-center items-center gap-2">
-      <section class="relative sm:container m-auto w-full h-fit min-h-[50vh] sm:min-h-[80vh]">
-        <h3 class="text-xl sm:text-2xl font-semibold">Under development</h3>
-        <div class="flex flex-col md:flex-row items-center justify-evenly w-full h-full gap-2">
-          <div class="w-full h-fit md:w-1/2">
-            <h1 class="text-4xl sm:text-7xl font-extrabold mb-3">Barj Lazuardi</h1>
-            <UtilityTypedText 
-              :id="1" 
-              :class="'justify-center min-h-[35px] sm:min-h-[50px] !p-0'"
-              :options="[
-                `<h2 class='text-2xl sm:text-5xl font-bold'>Website</h2>`,
-                `<h2 class='text-2xl sm:text-5xl font-bold'>Portfolio</h2>`,
-                `<h2 class='text-2xl sm:text-5xl font-bold'>Creation</h2>`,
-                `<h2 class='text-2xl sm:text-5xl font-bold'>Art</h2>`,
-                `<h2 class='text-2xl sm:text-5xl font-bold'>Masterpiece</h2>`,
-              ]"
-            />
-            <h2 class="text-2xl sm:text-5xl font-bold">Portal</h2>
+    <section class="relative xl:container xl:m-auto w-full min-h-[200vh]">
+      <div class="grid grid-cols-12 border-x border-x-black lg:divide-x divide-black border-black">
+        <div class="col-span-1 max-lg:hidden py-6"></div>
+        <div class="col-span-8 max-lg:col-span-12 text-lg xs:text-5xl font-dune-rise font-extrabold capitalize">
+          <div class="flex flex-wrap sm:flex-row divide-x divide-black">
+            <div class="w-full sm:w-[75%] lg:w-9/12 sm:border-b border-black divide-y divide-black">
+              <div class="px-1 md:px-4 py-10 lg:py-12">
+                <h1 class="line-clamp-1">minimalistic</h1>
+              </div>
+              <div class="px-1 md:px-4 py-10 lg:py-12">
+                <h1 class="line-clamp-1">& creative</h1>
+              </div>
+              <div class="px-1 md:px-4 py-10 lg:py-12">
+                <h1 class="line-clamp-1">websites</h1>
+              </div>
+            </div>
+            <div class="w-full sm:w-[25%] lg:w-3/12 border-b border-black divide-y divide-black">
+              <div class="px-4 py-6 lg:py-12">
+                <div class="flex flex-col-reverse sm:flex-col gap-8 sm:gap-2 justify-between w-full text-base sm:text-sm font-space-mono font-normal uppercase" :style="store.index.getLayout.default_layout.innerWidth >= 640 ? 'writing-mode: vertical-rl;' : ''">
+                  <div class="flex flex-row justify-between items-center gap-4">
+                    <p class="text-start sm:h-64">
+                      my websites embody a minimalistic and creative design, solve business issues, and are user-friendly.
+                    </p>
+                    <div class="bg-black w-16 h-16 max-sm:hidden"></div>
+                  </div>
+                  <div class="flex flex-wrap sm:flex-row justify-between items-center gap-6 sm:gap-4">
+                    <div class="w-full sm:h-48 p-2 border border-black rounded-2xl"></div>
+                    <div class="flex flex-row justify-between items-center gap-12 sm:gap-6">
+                      <div v-for="row in 4" :key="row" class="w-1.5 h-1.5 rounded-full" :class="row % 2 == 0 ? 'bg-black' : 'bg-gray-500'"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
-          <div class="w-full h-fit sm:h-[700px] md:w-1/2 md:h-[500px] xl:w-[700px] xl:h-[600px]" >
-            <template v-if="innerWidth >= 640 || $isDesktop()">
-              <ThreejsLittlestTokyo 
-                ref="threejs-object"
-                :class="'w-full h-full cursor-grab'"
-                :isZoom="false"
-                :isAutoRotate="true"
-                :isAutoRotateSpeed="-3.0"
-                @mousedown="toggleLenisScroll('stop')"
-                @mouseup="toggleLenisScroll('start')"
-                @touchstart="toggleLenisScroll('stop')"
-                @touchend="toggleLenisScroll('start')"
-              />
-            </template>
+          <div class="flex flex-row divide-x divide-black">
+            <div class="w-full border-b border-black divide-y divide-black">
+              <div class="px-1 md:px-4 py-10 lg:py-12">
+                <div class="flex flex-col lg:flex-row justify-evenly gap-x-4 gap-y-8 max-lg:text-start uppercase"> 
+                  <NuxtLink to="/"><p class="text-2xl sm:text-4xl lg:text-xl max-lg:font-bolder font-asgard-fat tracking-widest">sych.experts &gt;&gt;</p></NuxtLink>
+                  <NuxtLink to="/"><p class="text-2xl sm:text-4xl lg:text-xl max-lg:font-bolder font-asgard-fat tracking-widest">behance &gt;&gt;</p></NuxtLink>
+                  <NuxtLink to="/"><p class="text-2xl sm:text-4xl lg:text-xl max-lg:font-bolder font-asgard-fat tracking-widest">whatsapp &gt;&gt;</p></NuxtLink>
+                  <NuxtLink to="/"><p class="text-2xl sm:text-4xl lg:text-xl max-lg:font-bolder font-asgard-fat tracking-widest">telegram &gt;&gt;</p></NuxtLink>
+                </div>
+                <div class="w-full h-12"></div>
+                <div class="flex flex-col lg:flex-row justify-evenly gap-x-4 gap-y-8 max-lg:hidden"> 
+                  <p class="h-11 text-7xl font-libre-barcode font-normal">nice to see you</p>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
-      </section>
-
-      <section class="relative horizontal w-full bg-[#111] text-[#b9b3a9]">
-        <div class="pin-wrap">
-          <div class="animation-wrap to-right place-items-center">
-            <h2 class="item text-4xl font-termina font-bold">
-              Explore my works.
-            </h2>
-            <img class="item w-auto object-cover" src="https://images.pexels.com/photos/5207262/pexels-photo-5207262.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=900" alt="">
-            <img class="item w-auto object-cover" src="https://images.pexels.com/photos/3371358/pexels-photo-3371358.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=900" alt="">
-            <img class="item w-auto object-cover" src="https://images.pexels.com/photos/3618545/pexels-photo-3618545.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=900" alt="">
+        <div class="col-span-2 max-lg:col-span-9 text-sm font-space-mono font-normal uppercase border-b border-black divide-y divide-black">
+          <div class="w-full">
+            <div class="flex flex-col">
+              <img src="/img/icons/barj-illuminate.svg" alt="barj" class="h-[7.5rem]">
+              <h1 class="text-7xl font-jugendstil-ornamente mb-10">B</h1>
+              <div class="flex flex-row justify-center items-center">
+                <h1 class="h-52 text-7xl font-genjiro tracking-[.2em] -scale-100" style="writing-mode: vertical-rl;">()^&%</h1>
+                <h1 class="h-52 text-6xl font-genjiro tracking-wide -scale-100" style="writing-mode: vertical-rl;">&rarr;&rarr;&rarr;</h1>
+              </div>
+            </div>
           </div>
         </div>
-      </section>
-
-      <section class="relative m-auto w-full">
-        <div class="flex flex-wrap-reverse justify-evenly items-center">
-          <Skills />
-          <img src="@/assets/img/profile/1637566473719.png" alt="" width="500">
-        </div>
-      </section>
-
-      <section class="relative container m-auto w-full">
-        <h2 class="credit font-termina">
-          <a href="#" target="_blank" class="text-[#111] text-sm">
-            This Masterpiece Brought to You by 
-            <br>
-            <small>Mohammad Barj Lazuardi Dindashwara</small>
-          </a>
-        </h2>
-      </section>
-    </div>
+        <div class="col-span-1 max-lg:hidden py-6"></div>
+      </div>
+    </section>
   </div>
 </template>
 
 <script>
-import { useIndexStore } from '@/store'
+import { useIndexStore } from '../store/index'
 
 export default {
   setup() {
+    definePageMeta({
+      layout: 'main'
+    })
+
     useHead({
       title: 'Barjlazuardi | Portfolio',
       meta: [
@@ -82,8 +86,7 @@ export default {
       ],
       bodyAttrs: {
         class: 'index-page'
-      },
-      script: [{ innerHTML: 'console.warn(\'What da fak r u doin here ?\')' }]
+      }
     })
   },
   data() {
@@ -91,8 +94,6 @@ export default {
       store: {
         index: useIndexStore()
       },
-      innerWidth: 0,
-      innerHeight: 0,
     }
   },
   beforeMount() {
@@ -101,46 +102,17 @@ export default {
   mounted() {
     this.$nextTick(() => {
       this.initGsap()
-      this.handleResize()
-      window.addEventListener('resize', this.handleResize)
     })
-  },
-  beforeUnmount() {
-    window.removeEventListener('resize', this.handleResize)
   },
   methods: {
     initGsap() {
       const { $Lenis, $LocomotiveScroll, $gsap, $ScrollTrigger } = useNuxtApp()
       
       // Gsap logic
-    },
-    handleResize() {
-      this.innerWidth = window.innerWidth
-      this.innerHeight = window.innerHeight
-    },
-    toggleLenisScroll(state) {
-      this.store.index.$state.layout['default_layout'].scrollerStatus(state)
-    },
+    }
   }
 }
 </script>
 
 <style lang="scss">
-body {
-  &.index-page {
-    font-family: termina, sans-serif;
-    color: #111;
-    background: #b9b3a9;
-    transition: 0.3s ease-out;
-    overflow-x: hidden;
-    max-width: 100%;
-    width: 100%;
-    overscroll-behavior: none;
-
-    .item {
-      flex: 0 0 50rem;
-      padding: 150px 80px;
-    }
-  }
-}
 </style>

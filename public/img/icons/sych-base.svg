@@ -1,0 +1,55 @@
+<svg data-v-6805eed4="" version="1.0" xmlns="http://www.w3.org/2000/svg"
+  xmlns:xlink="http://www.w3.org/1999/xlink" width="100%" height="100%"
+  viewBox="0 0 340.000000 250.000000" preserveAspectRatio="xMidYMid meet"
+  color-interpolation-filters="sRGB" style="margin: auto;">
+  <rect data-v-6805eed4="" x="0" y="0" width="100%" height="100%" fill="transparent" fill-opacity="1"
+    class="background"></rect>
+  <rect data-v-6805eed4="" x="0" y="0" width="100%" height="100%" fill="url(#watermark)"
+    fill-opacity="1" class="watermarklayer"></rect>
+  <g data-v-6805eed4="" fill="#ddc36c" class="icon-text-wrapper icon-svg-group iconsvg"
+    transform="translate(115.5099983215332,57.885169982910156)">
+    <g class="iconsvg-imagesvg" transform="translate(0.4900016784667969,0)">
+      <g>
+        <rect fill="#ddc36c" fill-opacity="0" stroke-width="2" x="0" y="0" width="108"
+          height="107.89965332241015" class="image-rect"></rect>
+        <svg filter="url(#colors5227903634)" x="0" y="0" width="108" height="107.89965332241015"
+          filtersec="colorsf5271132987" class="image-svg-svg primary" style="overflow: visible;">
+          <svg xmlns="http://www.w3.org/2000/svg"
+            viewBox="-0.007349999999999968 -0.04166000000000003 74.549 74.48331">
+            <path
+              d="M44.8 35.7c2.7-2.7 6.9-5.2 10.9-5.2 5.1 0 9.2 4.1 9.2 9.2m-24.1-.1L15.5 64.9c13.8 10.9 33.9 10 46.7-2.8C75 49.3 75.9 29.2 65 15.4m-.1 24.3c0 5.1-4.1 9.2-9.2 9.2-7.3 0-15.4-8.6-15.4-8.6l-6.1-6.1s-8.2-8.6-15.4-8.6c-5.1 0-9.2 4.1-9.2 9.2m0 0c0 5.1 4.1 9.2 9.2 9.2 4 0 8.3-2.6 10.9-5.2m4-3.9L59 9.5C45.2-1.4 25.1-.5 12.3 12.3-.4 25.1-1.4 45.2 9.5 59"
+              fill="none" stroke="#333" stroke-width="4" stroke-miterlimit="10"></path>
+          </svg>
+        </svg>
+        <defs>
+          <filter id="colors5227903634">
+            <feColorMatrix type="matrix"
+              values="0 0 0 0 0.86328125  0 0 0 0 0.76171875  0 0 0 0 0.421875  0 0 0 1 0"
+              class="icon-fecolormatrix"></feColorMatrix>
+          </filter>
+          <filter id="colorsf5271132987">
+            <feColorMatrix type="matrix"
+              values="0 0 0 0 0.99609375  0 0 0 0 0.99609375  0 0 0 0 0.99609375  0 0 0 1 0"
+              class="icon-fecolormatrix"></feColorMatrix>
+          </filter>
+          <filter id="colorsb276605456">
+            <feColorMatrix type="matrix" values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 1 0"
+              class="icon-fecolormatrix"></feColorMatrix>
+          </filter>
+        </defs>
+      </g>
+    </g>
+    <g transform="translate(0,114.899658203125)">
+      <g data-gra="path-name" fill-rule="" class="tp-name iconsvg-namesvg">
+        <g transform="scale(1)">
+          <g>
+            <path
+              d="M7.2 0.3C10.93 0.3 14.15-1.85 14.15-5.23 14.15-11.23 4.38-11.08 4.38-13.88 4.38-15.05 5.85-15.78 7.2-15.78 8.8-15.78 10.15-14.83 10.15-13.68L13.83-13.68C13.83-17.38 10.43-18.95 7.2-18.95 3.43-18.95 0.73-16.88 0.73-13.98 0.73-7.83 10.5-8.55 10.5-5.23 10.5-3.95 9.35-3.13 7.45-3.13 5.25-3.13 4.2-4.65 4.2-6.05L0.5-6.05C0.5-2.33 3.43 0.3 7.2 0.3ZM46.7-18.75L42.95-18.75 38.67-11.33 34.4-18.75 30.65-18.75 36.95-7.83 36.95 0 40.4 0 40.4-7.83ZM62.43-9.38C62.43-4.17 66.48 0.28 71.5 0.28 73.7 0.28 75.73-0.55 77.3-1.9L75.2-4.67C74.18-3.88 72.98-3.33 71.43-3.33 68.13-3.33 66.15-6.35 66.15-9.38 66.15-12.4 68.13-15.43 71.43-15.43 72.98-15.43 74.2-14.9 75.2-14.08L77.3-16.85C75.73-18.2 73.7-19.03 71.5-19.03 66.48-19.03 62.43-14.58 62.43-9.38ZM95.35-18.75L95.35 0 98.78 0 98.78-5.53 106.05-5.53 106.05 0 109.48 0 109.48-18.75 106.05-18.75 106.05-8.97 98.78-8.97 98.78-18.75Z"
+              transform="translate(-0.5, 19.030000686645508)"></path>
+          </g> <!----> <!----> <!----> <!----> <!----> <!----> <!---->
+        </g>
+      </g> <!---->
+    </g>
+  </g>
+  <defs v-gra="od"></defs>
+</svg>
