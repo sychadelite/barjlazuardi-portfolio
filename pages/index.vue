@@ -52,15 +52,16 @@
             </div>
           </div>
         </div>
-        <div class="col-span-2 max-lg:col-span-9 text-sm font-space-mono font-normal uppercase border-b border-black divide-y divide-black">
+        <div class="col-span-2 max-lg:col-span-12 text-sm font-space-mono font-normal uppercase border-b border-black divide-y divide-black">
           <div class="w-full">
             <div class="flex flex-col">
               <img src="/img/icons/barj-illuminate.svg" alt="barj" class="h-[7.5rem]">
               <h1 class="text-7xl font-jugendstil-ornamente mb-10">B</h1>
-              <div class="flex flex-row justify-center items-center">
+              <div class="flex flex-row justify-center items-center mb-10">
                 <h1 class="h-52 text-7xl font-genjiro tracking-[.2em] -scale-100" style="writing-mode: vertical-rl;">()^&%</h1>
                 <h1 class="h-52 text-6xl font-genjiro tracking-wide -scale-100" style="writing-mode: vertical-rl;">&rarr;&rarr;&rarr;</h1>
               </div>
+              <img src="/img/icons/nazi.svg" alt="barj" class="h-[7.5rem]">
             </div>
           </div>
         </div>

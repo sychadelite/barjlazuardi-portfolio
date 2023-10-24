@@ -3,7 +3,7 @@
     <div class="col-span-1 max-lg:hidden py-6"></div>
     <div class="col-span-8 max-lg:col-span-9 max-sm:col-span-8 py-2 lg:py-6">
       <div class="flex flex-wrap gap-4 justify-between items-center h-full px-2 sm:px-6">
-        <div class="w-full">
+        <div class="max-sm:w-full">
           <h1 class="font-bold text-start line-clamp-1">
             @barjlazuardi
           </h1>
