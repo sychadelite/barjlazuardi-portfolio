@@ -84,18 +84,17 @@
       </div>
     </section>
 
-    <section class="relative xl:container xl:m-auto w-full min-h-screen">
+    <section class="relative xl:container xl:m-auto w-full">
       <div class="grid grid-cols-12 border-x border-x-black lg:divide-x divide-black border-black">
         <div class="col-span-1 order-4 lg:order-1 max-lg:hidden py-6"></div>
-        <div class="col-span-5 order-3 lg:order-2 max-lg:col-span-12 text-lg xs:text-3xl sm:text-5xl text-start font-space-mono font-normal capitalize">
+        <div class="col-span-5 order-3 lg:order-2 max-lg:col-span-12 text-lg xs:text-3xl sm:text-5xl text-start font-space-mono font-normal capitalize border-b border-black">
           <div class="px-4 lg:px-8 py-6 lg:py-12">
-            <h2 class="text-4xl uppercase font-bold tracking-widest">hello;)<br>my name is barj</h2>
+            <h2 class="text-2xl xs:text-4xl xl:text-5xl uppercase font-bold tracking-widest">hello;)<br>my name is barj</h2>
             <p class="text-lg uppercase mt-5">
-              i am a web developer and an expert of the sych platform.
+              I'm a web developer who loves tinkering with technology.
               <br>
               <br>
-              i implement a complex website development from creating a visual interface (ui) and building a user
-              experience (ux) to further building it on the sych platform.
+              I have experience in full-stack development, creating user-friendly websites
               <br>
               <br>
               my sites embody a clean and minimalistic design, solve business issues, and are user-friendly.
@@ -105,15 +104,110 @@
             </p>
             <button class="text-lg uppercase font-extrabold py-4 hover:tracking-widest transition-all ease-in-out duration-200">
               contact with me
-              &nbsp;
               <i class="fa-solid fa-arrow-trend-up"></i>
             </button>
           </div>
         </div>
-        <div class="col-span-5 order-2 lg:order-3 max-lg:col-span-12 text-lg xs:text-3xl sm:text-5xl text-start font-middle-earth font-normal capitalize">
+        <div class="col-span-5 order-2 lg:order-3 max-lg:col-span-12 text-lg xs:text-3xl sm:text-5xl text-start font-middle-earth font-normal capitalize border-b border-black">
           <div class="w-full h-full min-h-[20rem] bg-center bg-cover bg-no-repeat" style="background-image: url('/img/profile/1637566473719-grayscale.jpeg');"></div>
         </div>
         <div class="col-span-1 order-1 lg:order-4 max-lg:hidden py-6"></div>
+      </div>
+    </section>
+
+    <section class="relative xl:container xl:m-auto w-full">
+      <div class="grid grid-cols-12 border-x border-x-black lg:divide-x divide-black border-black">
+        <div class="col-span-1 max-lg:hidden py-6"></div>
+        <div class="col-span-10 max-lg:col-span-12 text-lg xs:text-3xl sm:text-5xl text-start font-space-mono font-normal capitalize border-b border-black">
+          <div class="px-4 lg:px-8 py-6 lg:py-12">
+            <div class="flex flex-wrap justify-between items-end gap-2 w-full h-fit">
+              <h2 class="text-2xl xs:text-4xl xl:text-5xl uppercase font-bold tracking-widest">my portfolio</h2>
+              <div class="flex flex-row items-start gap-4 h-20 sm:h-28">
+                <div class="flex flex-col justify-between h-full">
+                  <p class="text-lg font-bold tracking-tighter">projects</p>
+                  <i class="fa-solid fa-timeline"></i>
+                </div>
+                <div class="flex flex-col justify-between h-full">
+                  <i class="fa-brands fa-linode"></i>
+                  <i class="fa-regular fa-life-ring"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-span-1 max-lg:hidden py-6"></div>
+      </div>
+    </section>
+
+    <section class="relative xl:container xl:m-auto w-full">
+      <template v-for="row in Math.round(projects.length / 2)" :key="row">
+        <div class="grid grid-cols-12 border-x border-x-black lg:divide-x divide-black border-black">
+          <div class="col-span-1 max-lg:hidden py-6"></div>
+          <div class="col-span-5 max-lg:col-span-12 text-lg xs:text-3xl sm:text-5xl text-start font-space-mono font-normal capitalize border-b border-black">
+            <div class="px-4 lg:px-8 py-6 lg:py-12 h-full">
+              <template v-if="projects[row+(row-2)]?.id">
+                <div class="flex flex-col justify-between gap-2 w-full h-full">
+                  <div>
+                    <div class="flex flex-wrap gap-2 justify-between mb-5">
+                      <h4 class="text-2xl font-bold">{{ projects[row+(row-2)]?.name }}</h4>
+                      <p class="inline-flex items-center text-sm">{{ projects[row+(row-2)]?.country }}</p>
+                    </div>
+                    <p class="text-lg font-normal">
+                      {{ projects[row+(row-2)]?.description }}
+                    </p>
+                  </div>
+                  <div class="flex flex-wrap justify-between">
+                    <p><small class="text-xs">{{ $timeAgo(projects[row+(row-2)]?.date) }}</small></p>
+                    <NuxtLink :to="projects[row+(row-2)]?.url" target="_blank">
+                      <button class="px-4 text-lg font-bold hover:tracking-widest transition-all ease-in-out duration-200">learn more&nbsp;<i class="fa-solid fa-arrow-right-long -rotate-45"></i></button>
+                    </NuxtLink>
+                  </div>
+                </div>
+              </template>
+            </div>
+          </div>
+          <div class="col-span-5 max-lg:col-span-12 text-lg xs:text-3xl sm:text-5xl text-start font-space-mono font-normal capitalize border-b border-black">
+            <div class="px-4 lg:px-8 py-6 lg:py-12 h-full">
+              <template v-if="projects[row+(row-1)]?.id">
+                <div class="flex flex-col justify-between gap-2 w-full h-full">
+                  <div>
+                    <div class="flex flex-wrap gap-2 justify-between mb-5">
+                      <h4 class="text-2xl font-bold">{{ projects[row+(row-1)]?.name }}</h4>
+                      <p class="inline-flex items-center text-sm">{{ projects[row+(row-1)]?.country }}</p>
+                    </div>
+                    <p class="text-lg font-normal">
+                      {{ projects[row+(row-1)]?.description }}
+                    </p>
+                  </div>
+                  <div class="flex flex-wrap justify-between">
+                    <p><small class="text-xs">{{ $timeAgo(projects[row+(row-1)]?.date) }}</small></p>
+                    <NuxtLink :to="projects[row+(row-1)]?.url" target="_blank">
+                      <button class="px-4 text-lg font-bold hover:tracking-widest transition-all ease-in-out duration-200">learn more&nbsp;<i class="fa-solid fa-arrow-right-long -rotate-45"></i></button>
+                    </NuxtLink>
+                  </div>
+                </div>
+              </template>
+            </div>
+          </div>
+          <div class="col-span-1 max-lg:hidden py-6"></div>
+        </div>
+      </template>
+    </section>
+
+    <section class="relative xl:container xl:m-auto w-full">
+      <div class="grid grid-cols-12 border-x border-x-black lg:divide-x divide-black border-black">
+        <div class="col-span-1 max-lg:hidden py-6"></div>
+        <div class="col-span-10 max-lg:col-span-12 text-lg xs:text-3xl sm:text-5xl text-start font-space-mono font-normal capitalize border-b border-black">
+          <div class="px-4 lg:px-8 py-6 lg:py-12">
+            <div class="flex flex-wrap justify-between items-end gap-2 w-full h-fit">
+              <h2 class="text-2xl xs:text-4xl xl:text-5xl uppercase font-bold tracking-widest">work process</h2>
+              <div class="flex flex-row items-start gap-4">
+                <div v-for="row in 4" :key="row" class="w-8 h-32 border border-black rounded-[50px/200px]" :class="{ '-ml-6' : row > 1}"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-span-1 max-lg:hidden py-6"></div>
       </div>
     </section>
   </div>
@@ -143,6 +237,16 @@ export default {
       store: {
         index: useIndexStore()
       },
+      projects: [
+        { id: 1, name: 'Find Art Mystery - Apps', country: 'ID', date: '2021-06-19 00:00:00', url: 'https://play.google.com/store/apps/details?id=com.Pradita.Find&hl=en_US&gl=US', description: 'AR-based application that has various features such as indoor navigation, AR object exhibition and AR-based games using the Unity Engine. can be used inside summarecon mall serpong.' },
+        { id: 2, name: 'Wrathnet JD', country: 'ID', date: '2021-10-30 00:00:00', url: 'https://wrathnet.com', description: 'Jade Dynasty Wrathnet portal web game with player\'s CMS and integrated transaction using available payment gateways located in indonesia.' },
+        { id: 3, name: 'Teamremod JD', country: 'VE', date: '2023-01-30 00:00:00', url: 'https://teamremod.com', description: 'Jade Dynasty Teamremod portal web game with player\'s CMS and integrated transaction using available payment gateways located in venezuela.' },
+        { id: 4, name: 'Vengance JD', country: 'US', date: '2023-01-30 00:00:00', url: 'https://vengancejd.com', description: 'Jade Dynasty Vengance portal web game with player\'s CMS and integrated transaction using available payment gateways located in united states.' },
+        { id: 5, name: 'Admin Teamremod JD', country: 'VE', date: '2023-01-30 00:00:00', url: 'https://special.teamremod.com', description: 'Jade Dynasty Teamremod portal web game admin panel with a complex CMS located in venezuela.' },
+        { id: 6, name: 'TPID', country: 'ID', date: '2023-01-09 00:00:00', url: 'http://103.50.218.58/tpid', description: 'The Regional Inflation Control Team website, which was developed by Tangerang City Communications and Information Department. It features a basic CMS and a user-friendly interface, designed for a client located in Indonesia.' },
+        { id: 7, name: 'Kadaku', country: 'ID', date: '2023-02-13 00:00:00', url: 'https://kadaku.id', description: 'Digital invitation website in Indonesia allows users to buy and customize templates to match their preferred designs and formats.' },
+        { id: 8, name: 'Local Champion', country: 'ID', date: '2023-09-25 00:00:00', url: 'https://localchampion.id', description: 'Integrated - sustainable community empowerment platform to bring forth sustainable innovations that benefit both their local communities and the world.' },
+      ]
     }
   },
   beforeMount() {
