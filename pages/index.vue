@@ -93,13 +93,14 @@
               I'm a web developer who loves tinkering with technology.
               <br>
               <br>
-              I have experience in full-stack development, creating user-friendly websites
+              I have 3 years of experience in full-stack web development, which has equipped me with the skills to create robust and dynamic web applications.
+              <br>
+              My websites prioritize security, harmoniously blend a user-friendly, responsive design, and effectively tackle business challenges with elegance.
               <br>
               <br>
-              my sites embody a clean and minimalistic design, solve business issues, and are user-friendly.
+              This experience has also enabled me to effectively collaborate with cross-functional teams on various projects.
+              <!-- Feel free to offer framework suggestions, as I am adaptable to a wide range of frameworks tailored to specific user requirements. -->
               <br>
-              i have 3 years of experience in web development in one of the best start-up companies or government in tangerang and jakarta.
-              among my projects are websites for indonesia, united states, and colombia.
             </p>
             <button class="text-lg uppercase font-extrabold py-4 hover:tracking-widest transition-all ease-in-out duration-200">
               contact with me

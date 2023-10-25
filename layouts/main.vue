@@ -2,6 +2,7 @@
   <div>
     <Navbar />
     <slot />
+    <Footer />
     <UtilityFlashlight v-if="flashlight"/>
   </div>
 </template>
