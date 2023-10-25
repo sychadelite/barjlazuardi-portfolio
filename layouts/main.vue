@@ -30,7 +30,7 @@ export default {
     this.$nextTick(() => {
       setTimeout(() => {
         this.initGsap()
-        this.lenis.scrollTo('top')
+        // this.lenis.scrollTo('top')
       }, 300)
       this.handleResize()
       window.addEventListener('resize', this.handleResize)

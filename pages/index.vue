@@ -19,12 +19,12 @@
             <div class="w-full sm:w-[25%] lg:w-3/12 border-b border-black divide-y divide-black">
               <div class="px-4 py-6 lg:py-12">
                 <div class="flex flex-col-reverse sm:flex-col gap-8 sm:gap-2 justify-between w-full text-base sm:text-sm font-space-mono font-normal uppercase" :style="store.index.getLayout.main_layout.innerWidth >= 640 ? 'writing-mode: vertical-rl;' : ''">
-                  <div class="flex flex-row justify-between items-center gap-4">
+                  <div class="flex flex-wrap lg:flex-row justify-between items-center gap-4">
                     <p class="text-start sm:h-64">
                       my websites embody a minimalistic and creative design, solve business issues, and are user-friendly.
                     </p>
-                    <div class="max-sm:hidden" style="writing-mode: horizontal-tb;">
-                      <img src="/img/icons/sych-base.png" alt="sych" class="h-16 grayscale invert max-sm:hidden">
+                    <div class="m-auto" style="writing-mode: horizontal-tb;">
+                      <img src="/img/icons/sych-base.png" alt="sych" class="h-16 grayscale invert">
                       <small>{{ store.index.getLayout.main_layout.innerWidth }}</small>
                     </div>
                   </div>
@@ -50,17 +50,16 @@
                   </div>
                   <img src="/img/icons/barj-illuminate.png" alt="barj" class="h-24 my-auto">   
                 </div>
-                <div class="w-full h-12"></div>
+                <div class="w-full h-12 lg:hidden"></div>
                 <div class="flex flex-wrap lg:flex-col justify-around lg:justify-evenly gap-y-4">
-                  <div class="flex flex-col lg:flex-row justify-evenly gap-x-4 gap-y-8 max-lg:text-start uppercase"> 
-                    <NuxtLink to="/" class="text-lg xs:text-2xl sm:text-4xl lg:text-xl max-lg:font-bolder font-asgard-fat tracking-widest hover:tracking-tight min-h-[4rem] transition-all ease-in-out duration-200">sych.experts &gt;&gt;</NuxtLink>
-                    <NuxtLink to="/" class="text-lg xs:text-2xl sm:text-4xl lg:text-xl max-lg:font-bolder font-asgard-fat tracking-widest hover:tracking-tight min-h-[4rem] transition-all ease-in-out duration-200">behance &gt;&gt;</NuxtLink>
-                    <NuxtLink to="/" class="text-lg xs:text-2xl sm:text-4xl lg:text-xl max-lg:font-bolder font-asgard-fat tracking-widest hover:tracking-tight min-h-[4rem] transition-all ease-in-out duration-200">whatsapp &gt;&gt;</NuxtLink>
-                    <NuxtLink to="/" class="text-lg xs:text-2xl sm:text-4xl lg:text-xl max-lg:font-bolder font-asgard-fat tracking-widest hover:tracking-tight min-h-[4rem] transition-all ease-in-out duration-200">telegram &gt;&gt;</NuxtLink>
+                  <div class="flex flex-col lg:flex-row justify-around gap-x-4 gap-y-8 max-lg:text-start uppercase"> 
+                    <NuxtLink to="/" class="w-fit h-fit text-lg xs:text-2xl sm:text-4xl lg:text-xl max-lg:font-bolder font-asgard-fat tracking-widest hover:tracking-tight transition-all ease-in-out duration-200">sych.experts &gt;&gt;</NuxtLink>
+                    <NuxtLink to="/" class="w-fit h-fit text-lg xs:text-2xl sm:text-4xl lg:text-xl max-lg:font-bolder font-asgard-fat tracking-widest hover:tracking-tight transition-all ease-in-out duration-200">behance &gt;&gt;</NuxtLink>
+                    <NuxtLink to="/" class="w-fit h-fit text-lg xs:text-2xl sm:text-4xl lg:text-xl max-lg:font-bolder font-asgard-fat tracking-widest hover:tracking-tight transition-all ease-in-out duration-200">whatsapp &gt;&gt;</NuxtLink>
+                    <NuxtLink to="/" class="w-fit h-fit text-lg xs:text-2xl sm:text-4xl lg:text-xl max-lg:font-bolder font-asgard-fat tracking-widest hover:tracking-tight transition-all ease-in-out duration-200">telegram &gt;&gt;</NuxtLink>
                   </div>
-                  <div class="w-8 lg:w-full lg:h-12 max-lg:hidden"></div>
-                  <div class="flex flex-col lg:flex-row justify-evenly gap-x-4 gap-y-8" :style="`writing-mode: ${store.index.getLayout.main_layout.innerWidth < 1024 ? 'vertical-rl' : ''};`"> 
-                    <p class="max-lg:w-11 h-72 xs:h-96 lg:h-11 text-6xl xs:text-7xl font-libre-barcode font-normal">{{ store.index.getLayout.main_layout.innerWidth >= 1024 ? 'nice&nbsp;to&nbsp;meet&nbsp;you' : 'thank&nbsp;you' }}</p>
+                  <div class="max-xs:hidden h-fit my-auto" :style="`${store.index.getLayout.main_layout.innerWidth >= 1024  ? 'writing-mode: horizontal-tb;' : 'writing-mode: vertical-rl;'}`">
+                    <p class="lg:h-11 text-6xl xs:text-7xl font-libre-barcode font-normal">{{ store.index.getLayout.main_layout.innerWidth >= 1024 ? 'nice&nbsp;to&nbsp;meet&nbsp;you' : 'thank&nbsp;you' }}</p>
                   </div>
                 </div>
               </div>
