@@ -24,7 +24,7 @@
               {{ selectedLang.slice(0, 2) }}&nbsp;<i class="fa-solid fa-caret-down"></i>
             </a>
             <div ref="dropdown-lang" data-lenis-prevent class="dropdown-lang absolute top-10 left-0 opacity-0 h-0 max-h-56 bg-black text-white ring-1 ring-offset-4 ring-black overflow-y-auto overflow-invisible">
-              <ul class="text-start" :class="{ 'hidden': store.index.getLayout.default_layout.innerWidth < 1024 }">
+              <ul class="text-start" :class="{ 'hidden': store.index.getLayout.main_layout.innerWidth < 1024 }">
                 <li v-for="row in languages" :key="row.id" class="flex gap-2 pl-4 pr-8 py-2 hover:bg-gray-700 capitalize cursor-pointer" :class="{ 'bg-gray-700' : selectedLang == row.name }" @click="selectedLang = row.name">
                   <img :src="`/img/flags/svg/${row.flag}.svg`" :alt="row.flag" class="w-4">
                   {{ row.name }}
@@ -59,7 +59,7 @@
     <div class="col-span-1 max-lg:hidden py-6"></div>
 
     <!-- OVERLAY -->
-    <ul ref="overlay-menu" class="nav-menu overflow-invisible !hidden" data-lenis-prevent :class="{ '!hidden': store.index.getLayout.default_layout.innerWidth >= 1024 }">
+    <ul ref="overlay-menu" class="nav-menu overflow-invisible !hidden" data-lenis-prevent :class="{ '!hidden': store.index.getLayout.main_layout.innerWidth >= 1024 }">
 			<li><router-link to="" class="anim-multi-underline">About Me</router-link></li>
       <li><router-link to="" class="anim-multi-underline">Portfolio</router-link></li>
       <li><router-link to="" class="anim-multi-underline">Process</router-link></li>
@@ -122,7 +122,7 @@ export default {
   },
   watch: {
     isMenuOpen(newStatus) {
-      // this.store.index.getLayout.default_layout.scrollerStatus(!newStatus)
+      // this.store.index.getLayout.main_layout.scrollerStatus(!newStatus)
     }
   },
   created() {

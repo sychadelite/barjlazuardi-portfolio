@@ -19,10 +19,12 @@ export default {
       lenis: null,
       innerWidth: 0,
       innerHeight: 0,
+      screenWidth: 0,
+      screenHeight: 0,
     }
   },
   beforeMount() {
-    this.store.index.setRootLayout('default_layout', this)
+    this.store.index.setRootLayout('main_layout', this)
   },
   mounted() {
     this.$nextTick(() => {
@@ -59,6 +61,8 @@ export default {
     handleResize() {
       this.innerWidth = window.innerWidth
       this.innerHeight = window.innerHeight
+      this.screenWidth = window.screen.width
+      this.screenHeight = window.screen.height
     },
     scrollerStatus(status) {
       if (!status) {
