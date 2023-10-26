@@ -17,10 +17,10 @@
               </div>
             </div>
             <div class="w-full sm:w-[25%] lg:w-3/12 border-b border-black divide-y divide-black">
-              <div class="px-4 py-6 lg:py-12">
+              <div class="w-full h-full px-4 py-6 lg:py-12">
                 <div class="flex flex-col-reverse sm:flex-col gap-8 sm:gap-2 justify-between w-full text-base sm:text-sm font-space-mono font-normal uppercase" :style="store.index.getLayout.main_layout.innerWidth >= 640 ? 'writing-mode: vertical-rl;' : ''">
-                  <div class="flex flex-wrap lg:flex-row justify-between items-center gap-4">
-                    <p class="text-start sm:h-64">
+                  <div class="flex flex-col sm:flex-row justify-between items-center gap-x-2 gap-y-6">
+                    <p class="text-start sm:h-60">
                       my websites embody a minimalistic and creative design, solve business issues, and are user-friendly.
                     </p>
                     <div class="m-auto" style="writing-mode: horizontal-tb;">
@@ -28,7 +28,7 @@
                       <small>{{ store.index.getLayout.main_layout.innerWidth }}</small>
                     </div>
                   </div>
-                  <div class="flex flex-wrap sm:flex-row justify-between items-center gap-6 sm:gap-4">
+                  <div class="flex flex-col sm:flex-row justify-between items-center gap-6 sm:gap-4">
                     <div class="w-full sm:h-48 p-2 border border-black rounded-2xl"></div>
                     <div class="flex flex-row justify-between items-center gap-4 xs:gap-12 sm:gap-6">
                       <div v-for="row in 4" :key="row" class="w-1.5 h-1.5 rounded-full" :class="row % 2 == 0 ? 'bg-black' : 'bg-gray-500'"></div>
@@ -199,10 +199,59 @@
         <div class="col-span-1 max-lg:hidden py-6"></div>
         <div class="col-span-10 max-lg:col-span-12 text-lg xs:text-3xl sm:text-5xl text-start font-space-mono font-normal capitalize border-b border-black">
           <div class="px-4 lg:px-8 py-6 lg:py-12">
-            <div class="flex flex-wrap justify-between items-end gap-2 w-full h-fit">
+            <div class="flex flex-wrap-reverse justify-between items-end gap-2 w-full h-fit">
               <h2 class="text-2xl xs:text-4xl xl:text-5xl uppercase font-bold tracking-widest">work process</h2>
               <div class="flex flex-row items-start gap-4">
                 <div v-for="row in 4" :key="row" class="w-8 h-32 border border-black rounded-[50px/200px]" :class="{ '-ml-6' : row > 1}"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-span-1 max-lg:hidden py-6"></div>
+      </div>
+    </section>
+
+    <section class="relative xl:container xl:m-auto w-full">
+      <template v-for="(row, index) in workflow" :key="row.id">
+        <div class="grid grid-cols-12 border-x border-x-black lg:divide-x divide-black border-black">
+          <div class="col-span-1 max-lg:hidden py-6"></div>
+          <div class="col-span-10 max-lg:col-span-12 text-lg xs:text-3xl sm:text-5xl text-start font-space-mono font-normal capitalize border-b border-black">
+            <div class="px-4 lg:px-8 py-6 lg:py-12">
+              <div class="flex flex-row justify-between items-center gap-4 w-full h-fit">
+                <div class="w-10/12">
+                  <h2 class="text-lg xs:text-xl xl:text-2xl uppercase font-bold tracking-tight mb-5">{{ String(row.id).padStart(2, '0') }}. {{ row.name }}</h2>
+                  <p class="text-xs xs:text-base uppercase font-light tracking-tighter">{{ row.description }}</p>
+                </div>
+                <div class="w-2/12">
+                  <div class="ml-auto max-w-[6rem]">
+                    <svg width="100%" height="100%" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M13.0121 19.162L14.8241 17.3397L16.2423 18.75L12.0116 23.0045L7.75684 18.7738L9.16708 17.3557L11.0121 19.1904L10.9976 0.99696L12.9976 0.995361L13.0121 19.162Z" :fill="index % 2 == 0 ? 'black' : 'transparent'" :stroke="index % 2 == 0 ? '' : 'black'" :stroke-width="index % 2 == 0 ? '' : '.25'"/>
+                    </svg>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-span-1 max-lg:hidden py-6"></div>
+        </div>
+      </template>
+    </section>
+
+    <section class="relative xl:container xl:m-auto w-full">
+      <div class="grid grid-cols-12 border-x border-x-black lg:divide-x divide-black border-black">
+        <div class="col-span-1 max-lg:hidden py-6"></div>
+        <div class="col-span-10 max-lg:col-span-12 text-lg xs:text-3xl sm:text-5xl text-start font-space-mono font-normal capitalize border-b border-black">
+          <div class="px-4 lg:px-8 py-6 lg:py-12">
+            <div class="flex flex-col sm:flex-row justify-end sm:justify-between items-end gap-y-4 gap-x-8 w-full h-fit">
+              <h2 class="text-2xl xs:text-4xl xl:text-5xl uppercase font-bold tracking-widest">prices</h2>
+              <div class="text-end">
+                <small class="text-xs font-semibold tracking-tighter">// 23.349124, 13.184303</small>
+                <div class="flex flex-row justify-end items-start gap-4 my-5">
+                  <div v-for="row in 7" :key="row" class="arrow arrow--left" :class="{ '-mr-3' : row <= 7}"></div>
+                </div>
+                <p class="text-base xs:text-lg sm:text-2xl font-semibold tracking-tighter mt-5">
+                  50% of prepayment is required
+                </p>
               </div>
             </div>
           </div>
@@ -246,6 +295,11 @@ export default {
         { id: 6, name: 'TPID', country: 'ID', date: '2023-01-09 00:00:00', url: 'http://103.50.218.58/tpid', description: 'The Regional Inflation Control Team website, which was developed by Tangerang City Communications and Information Department. It features a basic CMS and a user-friendly interface, designed for a client located in Indonesia.' },
         { id: 7, name: 'Kadaku', country: 'ID', date: '2023-02-13 00:00:00', url: 'https://kadaku.id', description: 'Digital invitation website in Indonesia allows users to buy and customize templates to match their preferred designs and formats.' },
         { id: 8, name: 'Local Champion', country: 'ID', date: '2023-09-25 00:00:00', url: 'https://localchampion.id', description: 'Integrated - sustainable community empowerment platform to bring forth sustainable innovations that benefit both their local communities and the world.' },
+      ],
+      workflow: [
+        { id: 1, name: 'Brief and Analytics', description: 'We conduct an interview, and then I learn all the details of project and the specific details of a business. I research competitors, collect references, form ideas for a project, and develop a structure for a future site.' },
+        { id: 2, name: 'Design and Implementation', description: 'I designed a responsive interface in order to improve the quality of the user experience when using the website / app that will be built. The system and data flow mapping diagram also needs to be designed to make it easier for stakeholders and technicians to understand the architecture. Then, I started to carry out initial development by implementing every agreed detail.' },
+        { id: 3, name: 'Code and Deploy', description: 'When the initial development is done, I start the programming process to achieve goals based on confidentiality, integrity and availability of information in the chosen stack. I connect forms and services, perform basic SEO setup, test and debug the site for errors and deploy it.' },
       ]
     }
   },
