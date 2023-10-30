@@ -8,7 +8,7 @@
 </template>
 
 <script>
-import { useIndexStore } from '../store/index'
+import { useIndexStore } from '@/store/index'
 
 export default {
   data() {

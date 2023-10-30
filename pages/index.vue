@@ -28,7 +28,7 @@
                       <small>{{ store.index.getLayout.main_layout.innerWidth }}</small>
                     </div>
                   </div>
-                  <div class="flex flex-col sm:flex-row justify-between items-center gap-6 sm:gap-4">
+                  <div class="flex flex-col sm:flex-row justify-between items-start gap-6 sm:gap-4">
                     <div class="w-full sm:h-48 p-2 border border-black rounded-2xl"></div>
                     <div class="flex flex-row justify-between items-center gap-4 xs:gap-12 sm:gap-6">
                       <div v-for="row in 4" :key="row" class="w-1.5 h-1.5 rounded-full" :class="row % 2 == 0 ? 'bg-black' : 'bg-gray-500'"></div>
@@ -51,12 +51,12 @@
                   <img src="/img/icons/barj-illuminate.png" alt="barj" class="h-24 my-auto">   
                 </div>
                 <div class="w-full h-12 lg:hidden"></div>
-                <div class="flex flex-wrap lg:flex-col justify-around lg:justify-evenly gap-y-4">
+                <div class="flex flex-wrap lg:flex-col justify-start xs:justify-around lg:justify-evenly gap-y-8 max-xs:pl-4">
                   <div class="flex flex-col lg:flex-row justify-around gap-x-4 gap-y-8 max-lg:text-start uppercase"> 
-                    <NuxtLink to="/" class="w-fit h-fit text-lg xs:text-2xl sm:text-4xl lg:text-xl max-lg:font-bolder font-asgard-fat tracking-widest hover:tracking-tight transition-all ease-in-out duration-200">sych.experts &gt;&gt;</NuxtLink>
-                    <NuxtLink to="/" class="w-fit h-fit text-lg xs:text-2xl sm:text-4xl lg:text-xl max-lg:font-bolder font-asgard-fat tracking-widest hover:tracking-tight transition-all ease-in-out duration-200">behance &gt;&gt;</NuxtLink>
-                    <NuxtLink to="/" class="w-fit h-fit text-lg xs:text-2xl sm:text-4xl lg:text-xl max-lg:font-bolder font-asgard-fat tracking-widest hover:tracking-tight transition-all ease-in-out duration-200">whatsapp &gt;&gt;</NuxtLink>
-                    <NuxtLink to="/" class="w-fit h-fit text-lg xs:text-2xl sm:text-4xl lg:text-xl max-lg:font-bolder font-asgard-fat tracking-widest hover:tracking-tight transition-all ease-in-out duration-200">telegram &gt;&gt;</NuxtLink>
+                    <NuxtLink to="/" class="w-fit h-fit text-base xs:text-xl sm:text-3xl lg:text-lg font-asgard-fat tracking-widest hover:tracking-tight transition-all ease-in-out duration-200">sych.experts &gt;&gt;</NuxtLink>
+                    <NuxtLink to="/" class="w-fit h-fit text-base xs:text-xl sm:text-3xl lg:text-lg font-asgard-fat tracking-widest hover:tracking-tight transition-all ease-in-out duration-200">behance &gt;&gt;</NuxtLink>
+                    <NuxtLink to="/" class="w-fit h-fit text-base xs:text-xl sm:text-3xl lg:text-lg font-asgard-fat tracking-widest hover:tracking-tight transition-all ease-in-out duration-200">whatsapp &gt;&gt;</NuxtLink>
+                    <NuxtLink to="/" class="w-fit h-fit text-base xs:text-xl sm:text-3xl lg:text-lg font-asgard-fat tracking-widest hover:tracking-tight transition-all ease-in-out duration-200">telegram &gt;&gt;</NuxtLink>
                   </div>
                   <div class="max-xs:hidden h-fit my-auto" :style="`${store.index.getLayout.main_layout.innerWidth >= 1024  ? 'writing-mode: horizontal-tb;' : 'writing-mode: vertical-rl;'}`">
                     <p class="lg:h-11 text-6xl xs:text-7xl font-libre-barcode font-normal">{{ store.index.getLayout.main_layout.innerWidth >= 1024 ? 'nice&nbsp;to&nbsp;meet&nbsp;you' : 'thank&nbsp;you' }}</p>
@@ -83,13 +83,13 @@
       </div>
     </section>
 
-    <section class="relative xl:container xl:m-auto w-full">
+    <section id="about-me" class="relative xl:container xl:m-auto w-full">
       <div class="grid grid-cols-12 border-x border-x-black lg:divide-x divide-black border-black">
         <div class="col-span-1 order-4 lg:order-1 max-lg:hidden py-6"></div>
         <div class="col-span-5 order-3 lg:order-2 max-lg:col-span-12 text-lg xs:text-3xl sm:text-5xl text-start font-space-mono font-normal capitalize border-b border-black">
           <div class="px-4 lg:px-8 py-6 lg:py-12">
-            <h2 class="text-2xl xs:text-4xl xl:text-5xl uppercase font-bold tracking-widest">hello;)<br>my name is barj</h2>
-            <p class="text-lg uppercase mt-5">
+            <h2 class="text-3xl xs:text-4xl xl:text-5xl uppercase font-bold tracking-widest">hello;)<br>my name is barj</h2>
+            <p class="text-base xs:text-lg uppercase mt-5">
               I'm a web developer who loves tinkering with technology.
               <br>
               <br>
@@ -115,7 +115,7 @@
       </div>
     </section>
 
-    <section class="relative xl:container xl:m-auto w-full">
+    <section id="portfolio" class="relative xl:container xl:m-auto w-full">
       <div class="grid grid-cols-12 border-x border-x-black lg:divide-x divide-black border-black">
         <div class="col-span-1 max-lg:hidden py-6"></div>
         <div class="col-span-10 max-lg:col-span-12 text-lg xs:text-3xl sm:text-5xl text-start font-space-mono font-normal capitalize border-b border-black">
@@ -149,17 +149,17 @@
                 <div class="flex flex-col justify-between gap-2 w-full h-full">
                   <div>
                     <div class="flex flex-wrap gap-2 justify-between mb-5">
-                      <h4 class="text-2xl font-bold">{{ projects[row+(row-2)]?.name }}</h4>
+                      <h4 class="text-2xl sm:text-3xl font-bold">{{ projects[row+(row-2)]?.name }}</h4>
                       <p class="inline-flex items-center text-sm">{{ projects[row+(row-2)]?.country }}</p>
                     </div>
-                    <p class="text-lg font-normal">
+                    <p class="text-base xs:text-lg font-normal">
                       {{ projects[row+(row-2)]?.description }}
                     </p>
                   </div>
                   <div class="flex flex-wrap justify-between">
-                    <p><small class="text-xs">{{ $timeAgo(projects[row+(row-2)]?.date) }}</small></p>
+                    <p><small class="text-xs sm:text-sm">{{ $timeAgo(projects[row+(row-2)]?.date) }}</small></p>
                     <NuxtLink :to="projects[row+(row-2)]?.url" target="_blank">
-                      <button class="px-4 text-lg font-bold hover:tracking-widest transition-all ease-in-out duration-200">learn more&nbsp;<i class="fa-solid fa-arrow-right-long -rotate-45"></i></button>
+                      <button class="text-base sm:text-lg font-bold uppercase hover:tracking-widest transition-all ease-in-out duration-200">learn more&nbsp;<i class="fa-solid fa-arrow-right-long -rotate-45"></i></button>
                     </NuxtLink>
                   </div>
                 </div>
@@ -172,17 +172,17 @@
                 <div class="flex flex-col justify-between gap-2 w-full h-full">
                   <div>
                     <div class="flex flex-wrap gap-2 justify-between mb-5">
-                      <h4 class="text-2xl font-bold">{{ projects[row+(row-1)]?.name }}</h4>
+                      <h4 class="text-2xl sm:text-3xl font-bold">{{ projects[row+(row-1)]?.name }}</h4>
                       <p class="inline-flex items-center text-sm">{{ projects[row+(row-1)]?.country }}</p>
                     </div>
-                    <p class="text-lg font-normal">
+                    <p class="text-base xs:text-lg font-normal">
                       {{ projects[row+(row-1)]?.description }}
                     </p>
                   </div>
                   <div class="flex flex-wrap justify-between">
-                    <p><small class="text-xs">{{ $timeAgo(projects[row+(row-1)]?.date) }}</small></p>
+                    <p><small class="text-xs sm:text-sm">{{ $timeAgo(projects[row+(row-1)]?.date) }}</small></p>
                     <NuxtLink :to="projects[row+(row-1)]?.url" target="_blank">
-                      <button class="px-4 text-lg font-bold hover:tracking-widest transition-all ease-in-out duration-200">learn more&nbsp;<i class="fa-solid fa-arrow-right-long -rotate-45"></i></button>
+                      <button class="text-base sm:text-lg font-bold uppercase hover:tracking-widest transition-all ease-in-out duration-200">learn more&nbsp;<i class="fa-solid fa-arrow-right-long -rotate-45"></i></button>
                     </NuxtLink>
                   </div>
                 </div>
@@ -194,7 +194,7 @@
       </template>
     </section>
 
-    <section class="relative xl:container xl:m-auto w-full">
+    <section id="workflow" class="relative xl:container xl:m-auto w-full">
       <div class="grid grid-cols-12 border-x border-x-black lg:divide-x divide-black border-black">
         <div class="col-span-1 max-lg:hidden py-6"></div>
         <div class="col-span-10 max-lg:col-span-12 text-lg xs:text-3xl sm:text-5xl text-start font-space-mono font-normal capitalize border-b border-black">
@@ -219,8 +219,8 @@
             <div class="px-4 lg:px-8 py-6 lg:py-12">
               <div class="flex flex-row justify-between items-center gap-4 w-full h-fit">
                 <div class="w-10/12">
-                  <h2 class="text-lg xs:text-xl xl:text-2xl uppercase font-bold tracking-tight mb-5">{{ String(row.id).padStart(2, '0') }}. {{ row.name }}</h2>
-                  <p class="text-xs xs:text-base uppercase font-light tracking-tighter">{{ row.description }}</p>
+                  <h4 class="text-2xl sm:text-3xl font-bold tracking-tight uppercase mb-5">{{ String(row.id).padStart(2, '0') }}. {{ row.name }}</h4>
+                  <p class="text-base xs:text-lg font-normal">{{ row.description }}</p>
                 </div>
                 <div class="w-2/12">
                   <div class="ml-auto max-w-[6rem]">
@@ -237,7 +237,7 @@
       </template>
     </section>
 
-    <section class="relative xl:container xl:m-auto w-full">
+    <section id="price" class="relative xl:container xl:m-auto w-full">
       <div class="grid grid-cols-12 border-x border-x-black lg:divide-x divide-black border-black">
         <div class="col-span-1 max-lg:hidden py-6"></div>
         <div class="col-span-10 max-lg:col-span-12 text-lg xs:text-3xl sm:text-5xl text-start font-space-mono font-normal capitalize border-b border-black">
@@ -259,11 +259,158 @@
         <div class="col-span-1 max-lg:hidden py-6"></div>
       </div>
     </section>
+
+    <section class="relative xl:container xl:m-auto w-full">
+      <template v-for="row in Math.round(prices.length / 2)" :key="row">
+        <div class="grid grid-cols-12 border-x border-x-black lg:divide-x divide-black border-black">
+          <div class="col-span-1 max-lg:hidden py-6"></div>
+          <div class="col-span-5 max-lg:col-span-12 text-lg xs:text-3xl sm:text-5xl text-start font-space-mono font-normal capitalize border-b border-black">
+            <div class="px-4 lg:px-8 py-6 lg:py-12 h-full">
+              <template v-if="prices[row+(row-2)]?.id">
+                <div class="flex flex-col justify-between gap-2 w-full h-full">
+                  <div class="mb-12">
+                    <div class="flex flex-wrap gap-2 justify-between mb-5">
+                      <h4 class="text-2xl sm:text-3xl font-bold tracking-tight uppercase">{{ prices[row+(row-2)]?.name }}</h4>
+                      <p class="inline-flex items-center text-sm sm:text-lg font-bold tracking-tight uppercase">from ${{ prices[row+(row-2)]?.amount }}</p>
+                    </div>
+                    <p class="text-base xs:text-lg font-normal">
+                      {{ prices[row+(row-2)]?.description }}
+                    </p>
+                  </div>
+                  <div class="flex flex-wrap justify-between gap-4">
+                    <p><small class="text-sm sm:text-base tracking-tight uppercase">from {{ prices[row+(row-2)]?.duration }} business days</small></p>
+                    <NuxtLink :to="prices[row+(row-2)]?.url" target="_blank">
+                      <button class="text-lg font-bold uppercase hover:tracking-wide transition-all ease-in-out duration-200">create {{ prices[row+(row-2)]?.name }}&nbsp;<i class="fa-solid fa-arrow-right-long -rotate-45"></i></button>
+                    </NuxtLink>
+                  </div>
+                </div>
+              </template>
+            </div>
+          </div>
+          <div class="col-span-5 max-lg:col-span-12 text-lg xs:text-3xl sm:text-5xl text-start font-space-mono font-normal capitalize border-b border-black">
+            <div class="px-4 lg:px-8 py-6 lg:py-12 h-full">
+              <template v-if="prices[row+(row-1)]?.id">
+                <div class="flex flex-col justify-between gap-2 w-full h-full">
+                  <div class="mb-12">
+                    <div class="flex flex-wrap gap-2 justify-between mb-5">
+                      <h4 class="text-2xl sm:text-3xl font-bold tracking-tight uppercase">{{ prices[row+(row-1)]?.name }}</h4>
+                      <p class="inline-flex items-center text-sm sm:text-lg font-bold tracking-tight uppercase">from ${{ prices[row+(row-1)]?.amount }}</p>
+                    </div>
+                    <p class="text-base xs:text-lg font-normal">
+                      {{ prices[row+(row-1)]?.description }}
+                    </p>
+                  </div>
+                  <div class="flex flex-wrap justify-between gap-4">
+                    <p><small class="text-sm sm:text-base tracking-tight uppercase">from {{ prices[row+(row-1)]?.duration }} business days</small></p>
+                    <NuxtLink :to="prices[row+(row-1)]?.url" target="_blank">
+                      <button class="text-base sm:text-lg font-bold uppercase hover:tracking-wide transition-all ease-in-out duration-200">create {{ prices[row+(row-1)]?.name }}&nbsp;<i class="fa-solid fa-arrow-right-long -rotate-45"></i></button>
+                    </NuxtLink>
+                  </div>
+                </div>
+              </template>
+            </div>
+          </div>
+          <div class="col-span-1 max-lg:hidden py-6"></div>
+        </div>
+      </template>
+    </section>
+
+    <section id="contact" class="relative xl:container xl:m-auto w-full">
+      <div class="grid grid-cols-12 border-x border-x-black lg:divide-x divide-black border-black">
+        <div class="col-span-1 max-lg:hidden py-6"></div>
+        <div class="col-span-10 max-lg:col-span-12 text-lg xs:text-3xl sm:text-5xl text-start font-space-mono font-normal capitalize border-b border-black">
+          <div class="sm:relative px-4 lg:px-8 py-6 lg:py-12">
+            <div class="flex flex-col-reverse sm:flex-row sm:justify-between sm:items-end gap-y-12 gap-x-8 w-full h-fit">
+              <h2 class="w-full sm:w-2/4 text-2xl xs:text-4xl xl:text-5xl uppercase font-bold tracking-widest">contacts</h2>
+              <div class="max-sm:relative w-full sm:w-2/4 h-40 text-end">
+                <div class="absolute top-0 right-0 w-16 h-2/4 bg-black"></div>
+                <svg class="absolute bottom-0 right-0 w-full xs:w-2/4 h-4/5" x="0" y="0">
+                  <defs>
+                    <pattern id="diagonalHatch" patternUnits="userSpaceOnUse" width="5" height="14" patternTransform="rotate(-45 2 2)">
+                      <path d="M -1,2 l 6,0" stroke="#000000" stroke-width="4"/>
+                    </pattern>
+                  </defs>
+                  <rect x="1" y="1" width="100%" height="100%" stroke="transparent" stroke-width="2" fill="url(#diagonalHatch)"/>
+                </svg>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-span-1 max-lg:hidden py-6"></div>
+      </div>
+    </section>
+
+    <section class="relative xl:container xl:m-auto w-full">
+      <div class="grid grid-cols-12 border-x border-x-black lg:divide-x divide-black border-black">
+        <div class="col-span-1 max-lg:hidden py-6"></div>
+        <div class="col-span-5 max-lg:col-span-12 text-lg xs:text-3xl sm:text-5xl text-start font-space-mono font-normal capitalize border-b border-black">
+          <div class="px-4 lg:px-8 py-6 lg:py-12 h-full">
+            <div class="flex flex-col justify-between gap-12 w-full h-full">
+              <h4 class="text-3xl lg:text-xl font-bold tracking-tight uppercase">let's make something <br> incredible together</h4>
+              <div class="flex flex-col gap-x-4 gap-y-4 sm:gap-y-8 uppercase"> 
+                <NuxtLink to="/" class="w-fit h-fit text-base xs:text-lg sm:text-2xl lg:text-lg font-asgard-fat tracking-widest hover:tracking-tight transition-all ease-in-out duration-200">sych.experts &gt;&gt;</NuxtLink>
+                <NuxtLink to="/" class="w-fit h-fit text-base xs:text-lg sm:text-2xl lg:text-lg font-asgard-fat tracking-widest hover:tracking-tight transition-all ease-in-out duration-200">behance &gt;&gt;</NuxtLink>
+                <NuxtLink to="/" class="w-fit h-fit text-base xs:text-lg sm:text-2xl lg:text-lg font-asgard-fat tracking-widest hover:tracking-tight transition-all ease-in-out duration-200">whatsapp &gt;&gt;</NuxtLink>
+                <NuxtLink to="/" class="w-fit h-fit text-base xs:text-lg sm:text-2xl lg:text-lg font-asgard-fat tracking-widest hover:tracking-tight transition-all ease-in-out duration-200">telegram &gt;&gt;</NuxtLink>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-span-5 max-lg:col-span-12 text-lg xs:text-3xl sm:text-5xl text-start font-space-mono font-normal capitalize border-b border-black">
+          <div class="px-4 lg:px-8 py-6 lg:py-12 h-full">
+            <div class="flex flex-col justify-start gap-4 w-full text-5xl">
+              <div class="form__group field">
+                <input id="name" name="name" type="text" class="form__field tracking-wide" placeholder="name" required />
+                <label for="name" class="form__label uppercase">name</label>
+              </div>
+              <div class="form__group field">
+                <input id="email" name="email" type="email" class="form__field tracking-wide" placeholder="email" required />
+                <label for="email" class="form__label uppercase">email</label>
+              </div>
+              <div class="form__group field">
+                <div id="web-type" name="web-type" class="form__field dropdown">
+                  <div class="flex flex-row justify-between items-center py-2 cursor-pointer">
+                    <span>website type</span>
+                    <i class="fa fa-chevron-left dropdown-icon text-xs"></i>
+                  </div>
+                  <input type="hidden" name="gender">
+                  <ul class="dropdown-menu absolute left-0 hidden w-full max-h-[144px] mt-3 ring-2 ring-offset-4 ring-black overflow-y-auto bg-black z-10" data-lenis-prevent>
+                    <template v-for="row in prices" :key="row.id">
+                      <li :id="row.id" class="p-3 text-white hover:bg-gray-700 transition-all ease-in-out duration-200 cursor-pointer">{{ row.name }}</li>
+                    </template>
+                  </ul>
+                </div>
+              </div>
+              <div class="form__group field py-6">
+                <textarea id="description" name="description" type="text" class="form__field tracking-wide min-h-[100px]" placeholder="description" required rows="8"></textarea>
+                <label for="description" class="form__label uppercase">tell about your project</label>
+              </div>
+            </div>
+            <div class="flex flex-wrap justify-between items-center gap-4">
+              <button class="text-2xl uppercase font-extrabold py-4 hover:tracking-widest transition-all ease-in-out duration-200">
+                send
+                <i class="fa-solid fa-arrow-trend-up"></i>
+              </button>
+              <div>
+                <p class="text-xs text-gray-400 uppercase tracking-tighter">
+                  by clicking the button you accept
+                  <br>
+                  <NuxtLink to="#price" class="text-black">
+                    the privacy policy.
+                  </NuxtLink>
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-span-1 max-lg:hidden py-6"></div>
+      </div>
+    </section>
   </div>
 </template>
 
 <script>
-import { useIndexStore } from '../store/index'
+import { useIndexStore } from '@/store/index'
 
 export default {
   setup() {
@@ -300,6 +447,12 @@ export default {
         { id: 1, name: 'Brief and Analytics', description: 'We conduct an interview, and then I learn all the details of project and the specific details of a business. I research competitors, collect references, form ideas for a project, and develop a structure for a future site.' },
         { id: 2, name: 'Design and Implementation', description: 'I designed a responsive interface in order to improve the quality of the user experience when using the website / app that will be built. The system and data flow mapping diagram also needs to be designed to make it easier for stakeholders and technicians to understand the architecture. Then, I started to carry out initial development by implementing every agreed detail.' },
         { id: 3, name: 'Code and Deploy', description: 'When the initial development is done, I start the programming process to achieve goals based on confidentiality, integrity and availability of information in the chosen stack. I connect forms and services, perform basic SEO setup, test and debug the site for errors and deploy it.' },
+      ],
+      prices: [
+        { id: 1, name: 'Landing', amount: 500, duration: 7, url: '/', description: 'A promo page or landing page will be suitable for selling a small number of products or services. Includes: design, coding, basic SEO optimization.' },
+        { id: 2, name: 'Website', amount: 1000, duration: 10, url: '/', description: 'A multi-page website that will represent the company, its products or service. Includes: design, coding, basic SEO optimization.' },
+        { id: 3, name: 'Shop', amount: 1200, duration: 14, url: '/', description: 'A store will work for a business and provide a wide variety of functions: a shopping cart, online payments and an internal CRM system. Includes: design, coding, basic SEO optimization.' },
+        { id: 4, name: 'Design', amount: 3500, duration: 7, url: '/', description: 'Website design will be developed in figma. Includes: interaction design, adaptive version, illustration and animation development.' },
       ]
     }
   },
@@ -309,6 +462,8 @@ export default {
   mounted() {
     this.$nextTick(() => {
       this.initGsap()
+
+      this.initFormDropdown()
     })
   },
   methods: {
@@ -316,6 +471,58 @@ export default {
       const { $Lenis, $LocomotiveScroll, $gsap, $ScrollTrigger } = useNuxtApp()
       
       // Gsap logic
+    },
+    initFormDropdown() {
+      /* Dropdown Menu */
+      let isSliding = false;
+
+      $('.form__group .dropdown').click(function () {
+        if (isSliding) return; // Return if already sliding
+        isSliding = true;
+        
+        const $this = $(this);
+        $this.find('.dropdown-icon').toggleClass('-rotate-90');
+        $this.attr('tabindex', 1).focus();
+        $this.toggleClass('active');
+        $this.find('.dropdown-menu').slideToggle(300, function () {
+          isSliding = false;
+        });
+      });
+
+      $('.form__group .dropdown').focusout(function () {
+        if (isSliding) return; // Return if already sliding
+        isSliding = true;
+        
+        const $this = $(this);
+        $this.removeClass('active');
+        $this.find('.dropdown-menu').slideUp(300, function () {
+          isSliding = false;
+        });
+      });
+
+      $('.form__group .dropdown .dropdown-menu li').click(function () {
+        if (isSliding) return; // Return if already sliding
+        isSliding = true;
+        
+        const $this = $(this);
+        const parentDropdown = $this.parents('.form__group .dropdown');
+        parentDropdown.find('span').text($this.text());
+        parentDropdown.find('input').attr('value', $this.attr('id'));
+        isSliding = false;
+      });
+
+      /* End Dropdown Menu */
+
+      $('.dropdown-menu li').click(function () {
+        if (isSliding) return; // Return if already sliding
+        isSliding = true;
+        
+        const $this = $(this);
+        const input = '<strong>' + $this.parents('.form__group .dropdown').find('input').val() + '</strong>';
+        const msg = '<span class="msg">Hidden input value: ';
+        $('.msg').html(msg + input + '</span');
+        isSliding = false;
+      });
     }
   }
 }

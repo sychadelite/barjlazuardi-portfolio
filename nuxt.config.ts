@@ -9,7 +9,8 @@ export default defineNuxtConfig({
         { rel: 'stylesheet', href: 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css' }
       ],
       script: [
-        { src: 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/js/all.min.js' }
+        { src: 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/js/all.min.js' },
+        { src: 'https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.min.js' }
       ],
     }
   },

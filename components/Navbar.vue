@@ -14,11 +14,10 @@
           </div>
         </div>
         <ul class="nav-link flex flex-row gap-6 max-lg:hidden">
-          <li><router-link to="" class="anim-multi-underline">About Me</router-link></li>
-          <li><router-link to="" class="anim-multi-underline">Portfolio</router-link></li>
-          <li><router-link to="" class="anim-multi-underline">Process</router-link></li>
-          <li><router-link to="" class="anim-multi-underline">Prices</router-link></li>
-          <li><router-link to="" class="anim-multi-underline">Sych</router-link></li>
+          <li><router-link to="#about-me" class="anim-multi-underline" :style="$route.hash == '#about-me' ? 'background-size: 100% 2px; background-position-x: left;' : ''">About Me</router-link></li>
+          <li><router-link to="#portfolio" class="anim-multi-underline" :style="$route.hash == '#portfolio' ? 'background-size: 100% 2px; background-position-x: left;' : ''">Portfolio</router-link></li>
+          <li><router-link to="#workflow" class="anim-multi-underline" :style="$route.hash == '#workflow' ? 'background-size: 100% 2px; background-position-x: left;' : ''">Process</router-link></li>
+          <li><router-link to="#price" class="anim-multi-underline" :style="$route.hash == '#price' ? 'background-size: 100% 2px; background-position-x: left;' : ''">Prices</router-link></li>
           <li class="relative">
             <a ref="caret-lang" id="caret-lang" class="anim-multi-underline block min-w-[3rem] uppercase cursor-pointer" :style="isLangOpen ? 'background-size: 100% 2px; background-position-x: left;' : ''" @click="toggleLang">
               {{ selectedLang.slice(0, 2) }}&nbsp;<i class="fa-solid fa-caret-down"></i>
@@ -37,7 +36,7 @@
     </div>
     <div class="col-span-2 max-lg:col-span-3 max-sm:col-span-4 py-2 lg:py-6">
       <div class="flex justify-center items-center h-full max-lg:hidden">
-        <router-link to="">
+        <router-link to="#contact" :class="{'underline decoration-wavy' : $route.hash == '#contact'}">
           <h1 class="font-bold">
             CONTACTS
           </h1>
@@ -60,13 +59,12 @@
 
     <!-- OVERLAY -->
     <ul ref="overlay-menu" class="nav-menu overflow-invisible !hidden" data-lenis-prevent :class="{ '!hidden': store.index.getLayout.main_layout.innerWidth >= 1024 }">
-			<li><router-link to="" class="anim-multi-underline">About Me</router-link></li>
-      <li><router-link to="" class="anim-multi-underline">Portfolio</router-link></li>
-      <li><router-link to="" class="anim-multi-underline">Process</router-link></li>
-      <li><router-link to="" class="anim-multi-underline">Prices</router-link></li>
-      <li><router-link to="" class="anim-multi-underline">Sych</router-link></li>
+			<li><router-link to="#about-me" class="anim-multi-underline" :style="$route.hash == 'about-me' ? 'background-size: 100% 2px; background-position-x: left;' : ''">About Me</router-link></li>
+      <li><router-link to="#portfolio" class="anim-multi-underline" :style="$route.hash == 'portfolio' ? 'background-size: 100% 2px; background-position-x: left;' : ''">Portfolio</router-link></li>
+      <li><router-link to="#workflow" class="anim-multi-underline" :style="$route.hash == 'workflow' ? 'background-size: 100% 2px; background-position-x: left;' : ''">Process</router-link></li>
+      <li><router-link to="#price" class="anim-multi-underline" :style="$route.hash == 'price' ? 'background-size: 100% 2px; background-position-x: left;' : ''">Prices</router-link></li>
       <li ref="caret-overlay-lang" id="caret-overlay-lang" @click="toggleOverlayLang">
-        <router-link to="" class="anim-multi-underline" :style="isOverlayLangOpen ? 'background-size: 100% 2px; background-position-x: left;' : ''">{{ selectedLang.slice(0, 2) }}&nbsp;<i class="fa-solid fa-caret-down"></i></router-link>
+        <router-link :to="$route.hash" class="anim-multi-underline" :style="isOverlayLangOpen ? 'background-size: 100% 2px; background-position-x: left;' : ''">{{ selectedLang.slice(0, 2) }}&nbsp;<i class="fa-solid fa-caret-down"></i></router-link>
       </li>
       <ul class="nav-overlay-lang grid grid-cols-2 xs:grid-cols-3 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-6 xl:grid-cols-7 2xl:grid-cols-8 gap-4 w-full max-w-3xl -mt-5 mb-5">
         <li v-for="row in languages" :key="row.id" class="opt-overlay-lang opacity-0 -z-10">
@@ -80,12 +78,13 @@
           </div>
         </li>
       </ul>
+      <li><router-link to="#contact" class="anim-multi-underline" :style="$route.hash == 'contact' ? 'background-size: 100% 2px; background-position-x: left;' : ''">Contacts</router-link></li>
 		</ul>
   </nav>
 </template>
 
 <script>
-import { useIndexStore } from '../store/index'
+import { useIndexStore } from '@/store/index'
 
 export default {
   setup() {
@@ -123,6 +122,33 @@ export default {
   watch: {
     isMenuOpen(newStatus) {
       // this.store.index.getLayout.main_layout.scrollerStatus(!newStatus)
+    },
+    'store.index.getLayout.main_layout.lenis': {
+      handler(newVal) {
+        if (newVal) {
+          const id = this.$route.hash.replace('#', '')
+          this.store.index.getLayout.main_layout.lenis.scrollTo(document.getElementById(id), {
+            offset: -this.$refs['top-nav'].clientHeight,
+            lerp: .2,
+            duration: 2,
+            lock: true
+          })
+        }
+      },
+      immediate: true
+    },
+    $route: {
+      handler(to, from) {
+        if (this.isMenuOpen) this.$refs['ham-menu'].click()
+        
+        const id = to.hash.replace('#', '')
+        this.store.index.getLayout.main_layout.lenis.scrollTo(document.getElementById(id), {
+          offset: -this.$refs['top-nav'].clientHeight,
+          lerp: .2,
+          duration: 2,
+          lock: true
+        })
+      }
     }
   },
   created() {
