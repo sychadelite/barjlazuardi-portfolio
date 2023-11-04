@@ -1,6 +1,8 @@
 <template>
   <nav ref="top-nav" class="sticky top-0 xl:container xl:m-auto grid grid-cols-12 bg-white border-x border-x-black divide-x divide-black border-b border-black uppercase text-sm xs:text-base z-40">
-    <div class="col-span-1 max-lg:hidden flex py-6"></div>
+    <div class="col-span-1 max-lg:hidden flex">
+      <div class="w-full h-full bg-cover bg-center bg-no-repeat" style="background-image: url('/img/external/netanyahu-face-as-hitler.png');"></div>
+    </div>
     <div class="col-span-8 max-lg:col-span-9 max-sm:col-span-8 flex justify-start py-2 lg:py-6">
       <div class="flex flex-wrap gap-4 justify-between items-center w-full h-full px-2 sm:px-6">
         <div class="max-sm:w-full">
@@ -55,7 +57,9 @@
         <span class="!w-1/2 !-translate-x-[8px] !translate-y-[47px] !scale-[1] !rotate-[135deg]" :class="{ '!opacity-0' : !isMenuOpen }"></span>
       </div>
     </div>
-    <div class="col-span-1 max-lg:hidden flex py-6"></div>
+    <div class="col-span-1 max-lg:hidden flex">
+      <div class="w-full h-full bg-cover bg-center bg-no-repeat" style="background-image: url('/img/external/free-palestine-cave-pov-jet.jpg');"></div>
+    </div>
 
     <!-- OVERLAY -->
     <ul ref="overlay-menu" class="nav-menu overflow-invisible" data-lenis-prevent :class="{ '!hidden': store.index.getLayout.main_layout.innerWidth >= 1024 }">
@@ -108,14 +112,14 @@ export default {
         { id: 6, code: 'jp', name: 'japanese', flag: 'jp' },
         { id: 7, code: 'kr', name: 'korean', flag: 'kr' },
         { id: 8, code: 'ru', name: 'russian', flag: 'ru' },
-        { id: 8, code: 'gr', name: 'greece', flag: 'gr' },
-        { id: 8, code: 'es', name: 'spanish', flag: 'es' },
-        { id: 8, code: 'tr', name: 'turkish', flag: 'tr' },
-        { id: 8, code: 'de', name: 'german', flag: 'de' },
-        { id: 8, code: 'it', name: 'italian', flag: 'it' },
-        { id: 8, code: 'th', name: 'thai', flag: 'th' },
-        { id: 8, code: 'du', name: 'dutch', flag: 'nl' },
-        { id: 8, code: 'il', name: 'hebrew', flag: 'il' },
+        { id: 9, code: 'gr', name: 'greece', flag: 'gr' },
+        { id: 10, code: 'es', name: 'spanish', flag: 'es' },
+        { id: 11, code: 'tr', name: 'turkish', flag: 'tr' },
+        { id: 12, code: 'de', name: 'german', flag: 'de' },
+        { id: 13, code: 'it', name: 'italian', flag: 'it' },
+        { id: 14, code: 'th', name: 'thai', flag: 'th' },
+        { id: 15, code: 'du', name: 'dutch', flag: 'nl' },
+        { id: 16, code: 'he', name: 'hebrew', flag: 'il' },
       ],
       social_media: [
         { id: 1, name: 'github', url: 'https://github.com/sychadelite', title: 'github', icon: '<i class="fa-brands fa-github"></i>' },

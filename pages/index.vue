@@ -81,6 +81,20 @@
         </div>
         <div class="col-span-1 max-lg:hidden py-6"></div>
       </div>
+
+      <!-- BROADCAST -->
+      <section id="broadcast" class="relative xl:container xl:m-auto w-full">
+        <div class="grid grid-cols-12 border-x border-x-black lg:divide-x divide-black border-black">
+          <div class="col-span-1 max-lg:hidden py-6"></div>
+          <div class="col-span-10 max-lg:col-span-12 text-lg xs:text-3xl sm:text-5xl text-start font-space-mono font-normal capitalize border-b border-black">
+            <div class="flex flex-wrap w-full h-fit">
+              <div v-for="row in broadcast.posters" :key="row.id" class="w-full xs:w-2/4 sm:w-1/4 h-40 sm:h-40 xl:h-72 bg-repeat-round" :style="`background-image: url(${row.image}); background-position: inherit;`"></div>
+            </div>
+          </div>
+          <div class="col-span-1 max-lg:hidden py-6"></div>
+        </div>
+      </section>
+      <!-- BROADCAST -->
     </section>
 
     <section id="about-me" class="relative xl:container xl:m-auto w-full">
@@ -433,6 +447,18 @@ export default {
       store: {
         index: useIndexStore()
       },
+      broadcast: {
+        posters: [
+          { id: 1, image: '/img/external/f4f15e179956267.650276719158a.png' },
+          { id: 2, image: '/img/external/netanyahu-face-as-hitler.png' },
+          { id: 3, image: '/img/external/free-palestine-memo.jpg' },
+          { id: 4, image: '/img/external/i-stand-with-palestine.jpg' },
+          { id: 5, image: '/img/external/the-hitler-mary-jane.jpg' },
+          { id: 6, image: '/img/external/free-palestine-cave-pov-jet.jpg' },
+          { id: 7, image: '/img/external/34ce61181231207.65185d614c717.jpg' },
+          { id: 8, image: '/img/external/b07483174922421.64ab19eab6d61.png' },
+        ]
+      },
       projects: [
         { id: 1, name: 'Find Art Mystery - Apps', country: 'ID', date: '2021-06-19 00:00:00', url: 'https://play.google.com/store/apps/details?id=com.Pradita.Find&hl=en_US&gl=US', description: 'AR-based application that has various features such as indoor navigation, AR object exhibition and AR-based games using the Unity Engine. can be used inside summarecon mall serpong.' },
         { id: 2, name: 'Wrathnet JD', country: 'ID', date: '2021-10-30 00:00:00', url: 'https://wrathnet.com', description: 'Jade Dynasty Wrathnet portal web game with player\'s CMS and integrated transaction using available payment gateways located in indonesia.' },
@@ -461,7 +487,7 @@ export default {
           web_type: '',
           description: '',
         }
-      }
+      },
     }
   },
   beforeMount() {
@@ -531,7 +557,7 @@ export default {
         $('.msg').html(msg + input + '</span');
         isSliding = false;
       });
-    }
+    },
   }
 }
 </script>

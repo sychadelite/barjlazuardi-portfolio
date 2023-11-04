@@ -1022,7 +1022,7 @@ export default defineI18nConfig(() => ({
       "the privacy policy.": `het privacybeleid.`,
       "built with ❤ by": `gebouwd met ❤ door`,
     },
-    il: {
+    he: {
       "welcome": `ברוך הבא`,
       "about me": `עליי`,
       "portfolio": `תיק עבודות`,
