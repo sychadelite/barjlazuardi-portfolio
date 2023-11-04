@@ -53,7 +53,7 @@
                 <div class="w-full h-12 lg:hidden"></div>
                 <div class="flex flex-wrap lg:flex-col justify-start xs:justify-around lg:justify-evenly gap-y-8 max-xs:pl-4">
                   <div class="flex flex-col lg:flex-row justify-around gap-x-4 gap-y-8 max-lg:text-start uppercase"> 
-                    <NuxtLink to="/" class="w-fit h-fit text-base xs:text-xl sm:text-3xl lg:text-lg font-asgard-fat tracking-widest hover:tracking-tight transition-all ease-in-out duration-200">sych.experts &gt;&gt;</NuxtLink>
+                    <NuxtLink to="https://vuejs.org/" target="_blank" class="w-fit h-fit text-base xs:text-xl sm:text-3xl lg:text-lg font-asgard-fat tracking-widest hover:tracking-tight transition-all ease-in-out duration-200">vue.experts &gt;&gt;</NuxtLink>
                     <NuxtLink to="/" class="w-fit h-fit text-base xs:text-xl sm:text-3xl lg:text-lg font-asgard-fat tracking-widest hover:tracking-tight transition-all ease-in-out duration-200">behance &gt;&gt;</NuxtLink>
                     <NuxtLink to="/" class="w-fit h-fit text-base xs:text-xl sm:text-3xl lg:text-lg font-asgard-fat tracking-widest hover:tracking-tight transition-all ease-in-out duration-200">whatsapp &gt;&gt;</NuxtLink>
                     <NuxtLink to="/" class="w-fit h-fit text-base xs:text-xl sm:text-3xl lg:text-lg font-asgard-fat tracking-widest hover:tracking-tight transition-all ease-in-out duration-200">telegram &gt;&gt;</NuxtLink>
@@ -348,7 +348,7 @@
             <div class="flex flex-col justify-between gap-12 w-full h-full">
               <h4 class="text-3xl lg:text-xl font-bold tracking-tight uppercase">let's make something <br> incredible together</h4>
               <div class="flex flex-col gap-x-4 gap-y-4 sm:gap-y-8 uppercase"> 
-                <NuxtLink to="/" class="w-fit h-fit text-base xs:text-lg sm:text-2xl lg:text-lg font-asgard-fat tracking-widest hover:tracking-tight transition-all ease-in-out duration-200">sych.experts &gt;&gt;</NuxtLink>
+                <NuxtLink to="https://vuejs.org/" target="_blank" class="w-fit h-fit text-base xs:text-lg sm:text-2xl lg:text-lg font-asgard-fat tracking-widest hover:tracking-tight transition-all ease-in-out duration-200">vue.experts &gt;&gt;</NuxtLink>
                 <NuxtLink to="/" class="w-fit h-fit text-base xs:text-lg sm:text-2xl lg:text-lg font-asgard-fat tracking-widest hover:tracking-tight transition-all ease-in-out duration-200">behance &gt;&gt;</NuxtLink>
                 <NuxtLink to="/" class="w-fit h-fit text-base xs:text-lg sm:text-2xl lg:text-lg font-asgard-fat tracking-widest hover:tracking-tight transition-all ease-in-out duration-200">whatsapp &gt;&gt;</NuxtLink>
                 <NuxtLink to="/" class="w-fit h-fit text-base xs:text-lg sm:text-2xl lg:text-lg font-asgard-fat tracking-widest hover:tracking-tight transition-all ease-in-out duration-200">telegram &gt;&gt;</NuxtLink>
