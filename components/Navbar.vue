@@ -100,7 +100,7 @@ export default {
         index: useIndexStore()
       },
       languages: [
-        { id: 1, code: 'id', name: 'indonesia', flag: 'id' },
+        { id: 1, code: 'id', name: 'indonesian', flag: 'id' },
         { id: 2, code: 'en', name: 'english', flag: 'gb' },
         { id: 3, code: 'fr', name: 'french', flag: 'fr' },
         { id: 4, code: 'ar', name: 'arabic', flag: 'sa' },
