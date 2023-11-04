@@ -395,7 +395,7 @@
                 <p class="text-xs text-gray-400 uppercase tracking-tighter">
                   by clicking the button you accept
                   <br>
-                  <NuxtLink to="#price" class="text-black">
+                  <NuxtLink to="/privacy-policy" class="text-black">
                     the privacy policy.
                   </NuxtLink>
                 </p>

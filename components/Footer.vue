@@ -3,7 +3,7 @@
     <div class="flex flex-col justify-end items-center w-full h-fit min-h-[24rem]">
       <div class="flex flex-col sm:flex-row justify-between items-end w-full h-full px-6 max-sm:gap-6">
         <div class="sm:w-5/12 h-full">
-          <NuxtLink to="/" class="block mr-auto w-fit h-fit">
+          <NuxtLink to="#contact" class="block mr-auto w-fit h-fit">
             <p class="text-lg text-start hover:tracking-widest capitalize transition-all ease-in-out duration-200">Get In Touch</p>
           </NuxtLink>
         </div>
@@ -13,7 +13,7 @@
           </button>
         </div>
         <div class="sm:w-5/12 h-full">
-          <NuxtLink to="/" class="block ml-auto w-fit h-fit">
+          <NuxtLink to="/privacy-policy" class="block ml-auto w-fit h-fit">
             <p class="text-lg text-end hover:tracking-widest capitalize transition-all ease-in-out duration-200">privacy policy</p>
           </NuxtLink>
         </div>
