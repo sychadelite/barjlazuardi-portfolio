@@ -14,17 +14,17 @@
           </div>
         </div>
         <ul class="nav-link flex flex-row gap-6 max-lg:hidden">
-          <li><router-link to="#about-me" class="anim-multi-underline" :style="$route.hash == '#about-me' ? 'background-size: 100% 2px; background-position-x: left;' : ''">About Me</router-link></li>
-          <li><router-link to="#portfolio" class="anim-multi-underline" :style="$route.hash == '#portfolio' ? 'background-size: 100% 2px; background-position-x: left;' : ''">Portfolio</router-link></li>
-          <li><router-link to="#workflow" class="anim-multi-underline" :style="$route.hash == '#workflow' ? 'background-size: 100% 2px; background-position-x: left;' : ''">Process</router-link></li>
-          <li><router-link to="#price" class="anim-multi-underline" :style="$route.hash == '#price' ? 'background-size: 100% 2px; background-position-x: left;' : ''">Prices</router-link></li>
+          <li><router-link to="#about-me" class="anim-multi-underline" :style="$route.hash == '#about-me' ? 'background-size: 100% 2px; background-position-x: left;' : ''">{{ $t('about me') }}</router-link></li>
+          <li><router-link to="#portfolio" class="anim-multi-underline" :style="$route.hash == '#portfolio' ? 'background-size: 100% 2px; background-position-x: left;' : ''">{{ $t('portfolio') }}</router-link></li>
+          <li><router-link to="#workflow" class="anim-multi-underline" :style="$route.hash == '#workflow' ? 'background-size: 100% 2px; background-position-x: left;' : ''">{{ $t('process') }}</router-link></li>
+          <li><router-link to="#price" class="anim-multi-underline" :style="$route.hash == '#price' ? 'background-size: 100% 2px; background-position-x: left;' : ''">{{ $t('prices') }}</router-link></li>
           <li class="relative">
             <a ref="caret-lang" id="caret-lang" class="anim-multi-underline block min-w-[3rem] uppercase cursor-pointer" :style="isLangOpen ? 'background-size: 100% 2px; background-position-x: left;' : ''" @click="toggleLang">
               {{ selectedLang.slice(0, 2) }}&nbsp;<i class="fa-solid fa-caret-down"></i>
             </a>
             <div ref="dropdown-lang" data-lenis-prevent class="dropdown-lang absolute top-10 left-0 opacity-0 h-0 max-h-56 bg-black text-white ring-1 ring-offset-4 ring-black overflow-y-auto overflow-invisible">
               <ul class="text-start" :class="{ 'hidden': store.index.getLayout.main_layout.innerWidth < 1024 }">
-                <li v-for="row in languages" :key="row.id" class="flex gap-2 pl-4 pr-8 py-2 hover:bg-gray-700 capitalize cursor-pointer" :class="{ 'bg-gray-700' : selectedLang == row.name }" @click="selectedLang = row.name">
+                <li v-for="row in languages" :key="row.id" class="flex gap-2 pl-4 pr-8 py-2 hover:bg-gray-700 capitalize cursor-pointer" :class="{ 'bg-gray-700' : selectedLang == row.code }" @click="selectedLang = row.code">
                   <img :src="`/img/flags/svg/${row.flag}.svg`" :alt="row.flag" class="w-4">
                   {{ row.name }}
                 </li>
@@ -37,8 +37,8 @@
     <div class="col-span-2 max-lg:col-span-3 max-sm:col-span-4 flex justify-center py-2 lg:py-6">
       <div class="flex justify-center items-center h-full max-lg:hidden">
         <router-link to="#contact" :class="{'underline decoration-wavy' : $route.hash == '#contact'}">
-          <h1 class="font-bold">
-            CONTACTS
+          <h1 class="font-bold uppercase">
+            {{ $t('contact') }}
           </h1>
         </router-link>
       </div>
@@ -58,27 +58,27 @@
     <div class="col-span-1 max-lg:hidden flex py-6"></div>
 
     <!-- OVERLAY -->
-    <ul ref="overlay-menu" class="nav-menu overflow-invisible !hidden" data-lenis-prevent :class="{ '!hidden': store.index.getLayout.main_layout.innerWidth >= 1024 }">
-			<li><router-link to="#about-me" class="anim-multi-underline" :style="$route.hash == 'about-me' ? 'background-size: 100% 2px; background-position-x: left;' : ''">About Me</router-link></li>
-      <li><router-link to="#portfolio" class="anim-multi-underline" :style="$route.hash == 'portfolio' ? 'background-size: 100% 2px; background-position-x: left;' : ''">Portfolio</router-link></li>
-      <li><router-link to="#workflow" class="anim-multi-underline" :style="$route.hash == 'workflow' ? 'background-size: 100% 2px; background-position-x: left;' : ''">Process</router-link></li>
-      <li><router-link to="#price" class="anim-multi-underline" :style="$route.hash == 'price' ? 'background-size: 100% 2px; background-position-x: left;' : ''">Prices</router-link></li>
+    <ul ref="overlay-menu" class="nav-menu overflow-invisible" data-lenis-prevent :class="{ '!hidden': store.index.getLayout.main_layout.innerWidth >= 1024 }">
+			<li><router-link to="#about-me" class="anim-multi-underline" :style="$route.hash == '#about-me' ? 'background-size: 100% 2px; background-position-x: left;' : ''">{{ $t('about me') }}</router-link></li>
+      <li><router-link to="#portfolio" class="anim-multi-underline" :style="$route.hash == '#portfolio' ? 'background-size: 100% 2px; background-position-x: left;' : ''">{{ $t('portfolio') }}</router-link></li>
+      <li><router-link to="#workflow" class="anim-multi-underline" :style="$route.hash == '#workflow' ? 'background-size: 100% 2px; background-position-x: left;' : ''">{{ $t('process') }}</router-link></li>
+      <li><router-link to="#price" class="anim-multi-underline" :style="$route.hash == '#price' ? 'background-size: 100% 2px; background-position-x: left;' : ''">{{ $t('prices') }}</router-link></li>
       <li ref="caret-overlay-lang" id="caret-overlay-lang" @click="toggleOverlayLang">
         <router-link :to="$route.hash" class="anim-multi-underline" :style="isOverlayLangOpen ? 'background-size: 100% 2px; background-position-x: left;' : ''">{{ selectedLang.slice(0, 2) }}&nbsp;<i class="fa-solid fa-caret-down"></i></router-link>
       </li>
       <ul class="nav-overlay-lang grid grid-cols-2 xs:grid-cols-3 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-6 xl:grid-cols-7 2xl:grid-cols-8 gap-4 w-full max-w-3xl -mt-5 mb-5">
         <li v-for="row in languages" :key="row.id" class="opt-overlay-lang opacity-0 -z-10">
-          <div class="relative p-4 rounded-sm bg-repeat-round cursor-pointer" :style="`background-image: url('/img/flags/png1000px/${row.flag}.png'); background-position: inherit;`" @click="selectedLang = row.name">
-            <div class="absolute inset-0 bg-black transition-all ease-in-out duration-200" :class="selectedLang == row.name ? 'opacity-30' : 'opacity-75'"></div>
+          <div class="relative p-4 rounded-sm bg-repeat-round cursor-pointer" :style="`background-image: url('/img/flags/png1000px/${row.flag}.png'); background-position: inherit;`" @click="selectedLang = row.code">
+            <div class="absolute inset-0 bg-black transition-all ease-in-out duration-200" :class="selectedLang == row.code ? 'opacity-30' : 'opacity-75'"></div>
             <p class="line-clamp-1">
-              <router-link to="" class="anim-multi-underline text-[10px] xs:text-xs" :style="selectedLang == row.name ? 'background-size: 100% 2px; background-position-x: left;' : ''" @click="selectedLang = row.name">
+              <router-link to="" class="anim-multi-underline font-medium text-[10px] xs:text-xs" :style="selectedLang == row.code ? 'background-size: 100% 2px; background-position-x: left;' : ''" @click="selectedLang = row.code">
                 {{ row.name }}
               </router-link>
             </p>
           </div>
         </li>
       </ul>
-      <li><router-link to="#contact" class="anim-multi-underline" :style="$route.hash == 'contact' ? 'background-size: 100% 2px; background-position-x: left;' : ''">Contacts</router-link></li>
+      <li><router-link to="#contact" class="anim-multi-underline" :style="$route.hash == '#contact' ? 'background-size: 100% 2px; background-position-x: left;' : ''">{{ $t('contact') }}</router-link></li>
 		</ul>
   </nav>
 </template>
@@ -88,6 +88,11 @@ import { useIndexStore } from '@/store/index'
 
 export default {
   setup() {
+    const { locale } = useI18n()
+
+    return {
+      locale
+    }
   },
   data() {
     return {
@@ -95,14 +100,22 @@ export default {
         index: useIndexStore()
       },
       languages: [
-        { id: 1, name: 'indonesia', flag: 'id' },
-        { id: 2, name: 'english', flag: 'gb' },
-        { id: 3, name: 'french', flag: 'fr' },
-        { id: 4, name: 'arabic', flag: 'sa' },
-        { id: 5, name: 'mandarin', flag: 'cn' },
-        { id: 6, name: 'japanese', flag: 'jp' },
-        { id: 7, name: 'korean', flag: 'kr' },
-        { id: 8, name: 'russian', flag: 'ru' },
+        { id: 1, code: 'id', name: 'indonesia', flag: 'id' },
+        { id: 2, code: 'en', name: 'english', flag: 'gb' },
+        { id: 3, code: 'fr', name: 'french', flag: 'fr' },
+        { id: 4, code: 'ar', name: 'arabic', flag: 'sa' },
+        { id: 5, code: 'cn', name: 'mandarin', flag: 'cn' },
+        { id: 6, code: 'jp', name: 'japanese', flag: 'jp' },
+        { id: 7, code: 'kr', name: 'korean', flag: 'kr' },
+        { id: 8, code: 'ru', name: 'russian', flag: 'ru' },
+        { id: 8, code: 'gr', name: 'greece', flag: 'gr' },
+        { id: 8, code: 'es', name: 'spanish', flag: 'es' },
+        { id: 8, code: 'tr', name: 'turkish', flag: 'tr' },
+        { id: 8, code: 'de', name: 'german', flag: 'de' },
+        { id: 8, code: 'it', name: 'italian', flag: 'it' },
+        { id: 8, code: 'th', name: 'thai', flag: 'th' },
+        { id: 8, code: 'du', name: 'dutch', flag: 'nl' },
+        { id: 8, code: 'il', name: 'hebrew', flag: 'il' },
       ],
       social_media: [
         { id: 1, name: 'github', url: 'https://github.com/sychadelite', title: 'github', icon: '<i class="fa-brands fa-github"></i>' },
@@ -113,7 +126,7 @@ export default {
         { id: 6, name: 'discord', url: 'https://discord.com/users/41767866263312793', title: 'instagram', icon: '<i class="fa-brands fa-discord"></i>' },
         { id: 7, name: 'pinterest', url: 'https://www.pinterest.com/barjlazuardi/', icon: '<i class="fa-brands fa-pinterest"></i>' },
       ],
-      selectedLang: 'english',
+      selectedLang: localStorage.getItem('selectedLang') ?? 'en',
       isMenuOpen: false,
       isLangOpen: false,
       isOverlayLangOpen: false,
@@ -149,6 +162,10 @@ export default {
           lock: true
         })
       }
+    },
+    selectedLang(newLang) {
+      localStorage.setItem('selectedLang', newLang)
+      this.locale = newLang
     }
   },
   created() {
@@ -294,13 +311,16 @@ export default {
     },
     handleDocumentClick(event) {
       if (this.isMenuOpen && !this.$refs['overlay-menu'].contains(event.target) && !this.$refs['ham-menu'].contains(event.target)) {
-        document.querySelector('#ham-menu').click()
+        if (this.store.index.getLayout.main_layout.innerWidth < 1024)
+          document.querySelector('#ham-menu').click()
       }
       if (this.isLangOpen && !this.$refs['dropdown-lang'].contains(event.target) && !this.$refs['caret-lang'].contains(event.target)) {
-        document.querySelector('#caret-lang').click()
+        if (this.store.index.getLayout.main_layout.innerWidth >= 1024)
+          document.querySelector('#caret-lang').click()
       }
       if (this.isOverlayLangOpen && !this.$refs['overlay-menu'].contains(event.target) && !this.$refs['caret-overlay-lang'].contains(event.target)) {
-        document.querySelector('#caret-overlay-lang').click()
+        if (this.store.index.getLayout.main_layout.innerWidth < 1024)
+          document.querySelector('#caret-overlay-lang').click()
       }
     },
   }

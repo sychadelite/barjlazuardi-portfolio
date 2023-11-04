@@ -18,9 +18,13 @@ export default defineNuxtConfig({
     '@/assets/scss/_main.scss',
   ],
   modules: [
+    '@nuxtjs/i18n',
     '@nuxtjs/tailwindcss',
     '@pinia/nuxt',
   ],
+  i18n: {
+    vueI18n: '~/plugins/@core/i18n/config.ts'
+  },
   plugins: [
     { src: '~/plugins/@core/helpers.ts', mode: 'client' },
   ],

@@ -7,13 +7,13 @@
           <div class="flex flex-wrap sm:flex-row divide-x divide-black">
             <div class="w-full sm:w-[75%] lg:w-9/12 sm:border-b border-black divide-y divide-black">
               <div class="px-1 md:px-4 py-10 lg:py-12">
-                <h1 class="line-clamp-1">minimalistic</h1>
+                <h1 class="line-clamp-1">{{ $t('minimalistic') }}</h1>
               </div>
               <div class="px-1 md:px-4 py-10 lg:py-12">
-                <h1 class="line-clamp-1">& creative</h1>
+                <h1 class="line-clamp-1">& {{ $t('creative') }}</h1>
               </div>
               <div class="px-1 md:px-4 py-10 lg:py-12">
-                <h1 class="line-clamp-1">websites</h1>
+                <h1 class="line-clamp-1">{{ $t('websites') }}</h1>
               </div>
             </div>
             <div class="w-full sm:w-[25%] lg:w-3/12 border-b border-black divide-y divide-black">
@@ -21,7 +21,7 @@
                 <div class="flex flex-col-reverse sm:flex-col gap-8 sm:gap-2 justify-between w-full text-base sm:text-sm font-space-mono font-normal uppercase" :style="store.index.getLayout.main_layout.innerWidth > 640 ? 'writing-mode: vertical-rl;' : ''">
                   <div class="flex flex-col sm:flex-row justify-between items-center gap-x-2 gap-y-6">
                     <p class="text-start sm:h-60">
-                      my websites embody a minimalistic and creative design, solve business issues, and are user-friendly.
+                      {{ $t('my websites embody a minimalistic and creative design, solve business issues, and are user-friendly.') }}
                     </p>
                     <div class="m-auto" style="writing-mode: horizontal-tb;">
                       <img src="/img/icons/sych-base.png" alt="sych" class="h-16 grayscale invert">
@@ -53,10 +53,10 @@
                 <div class="w-full h-12 lg:hidden"></div>
                 <div class="flex flex-wrap lg:flex-col justify-start xs:justify-around lg:justify-evenly gap-y-8 max-xs:pl-4">
                   <div class="flex flex-col lg:flex-row justify-around gap-x-4 gap-y-8 max-lg:text-start uppercase"> 
-                    <NuxtLink to="https://vuejs.org/" target="_blank" class="w-fit h-fit text-base xs:text-xl sm:text-3xl lg:text-lg font-asgard-fat tracking-widest hover:tracking-tight transition-all ease-in-out duration-200">vue.experts &gt;&gt;</NuxtLink>
-                    <NuxtLink to="/" class="w-fit h-fit text-base xs:text-xl sm:text-3xl lg:text-lg font-asgard-fat tracking-widest hover:tracking-tight transition-all ease-in-out duration-200">behance &gt;&gt;</NuxtLink>
-                    <NuxtLink to="/" class="w-fit h-fit text-base xs:text-xl sm:text-3xl lg:text-lg font-asgard-fat tracking-widest hover:tracking-tight transition-all ease-in-out duration-200">whatsapp &gt;&gt;</NuxtLink>
-                    <NuxtLink to="/" class="w-fit h-fit text-base xs:text-xl sm:text-3xl lg:text-lg font-asgard-fat tracking-widest hover:tracking-tight transition-all ease-in-out duration-200">telegram &gt;&gt;</NuxtLink>
+                    <NuxtLink to="https://vuejs.org/" target="_blank" class="w-fit h-fit text-base xs:text-xl sm:text-3xl lg:text-lg font-asgard-fat tracking-widest hover:tracking-tight transition-all ease-in-out duration-200">{{ $t('vue.experts') }} &gt;&gt;</NuxtLink>
+                    <NuxtLink to="/" class="w-fit h-fit text-base xs:text-xl sm:text-3xl lg:text-lg font-asgard-fat tracking-widest hover:tracking-tight transition-all ease-in-out duration-200">{{ $t('behance') }} &gt;&gt;</NuxtLink>
+                    <NuxtLink to="/" class="w-fit h-fit text-base xs:text-xl sm:text-3xl lg:text-lg font-asgard-fat tracking-widest hover:tracking-tight transition-all ease-in-out duration-200">{{ $t('whatsapp') }} &gt;&gt;</NuxtLink>
+                    <NuxtLink to="/" class="w-fit h-fit text-base xs:text-xl sm:text-3xl lg:text-lg font-asgard-fat tracking-widest hover:tracking-tight transition-all ease-in-out duration-200">{{ $t('telegram') }} &gt;&gt;</NuxtLink>
                   </div>
                   <div class="max-xs:hidden h-fit my-auto" :style="`${store.index.getLayout.main_layout.innerWidth >= 1024  ? 'writing-mode: horizontal-tb;' : 'writing-mode: vertical-rl;'}`">
                     <p class="lg:h-11 text-6xl xs:text-7xl font-libre-barcode font-normal">{{ store.index.getLayout.main_layout.innerWidth >= 1024 ? 'nice&nbsp;to&nbsp;meet&nbsp;you' : 'thank&nbsp;you' }}</p>
@@ -88,22 +88,22 @@
         <div class="col-span-1 order-4 lg:order-1 max-lg:hidden py-6"></div>
         <div class="col-span-5 order-3 lg:order-2 max-lg:col-span-12 text-lg xs:text-3xl sm:text-5xl text-start font-space-mono font-normal capitalize border-b border-black">
           <div class="px-4 lg:px-8 py-6 lg:py-12">
-            <h2 class="text-3xl xs:text-4xl xl:text-5xl uppercase font-bold tracking-widest">hello;)<br>my name is barj</h2>
+            <h2 class="text-3xl xs:text-4xl xl:text-5xl uppercase font-bold tracking-widest">{{ $t('hello') }};)<br>{{ $t('my name is barj') }}</h2>
             <p class="text-base xs:text-lg uppercase mt-5">
-              I'm a web developer who loves tinkering with technology.
+              {{ $t("I'm a web developer who loves tinkering with technology.") }}
               <br>
               <br>
-              I have 3 years of experience in full-stack web development, which has equipped me with the skills to create robust and dynamic web applications.
+              {{ $t('I have 3 years of experience in full-stack web development, which has equipped me with the skills to create robust and dynamic web applications.') }}
               <br>
-              My websites prioritize security, harmoniously blend a user-friendly, responsive design, and effectively tackle business challenges with elegance.
+              {{ $t('my websites prioritize security, harmoniously blend a user-friendly, responsive design, and effectively tackle business challenges with elegance.') }}
               <br>
               <br>
-              This experience has also enabled me to effectively collaborate with cross-functional teams on various projects.
+              {{ $t('this experience has also enabled me to effectively collaborate with cross-functional teams on various projects.') }}
               <!-- Feel free to offer framework suggestions, as I am adaptable to a wide range of frameworks tailored to specific user requirements. -->
               <br>
             </p>
             <button class="text-lg uppercase font-extrabold py-4 hover:tracking-widest transition-all ease-in-out duration-200">
-              contact with me
+              {{ $t('contact with me') }}
               <i class="fa-solid fa-arrow-trend-up"></i>
             </button>
           </div>
@@ -121,10 +121,10 @@
         <div class="col-span-10 max-lg:col-span-12 text-lg xs:text-3xl sm:text-5xl text-start font-space-mono font-normal capitalize border-b border-black">
           <div class="px-4 lg:px-8 py-6 lg:py-12">
             <div class="flex flex-wrap justify-between items-end gap-2 w-full h-fit">
-              <h2 class="text-2xl xs:text-4xl xl:text-5xl uppercase font-bold tracking-widest">my portfolio</h2>
+              <h2 class="text-2xl xs:text-4xl xl:text-5xl uppercase font-bold tracking-widest">{{ $t('my portfolio') }}</h2>
               <div class="flex flex-row items-start gap-4 h-20 sm:h-28">
                 <div class="flex flex-col justify-between h-full">
-                  <p class="text-lg font-bold tracking-tighter">projects</p>
+                  <p class="text-lg font-bold tracking-tighter">{{ $t('projects') }}</p>
                   <i class="fa-solid fa-timeline"></i>
                 </div>
                 <div class="flex flex-col justify-between h-full">
@@ -153,13 +153,13 @@
                       <p class="inline-flex items-center text-sm">{{ projects[row+(row-2)]?.country }}</p>
                     </div>
                     <p class="text-base xs:text-lg font-normal">
-                      {{ projects[row+(row-2)]?.description }}
+                      {{ $t(projects[row+(row-2)]?.description) }}
                     </p>
                   </div>
                   <div class="flex flex-wrap justify-between">
                     <p><small class="text-xs sm:text-sm">{{ $timeAgo(projects[row+(row-2)]?.date) }}</small></p>
                     <NuxtLink :to="projects[row+(row-2)]?.url" target="_blank">
-                      <button class="text-base sm:text-lg font-bold uppercase hover:tracking-widest transition-all ease-in-out duration-200">learn more&nbsp;<i class="fa-solid fa-arrow-right-long -rotate-45"></i></button>
+                      <button class="text-base sm:text-lg font-bold uppercase hover:tracking-widest transition-all ease-in-out duration-200">{{ $t('learn more') }}&nbsp;<i class="fa-solid fa-arrow-right-long -rotate-45"></i></button>
                     </NuxtLink>
                   </div>
                 </div>
@@ -176,13 +176,13 @@
                       <p class="inline-flex items-center text-sm">{{ projects[row+(row-1)]?.country }}</p>
                     </div>
                     <p class="text-base xs:text-lg font-normal">
-                      {{ projects[row+(row-1)]?.description }}
+                      {{ $t(projects[row+(row-1)]?.description) }}
                     </p>
                   </div>
                   <div class="flex flex-wrap justify-between">
                     <p><small class="text-xs sm:text-sm">{{ $timeAgo(projects[row+(row-1)]?.date) }}</small></p>
                     <NuxtLink :to="projects[row+(row-1)]?.url" target="_blank">
-                      <button class="text-base sm:text-lg font-bold uppercase hover:tracking-widest transition-all ease-in-out duration-200">learn more&nbsp;<i class="fa-solid fa-arrow-right-long -rotate-45"></i></button>
+                      <button class="text-base sm:text-lg font-bold uppercase hover:tracking-widest transition-all ease-in-out duration-200">{{ $t('learn more') }}&nbsp;<i class="fa-solid fa-arrow-right-long -rotate-45"></i></button>
                     </NuxtLink>
                   </div>
                 </div>
@@ -200,7 +200,7 @@
         <div class="col-span-10 max-lg:col-span-12 text-lg xs:text-3xl sm:text-5xl text-start font-space-mono font-normal capitalize border-b border-black">
           <div class="px-4 lg:px-8 py-6 lg:py-12">
             <div class="flex flex-wrap-reverse justify-between items-end gap-2 w-full h-fit">
-              <h2 class="text-2xl xs:text-4xl xl:text-5xl uppercase font-bold tracking-widest">work process</h2>
+              <h2 class="text-2xl xs:text-4xl xl:text-5xl uppercase font-bold tracking-widest">{{ $t('work process') }}</h2>
               <div class="flex flex-row items-start gap-4">
                 <div v-for="row in 4" :key="row" class="w-8 h-32 border border-black rounded-[50px/200px]" :class="{ '-ml-6' : row > 1}"></div>
               </div>
@@ -219,8 +219,8 @@
             <div class="px-4 lg:px-8 py-6 lg:py-12">
               <div class="flex flex-row justify-between items-center gap-4 w-full h-fit">
                 <div class="w-10/12">
-                  <h4 class="text-2xl sm:text-3xl font-bold tracking-tight uppercase mb-5">{{ String(row.id).padStart(2, '0') }}. {{ row.name }}</h4>
-                  <p class="text-base xs:text-lg font-normal">{{ row.description }}</p>
+                  <h4 class="text-2xl sm:text-3xl font-bold tracking-tight uppercase mb-5">{{ String(row.id).padStart(2, '0') }}. {{ $t(row.name) }}</h4>
+                  <p class="text-base xs:text-lg font-normal">{{ $t(row.description) }}</p>
                 </div>
                 <div class="w-2/12">
                   <div class="ml-auto max-w-[6rem]">
@@ -243,14 +243,14 @@
         <div class="col-span-10 max-lg:col-span-12 text-lg xs:text-3xl sm:text-5xl text-start font-space-mono font-normal capitalize border-b border-black">
           <div class="px-4 lg:px-8 py-6 lg:py-12">
             <div class="flex flex-col sm:flex-row justify-end sm:justify-between items-end gap-y-4 gap-x-8 w-full h-fit">
-              <h2 class="text-2xl xs:text-4xl xl:text-5xl uppercase font-bold tracking-widest">prices</h2>
+              <h2 class="text-2xl xs:text-4xl xl:text-5xl uppercase font-bold tracking-widest">{{ $t('prices') }}</h2>
               <div class="text-end">
-                <small class="text-xs font-semibold tracking-tighter">// 23.349124, 13.184303</small>
+                <small class="text-xs font-semibold tracking-tighter">// {{ $t('23.349124') }}, {{ $t('13.184303') }}</small>
                 <div class="flex flex-row justify-end items-start gap-4 my-5">
                   <div v-for="row in 7" :key="row" class="arrow arrow--left" :class="{ '-mr-3' : row <= 7}"></div>
                 </div>
                 <p class="text-base xs:text-lg sm:text-2xl font-semibold tracking-tighter mt-5">
-                  50% of prepayment is required
+                  {{ $t('50% of prepayment is required') }}
                 </p>
               </div>
             </div>
@@ -270,17 +270,17 @@
                 <div class="flex flex-col justify-between gap-2 w-full h-full">
                   <div class="mb-12">
                     <div class="flex flex-wrap gap-2 justify-between mb-5">
-                      <h4 class="text-2xl sm:text-3xl font-bold tracking-tight uppercase">{{ prices[row+(row-2)]?.name }}</h4>
-                      <p class="inline-flex items-center text-sm sm:text-lg font-bold tracking-tight uppercase">from ${{ prices[row+(row-2)]?.amount }}</p>
+                      <h4 class="text-2xl sm:text-3xl font-bold tracking-tight uppercase">{{ $t(prices[row+(row-2)]?.name) }}</h4>
+                      <p class="inline-flex items-center text-sm sm:text-lg font-bold tracking-tight uppercase">{{ $t('from') }} ${{ prices[row+(row-2)]?.amount }}</p>
                     </div>
                     <p class="text-base xs:text-lg font-normal">
-                      {{ prices[row+(row-2)]?.description }}
+                      {{ $t(prices[row+(row-2)]?.description) }}
                     </p>
                   </div>
                   <div class="flex flex-wrap justify-between gap-4">
-                    <p><small class="text-sm sm:text-base tracking-tight uppercase">from {{ prices[row+(row-2)]?.duration }} business days</small></p>
+                    <p><small class="text-sm sm:text-base tracking-tight uppercase">{{ $t('from') }} {{ prices[row+(row-2)]?.duration }} {{ $t('business days') }}</small></p>
                     <NuxtLink :to="prices[row+(row-2)]?.url" target="_blank">
-                      <button class="text-lg font-bold uppercase hover:tracking-wide transition-all ease-in-out duration-200">create {{ prices[row+(row-2)]?.name }}&nbsp;<i class="fa-solid fa-arrow-right-long -rotate-45"></i></button>
+                      <button class="text-lg font-bold uppercase hover:tracking-wide transition-all ease-in-out duration-200">{{ $t('create') }} {{ $t(prices[row+(row-2)]?.name) }}&nbsp;<i class="fa-solid fa-arrow-right-long -rotate-45"></i></button>
                     </NuxtLink>
                   </div>
                 </div>
@@ -293,17 +293,17 @@
                 <div class="flex flex-col justify-between gap-2 w-full h-full">
                   <div class="mb-12">
                     <div class="flex flex-wrap gap-2 justify-between mb-5">
-                      <h4 class="text-2xl sm:text-3xl font-bold tracking-tight uppercase">{{ prices[row+(row-1)]?.name }}</h4>
-                      <p class="inline-flex items-center text-sm sm:text-lg font-bold tracking-tight uppercase">from ${{ prices[row+(row-1)]?.amount }}</p>
+                      <h4 class="text-2xl sm:text-3xl font-bold tracking-tight uppercase">{{ $t(prices[row+(row-1)]?.name) }}</h4>
+                      <p class="inline-flex items-center text-sm sm:text-lg font-bold tracking-tight uppercase">{{ $t('from') }} ${{ prices[row+(row-1)]?.amount }}</p>
                     </div>
                     <p class="text-base xs:text-lg font-normal">
-                      {{ prices[row+(row-1)]?.description }}
+                      {{ $t(prices[row+(row-1)]?.description) }}
                     </p>
                   </div>
                   <div class="flex flex-wrap justify-between gap-4">
-                    <p><small class="text-sm sm:text-base tracking-tight uppercase">from {{ prices[row+(row-1)]?.duration }} business days</small></p>
+                    <p><small class="text-sm sm:text-base tracking-tight uppercase">{{ $t('from') }} {{ prices[row+(row-1)]?.duration }} {{ $t('business days') }}</small></p>
                     <NuxtLink :to="prices[row+(row-1)]?.url" target="_blank">
-                      <button class="text-base sm:text-lg font-bold uppercase hover:tracking-wide transition-all ease-in-out duration-200">create {{ prices[row+(row-1)]?.name }}&nbsp;<i class="fa-solid fa-arrow-right-long -rotate-45"></i></button>
+                      <button class="text-base sm:text-lg font-bold uppercase hover:tracking-wide transition-all ease-in-out duration-200">{{ $t('create') }} {{ $t(prices[row+(row-1)]?.name) }}&nbsp;<i class="fa-solid fa-arrow-right-long -rotate-45"></i></button>
                     </NuxtLink>
                   </div>
                 </div>
@@ -321,7 +321,7 @@
         <div class="col-span-10 max-lg:col-span-12 text-lg xs:text-3xl sm:text-5xl text-start font-space-mono font-normal capitalize border-b border-black">
           <div class="sm:relative px-4 lg:px-8 py-6 lg:py-12">
             <div class="flex flex-col-reverse sm:flex-row sm:justify-between sm:items-end gap-y-12 gap-x-8 w-full h-fit">
-              <h2 class="w-full sm:w-2/4 text-2xl xs:text-4xl xl:text-5xl uppercase font-bold tracking-widest">contacts</h2>
+              <h2 class="w-full sm:w-2/4 text-2xl xs:text-4xl xl:text-5xl uppercase font-bold tracking-widest">{{ $t('contacts') }}</h2>
               <div class="max-sm:relative w-full sm:w-2/4 h-40 text-end">
                 <div class="absolute top-0 right-0 w-16 h-2/4 bg-black"></div>
                 <svg class="absolute bottom-0 right-0 w-full xs:w-2/4 h-4/5" x="0" y="0">
@@ -346,12 +346,12 @@
         <div class="col-span-5 max-lg:col-span-12 text-lg xs:text-3xl sm:text-5xl text-start font-space-mono font-normal capitalize border-b border-black">
           <div class="px-4 lg:px-8 py-6 lg:py-12 h-full">
             <div class="flex flex-col justify-between gap-12 w-full h-full">
-              <h4 class="text-3xl lg:text-xl font-bold tracking-tight uppercase">let's make something <br> incredible together</h4>
+              <h4 class="text-3xl lg:text-xl font-bold tracking-tight uppercase">{{ $t("let's make something incredible together") }}</h4>
               <div class="flex flex-col gap-x-4 gap-y-4 sm:gap-y-8 uppercase"> 
-                <NuxtLink to="https://vuejs.org/" target="_blank" class="w-fit h-fit text-base xs:text-lg sm:text-2xl lg:text-lg font-asgard-fat tracking-widest hover:tracking-tight transition-all ease-in-out duration-200">vue.experts &gt;&gt;</NuxtLink>
-                <NuxtLink to="/" class="w-fit h-fit text-base xs:text-lg sm:text-2xl lg:text-lg font-asgard-fat tracking-widest hover:tracking-tight transition-all ease-in-out duration-200">behance &gt;&gt;</NuxtLink>
-                <NuxtLink to="/" class="w-fit h-fit text-base xs:text-lg sm:text-2xl lg:text-lg font-asgard-fat tracking-widest hover:tracking-tight transition-all ease-in-out duration-200">whatsapp &gt;&gt;</NuxtLink>
-                <NuxtLink to="/" class="w-fit h-fit text-base xs:text-lg sm:text-2xl lg:text-lg font-asgard-fat tracking-widest hover:tracking-tight transition-all ease-in-out duration-200">telegram &gt;&gt;</NuxtLink>
+                <NuxtLink to="https://vuejs.org/" target="_blank" class="w-fit h-fit text-base xs:text-lg sm:text-2xl lg:text-lg font-asgard-fat tracking-widest hover:tracking-tight transition-all ease-in-out duration-200">{{ $t('vue.experts') }} &gt;&gt;</NuxtLink>
+                <NuxtLink to="/" class="w-fit h-fit text-base xs:text-lg sm:text-2xl lg:text-lg font-asgard-fat tracking-widest hover:tracking-tight transition-all ease-in-out duration-200">{{ $t('behance') }} &gt;&gt;</NuxtLink>
+                <NuxtLink to="/" class="w-fit h-fit text-base xs:text-lg sm:text-2xl lg:text-lg font-asgard-fat tracking-widest hover:tracking-tight transition-all ease-in-out duration-200">{{ $t('whatsapp') }} &gt;&gt;</NuxtLink>
+                <NuxtLink to="/" class="w-fit h-fit text-base xs:text-lg sm:text-2xl lg:text-lg font-asgard-fat tracking-widest hover:tracking-tight transition-all ease-in-out duration-200">{{ $t('telegram') }} &gt;&gt;</NuxtLink>
               </div>
             </div>
           </div>
@@ -360,43 +360,43 @@
           <div class="px-4 lg:px-8 py-6 lg:py-12 h-full">
             <div class="flex flex-col justify-start gap-4 w-full text-5xl">
               <div class="form__group field">
-                <input id="name" name="name" type="text" class="form__field tracking-wide" placeholder="name" required />
-                <label for="name" class="form__label uppercase">name</label>
+                <input id="name" name="name" type="text" class="form__field tracking-wide" :placeholder="$t('name')" required />
+                <label for="name" class="form__label uppercase">{{ $t('name') }}</label>
               </div>
               <div class="form__group field">
-                <input id="email" name="email" type="email" class="form__field tracking-wide" placeholder="email" required />
-                <label for="email" class="form__label uppercase">email</label>
+                <input id="email" name="email" type="email" class="form__field tracking-wide" :placeholder="$t('email')" required />
+                <label for="email" class="form__label uppercase">{{ $t('email') }}</label>
               </div>
               <div class="form__group field">
-                <div id="web-type" name="web-type" class="form__field dropdown">
+                <div id="web-type" class="form__field dropdown">
                   <div class="flex flex-row justify-between items-center py-2 cursor-pointer">
-                    <span>website type</span>
+                    <span>{{ $t('website type') }}</span>
                     <i class="fa fa-chevron-left dropdown-icon text-xs"></i>
                   </div>
-                  <input type="hidden" name="gender">
+                  <input type="hidden" name="web-type">
                   <ul class="dropdown-menu absolute left-0 hidden w-full max-h-[160px] mt-3 ring-2 ring-offset-4 ring-black overflow-y-auto bg-black z-10" data-lenis-prevent>
                     <template v-for="row in prices" :key="row.id">
-                      <li :id="row.id" class="p-3 text-white hover:bg-gray-700 transition-all ease-in-out duration-200 cursor-pointer" :class="{ 'bg-gray-700' : payload.contact.web_type == row.name }" @click="payload.contact.web_type = row.name">{{ row.name }}</li>
+                      <li :id="row.id" class="p-3 text-white hover:bg-gray-700 transition-all ease-in-out duration-200 cursor-pointer" :class="{ 'bg-gray-700' : payload.contact.web_type == row.name }" @click="payload.contact.web_type = row.name">{{ $t(row.name) }}</li>
                     </template>
                   </ul>
                 </div>
               </div>
               <div class="form__group field py-6">
-                <textarea id="description" name="description" type="text" class="form__field tracking-wide min-h-[100px]" placeholder="description" required rows="8"></textarea>
-                <label for="description" class="form__label uppercase">tell about your project</label>
+                <textarea id="description" name="description" type="text" class="form__field tracking-wide min-h-[100px]" :placeholder="$t('description')" required rows="8"></textarea>
+                <label for="description" class="form__label uppercase">{{ $t('tell about your project') }}</label>
               </div>
             </div>
             <div class="flex flex-wrap justify-between items-center gap-4">
               <button class="text-2xl uppercase font-extrabold py-4 hover:tracking-widest transition-all ease-in-out duration-200">
-                send
+                {{ $t('send') }}
                 <i class="fa-solid fa-arrow-trend-up"></i>
               </button>
               <div>
                 <p class="text-xs text-gray-400 uppercase tracking-tighter">
-                  by clicking the button you accept
+                  {{ $t('by clicking the button you accept') }}
                   <br>
                   <NuxtLink to="/privacy-policy" class="text-black">
-                    the privacy policy.
+                    {{ $t('the privacy policy.') }}
                   </NuxtLink>
                 </p>
               </div>
@@ -444,9 +444,9 @@ export default {
         { id: 8, name: 'Local Champion', country: 'ID', date: '2023-09-25 00:00:00', url: 'https://localchampion.id', description: 'Integrated - sustainable community empowerment platform to bring forth sustainable innovations that benefit both their local communities and the world.' },
       ],
       workflow: [
-        { id: 1, name: 'Brief and Analytics', description: 'We conduct an interview, and then I learn all the details of project and the specific details of a business. I research competitors, collect references, form ideas for a project, and develop a structure for a future site.' },
-        { id: 2, name: 'Design and Implementation', description: 'I designed a responsive interface in order to improve the quality of the user experience when using the website / app that will be built. The system and data flow mapping diagram also needs to be designed to make it easier for stakeholders and technicians to understand the architecture. Then, I started to carry out initial development by implementing every agreed detail.' },
-        { id: 3, name: 'Code and Deploy', description: 'When the initial development is done, I start the programming process to achieve goals based on confidentiality, integrity and availability of information in the chosen stack. I connect forms and services, perform basic SEO setup, test and debug the site for errors and deploy it.' },
+        { id: 1, name: 'brief and analytics', description: 'We conduct an interview, and then I learn all the details of project and the specific details of a business. I research competitors, collect references, form ideas for a project, and develop a structure for a future site.' },
+        { id: 2, name: 'design and implementation', description: 'I designed a responsive interface in order to improve the quality of the user experience when using the website / app that will be built. The system and data flow mapping diagram also needs to be designed to make it easier for stakeholders and technicians to understand the architecture. Then, I started to carry out initial development by implementing every agreed detail.' },
+        { id: 3, name: 'code and deploy', description: 'When the initial development is done, I start the programming process to achieve goals based on confidentiality, integrity and availability of information in the chosen stack. I connect forms and services, perform basic SEO setup, test and debug the site for errors and deploy it.' },
       ],
       prices: [
         { id: 1, name: 'Landing', amount: 500, duration: 7, url: '/', description: 'A promo page or landing page will be suitable for selling a small number of products or services. Includes: design, coding, basic SEO optimization.' },
