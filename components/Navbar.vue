@@ -1,13 +1,13 @@
 <template>
   <nav ref="top-nav" class="sticky top-0 xl:container xl:m-auto grid grid-cols-12 bg-white border-x border-x-black divide-x divide-black border-b border-black uppercase text-sm xs:text-base z-40">
-    <div class="col-span-1 max-lg:hidden py-6"></div>
-    <div class="col-span-8 max-lg:col-span-9 max-sm:col-span-8 py-2 lg:py-6">
+    <div class="col-span-1 max-lg:hidden flex py-6"></div>
+    <div class="col-span-8 max-lg:col-span-9 max-sm:col-span-8 flex justify-start py-2 lg:py-6">
       <div class="flex flex-wrap gap-4 justify-between items-center h-full px-2 sm:px-6">
         <div class="max-sm:w-full">
           <h1 class="font-bold text-start line-clamp-1">
             @barjlazuardi
           </h1>
-          <div class="social-media flex flex-wrap gap-1.5">
+          <div class="social-media flex flex-wrap gap-x-3 gap-y-1">
             <NuxtLink v-for="row in social_media" :key="row.id" :to="row.url" target="_blank" :title="row.name" class="line-clamp-1 hover:text-contessa-700 hover:scale-90 opacity-0">
               <div v-html="row.icon"></div>
             </NuxtLink>
@@ -34,7 +34,7 @@
         </ul>
       </div>
     </div>
-    <div class="col-span-2 max-lg:col-span-3 max-sm:col-span-4 py-2 lg:py-6">
+    <div class="col-span-2 max-lg:col-span-3 max-sm:col-span-4 flex justify-center py-2 lg:py-6">
       <div class="flex justify-center items-center h-full max-lg:hidden">
         <router-link to="#contact" :class="{'underline decoration-wavy' : $route.hash == '#contact'}">
           <h1 class="font-bold">
@@ -55,7 +55,7 @@
         <span class="!w-1/2 !-translate-x-[8px] !translate-y-[47px] !scale-[1] !rotate-[135deg]" :class="{ '!opacity-0' : !isMenuOpen }"></span>
       </div>
     </div>
-    <div class="col-span-1 max-lg:hidden py-6"></div>
+    <div class="col-span-1 max-lg:hidden flex py-6"></div>
 
     <!-- OVERLAY -->
     <ul ref="overlay-menu" class="nav-menu overflow-invisible !hidden" data-lenis-prevent :class="{ '!hidden': store.index.getLayout.main_layout.innerWidth >= 1024 }">
