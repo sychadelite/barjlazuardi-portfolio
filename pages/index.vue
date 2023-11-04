@@ -18,7 +18,7 @@
             </div>
             <div class="w-full sm:w-[25%] lg:w-3/12 border-b border-black divide-y divide-black">
               <div class="w-full h-full px-4 py-6 lg:py-12">
-                <div class="flex flex-col-reverse sm:flex-col gap-8 sm:gap-2 justify-between w-full text-base sm:text-sm font-space-mono font-normal uppercase" :style="store.index.getLayout.main_layout.innerWidth >= 640 ? 'writing-mode: vertical-rl;' : ''">
+                <div class="flex flex-col-reverse sm:flex-col gap-8 sm:gap-2 justify-between w-full text-base sm:text-sm font-space-mono font-normal uppercase" :style="store.index.getLayout.main_layout.innerWidth > 640 ? 'writing-mode: vertical-rl;' : ''">
                   <div class="flex flex-col sm:flex-row justify-between items-center gap-x-2 gap-y-6">
                     <p class="text-start sm:h-60">
                       my websites embody a minimalistic and creative design, solve business issues, and are user-friendly.

@@ -2,7 +2,7 @@
   <nav ref="top-nav" class="sticky top-0 xl:container xl:m-auto grid grid-cols-12 bg-white border-x border-x-black divide-x divide-black border-b border-black uppercase text-sm xs:text-base z-40">
     <div class="col-span-1 max-lg:hidden flex py-6"></div>
     <div class="col-span-8 max-lg:col-span-9 max-sm:col-span-8 flex justify-start py-2 lg:py-6">
-      <div class="flex flex-wrap gap-4 justify-between items-center h-full px-2 sm:px-6">
+      <div class="flex flex-wrap gap-4 justify-between items-center w-full h-full px-2 sm:px-6">
         <div class="max-sm:w-full">
           <h1 class="font-bold text-start line-clamp-1">
             @barjlazuardi
