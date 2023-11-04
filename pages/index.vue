@@ -374,9 +374,9 @@
                     <i class="fa fa-chevron-left dropdown-icon text-xs"></i>
                   </div>
                   <input type="hidden" name="gender">
-                  <ul class="dropdown-menu absolute left-0 hidden w-full max-h-[144px] mt-3 ring-2 ring-offset-4 ring-black overflow-y-auto bg-black z-10" data-lenis-prevent>
+                  <ul class="dropdown-menu absolute left-0 hidden w-full max-h-[160px] mt-3 ring-2 ring-offset-4 ring-black overflow-y-auto bg-black z-10" data-lenis-prevent>
                     <template v-for="row in prices" :key="row.id">
-                      <li :id="row.id" class="p-3 text-white hover:bg-gray-700 transition-all ease-in-out duration-200 cursor-pointer">{{ row.name }}</li>
+                      <li :id="row.id" class="p-3 text-white hover:bg-gray-700 transition-all ease-in-out duration-200 cursor-pointer" :class="{ 'bg-gray-700' : payload.contact.web_type == row.name }" @click="payload.contact.web_type = row.name">{{ row.name }}</li>
                     </template>
                   </ul>
                 </div>
@@ -453,7 +453,15 @@ export default {
         { id: 2, name: 'Website', amount: 1000, duration: 10, url: '/', description: 'A multi-page website that will represent the company, its products or service. Includes: design, coding, basic SEO optimization.' },
         { id: 3, name: 'Shop', amount: 1200, duration: 14, url: '/', description: 'A store will work for a business and provide a wide variety of functions: a shopping cart, online payments and an internal CRM system. Includes: design, coding, basic SEO optimization.' },
         { id: 4, name: 'Design', amount: 3500, duration: 7, url: '/', description: 'Website design will be developed in figma. Includes: interaction design, adaptive version, illustration and animation development.' },
-      ]
+      ],
+      payload: {
+        contact: {
+          name: '',
+          email: '',
+          web_type: '',
+          description: '',
+        }
+      }
     }
   },
   beforeMount() {
