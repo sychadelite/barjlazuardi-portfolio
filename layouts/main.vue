@@ -3,7 +3,8 @@
     <Navbar />
     <slot />
     <Footer />
-    <UtilityFlashlight v-if="flashlight"/>
+    <UtilityFlashlight v-if="flashlight" />
+    <UtilityToggleFlashlight :isOn="flashlight" @callback="onToggleLight" />
   </div>
 </template>
 
@@ -16,7 +17,7 @@ export default {
       store: {
         index: useIndexStore()
       },
-      flashlight: false,
+      flashlight: localStorage.getItem('flashlight') == 'true' ?? false,
       lenis: null,
       innerWidth: 0,
       innerHeight: 0,
@@ -71,6 +72,10 @@ export default {
       } else {
         this.lenis.start()
       }
+    },
+    onToggleLight(e) {
+      this.flashlight = !this.flashlight
+      localStorage.setItem('flashlight', this.flashlight)
     }
   }
 }

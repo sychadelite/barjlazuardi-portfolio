@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div id="flashlight" ref="flashlight" class="z-[9999]"></div>
+    <div id="flashlight" ref="flashlight" class="z-[60]"></div>
   </div>
 </template>
 
