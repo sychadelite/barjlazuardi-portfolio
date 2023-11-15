@@ -107,7 +107,9 @@
 
     <section id="about-me" class="relative xl:container xl:m-auto w-full">
       <div class="grid grid-cols-12 border-x border-x-black lg:divide-x divide-black border-black">
-        <div class="col-span-1 order-4 lg:order-1 max-lg:hidden py-6"></div>
+        <div class="col-span-1 order-4 lg:order-1 max-lg:hidden py-6">
+          <div class="w-full h-full bg-cover bg-left bg-no-repeat" style="background-image: url('/img/external/b07483174922421.64ab19eab6d61.png');"></div>
+        </div>
         <div class="col-span-5 order-3 lg:order-2 max-lg:col-span-12 text-lg xs:text-3xl sm:text-5xl text-start font-space-mono font-normal capitalize border-b border-black">
           <div class="px-4 lg:px-8 py-6 lg:py-12">
             <h2 class="text-3xl xs:text-4xl xl:text-5xl uppercase font-bold tracking-widest">{{ $t('hello') }};)<br>{{ $t('my name is barj') }}</h2>
@@ -133,13 +135,17 @@
         <div class="col-span-5 order-2 lg:order-3 max-lg:col-span-12 text-lg xs:text-3xl sm:text-5xl text-start font-middle-earth font-normal capitalize border-b border-black">
           <div class="w-full h-full min-h-[20rem] bg-center bg-cover bg-no-repeat" style="background-image: url('/img/profile/1637566473719-grayscale.jpeg');"></div>
         </div>
-        <div class="col-span-1 order-1 lg:order-4 max-lg:hidden py-6"></div>
+        <div class="col-span-1 order-1 lg:order-4 max-lg:hidden py-6">
+          <div class="w-full h-full bg-cover bg-right bg-no-repeat" style="background-image: url('/img/external/b07483174922421.64ab19eab6d61.png');"></div>
+        </div>
       </div>
     </section>
 
     <section id="portfolio" class="relative xl:container xl:m-auto w-full">
       <div class="grid grid-cols-12 border-x border-x-black lg:divide-x divide-black border-black">
-        <div class="col-span-1 max-lg:hidden py-6"></div>
+        <div class="col-span-1 max-lg:hidden py-6">
+          <div class="w-full h-full bg-cover bg-left bg-no-repeat" style="background-image: url('/img/external/b07483174922421.64ab19eab6d61.png');"></div>
+        </div>
         <div class="col-span-10 max-lg:col-span-12 text-lg xs:text-3xl sm:text-5xl text-start font-space-mono font-normal capitalize border-b border-black">
           <div class="px-4 lg:px-8 py-6 lg:py-12">
             <div class="flex flex-wrap justify-between items-end gap-2 w-full h-fit">
@@ -157,14 +163,18 @@
             </div>
           </div>
         </div>
-        <div class="col-span-1 max-lg:hidden py-6"></div>
+        <div class="col-span-1 max-lg:hidden py-6">
+          <div class="w-full h-full bg-cover bg-right bg-no-repeat" style="background-image: url('/img/external/b07483174922421.64ab19eab6d61.png');"></div>
+        </div>
       </div>
     </section>
 
     <section class="relative xl:container xl:m-auto w-full">
       <template v-for="row in Math.round(projects.length / 2)" :key="row">
         <div class="grid grid-cols-12 border-x border-x-black lg:divide-x divide-black border-black">
-          <div class="col-span-1 max-lg:hidden py-6"></div>
+          <div class="col-span-1 max-lg:hidden py-6">
+            <div class="w-full h-full bg-cover bg-left bg-no-repeat" style="background-image: url('/img/external/b07483174922421.64ab19eab6d61.png');"></div>
+          </div>
           <div class="col-span-5 max-lg:col-span-12 text-lg xs:text-3xl sm:text-5xl text-start font-space-mono font-normal capitalize border-b border-black">
             <div class="px-4 lg:px-8 py-6 lg:py-12 h-full">
               <template v-if="projects[row+(row-2)]?.id">
@@ -211,14 +221,18 @@
               </template>
             </div>
           </div>
-          <div class="col-span-1 max-lg:hidden py-6"></div>
+          <div class="col-span-1 max-lg:hidden py-6">
+            <div class="w-full h-full bg-cover bg-right bg-no-repeat" style="background-image: url('/img/external/b07483174922421.64ab19eab6d61.png');"></div>
+          </div>
         </div>
       </template>
     </section>
 
     <section id="workflow" class="relative xl:container xl:m-auto w-full">
       <div class="grid grid-cols-12 border-x border-x-black lg:divide-x divide-black border-black">
-        <div class="col-span-1 max-lg:hidden py-6"></div>
+        <div class="col-span-1 max-lg:hidden py-6">
+          <div class="w-full h-full bg-cover bg-left bg-no-repeat" style="background-image: url('/img/external/b07483174922421.64ab19eab6d61.png');"></div>
+        </div>
         <div class="col-span-10 max-lg:col-span-12 text-lg xs:text-3xl sm:text-5xl text-start font-space-mono font-normal capitalize border-b border-black">
           <div class="px-4 lg:px-8 py-6 lg:py-12">
             <div class="flex flex-wrap-reverse justify-between items-end gap-2 w-full h-fit">
@@ -229,14 +243,18 @@
             </div>
           </div>
         </div>
-        <div class="col-span-1 max-lg:hidden py-6"></div>
+        <div class="col-span-1 max-lg:hidden py-6">
+          <div class="w-full h-full bg-cover bg-right bg-no-repeat" style="background-image: url('/img/external/b07483174922421.64ab19eab6d61.png');"></div>
+        </div>
       </div>
     </section>
 
     <section class="relative xl:container xl:m-auto w-full">
       <template v-for="(row, index) in workflow" :key="row.id">
         <div class="grid grid-cols-12 border-x border-x-black lg:divide-x divide-black border-black">
-          <div class="col-span-1 max-lg:hidden py-6"></div>
+          <div class="col-span-1 max-lg:hidden py-6">
+            <div class="w-full h-full bg-cover bg-left bg-no-repeat" style="background-image: url('/img/external/b07483174922421.64ab19eab6d61.png');"></div>
+          </div>
           <div class="col-span-10 max-lg:col-span-12 text-lg xs:text-3xl sm:text-5xl text-start font-space-mono font-normal capitalize border-b border-black">
             <div class="px-4 lg:px-8 py-6 lg:py-12">
               <div class="flex flex-row justify-between items-center gap-4 w-full h-fit">
@@ -254,14 +272,18 @@
               </div>
             </div>
           </div>
-          <div class="col-span-1 max-lg:hidden py-6"></div>
+          <div class="col-span-1 max-lg:hidden py-6">
+            <div class="w-full h-full bg-cover bg-right bg-no-repeat" style="background-image: url('/img/external/b07483174922421.64ab19eab6d61.png');"></div>
+          </div>
         </div>
       </template>
     </section>
 
     <section id="price" class="relative xl:container xl:m-auto w-full">
       <div class="grid grid-cols-12 border-x border-x-black lg:divide-x divide-black border-black">
-        <div class="col-span-1 max-lg:hidden py-6"></div>
+        <div class="col-span-1 max-lg:hidden py-6">
+          <div class="w-full h-full bg-cover bg-left bg-no-repeat" style="background-image: url('/img/external/b07483174922421.64ab19eab6d61.png');"></div>
+        </div>
         <div class="col-span-10 max-lg:col-span-12 text-lg xs:text-3xl sm:text-5xl text-start font-space-mono font-normal capitalize border-b border-black">
           <div class="px-4 lg:px-8 py-6 lg:py-12">
             <div class="flex flex-col sm:flex-row justify-end sm:justify-between items-end gap-y-4 gap-x-8 w-full h-fit">
@@ -278,14 +300,18 @@
             </div>
           </div>
         </div>
-        <div class="col-span-1 max-lg:hidden py-6"></div>
+        <div class="col-span-1 max-lg:hidden py-6">
+          <div class="w-full h-full bg-cover bg-right bg-no-repeat" style="background-image: url('/img/external/b07483174922421.64ab19eab6d61.png');"></div>
+        </div>
       </div>
     </section>
 
     <section class="relative xl:container xl:m-auto w-full">
       <template v-for="row in Math.round(prices.length / 2)" :key="row">
         <div class="grid grid-cols-12 border-x border-x-black lg:divide-x divide-black border-black">
-          <div class="col-span-1 max-lg:hidden py-6"></div>
+          <div class="col-span-1 max-lg:hidden py-6">
+            <div class="w-full h-full bg-cover bg-left bg-no-repeat" style="background-image: url('/img/external/b07483174922421.64ab19eab6d61.png');"></div>
+          </div>
           <div class="col-span-5 max-lg:col-span-12 text-lg xs:text-3xl sm:text-5xl text-start font-space-mono font-normal capitalize border-b border-black">
             <div class="px-4 lg:px-8 py-6 lg:py-12 h-full">
               <template v-if="prices[row+(row-2)]?.id">
@@ -332,14 +358,18 @@
               </template>
             </div>
           </div>
-          <div class="col-span-1 max-lg:hidden py-6"></div>
+          <div class="col-span-1 max-lg:hidden py-6">
+            <div class="w-full h-full bg-cover bg-right bg-no-repeat" style="background-image: url('/img/external/b07483174922421.64ab19eab6d61.png');"></div>
+          </div>
         </div>
       </template>
     </section>
 
     <section id="contact" class="relative xl:container xl:m-auto w-full">
       <div class="grid grid-cols-12 border-x border-x-black lg:divide-x divide-black border-black">
-        <div class="col-span-1 max-lg:hidden py-6"></div>
+        <div class="col-span-1 max-lg:hidden py-6">
+          <div class="w-full h-full bg-cover bg-left bg-no-repeat" style="background-image: url('/img/external/b07483174922421.64ab19eab6d61.png');"></div>
+        </div>
         <div class="col-span-10 max-lg:col-span-12 text-lg xs:text-3xl sm:text-5xl text-start font-space-mono font-normal capitalize border-b border-black">
           <div class="sm:relative px-4 lg:px-8 py-6 lg:py-12">
             <div class="flex flex-col-reverse sm:flex-row sm:justify-between sm:items-end gap-y-12 gap-x-8 w-full h-fit">
@@ -358,13 +388,17 @@
             </div>
           </div>
         </div>
-        <div class="col-span-1 max-lg:hidden py-6"></div>
+        <div class="col-span-1 max-lg:hidden py-6">
+          <div class="w-full h-full bg-cover bg-right bg-no-repeat" style="background-image: url('/img/external/b07483174922421.64ab19eab6d61.png');"></div>
+        </div>
       </div>
     </section>
 
     <section class="relative xl:container xl:m-auto w-full">
       <div class="grid grid-cols-12 border-x border-x-black lg:divide-x divide-black border-black">
-        <div class="col-span-1 max-lg:hidden py-6"></div>
+        <div class="col-span-1 max-lg:hidden py-6">
+          <div class="w-full h-full bg-cover bg-left bg-no-repeat" style="background-image: url('/img/external/b07483174922421.64ab19eab6d61.png');"></div>
+        </div>
         <div class="col-span-5 max-lg:col-span-12 text-lg xs:text-3xl sm:text-5xl text-start font-space-mono font-normal capitalize border-b border-black">
           <div class="px-4 lg:px-8 py-6 lg:py-12 h-full">
             <div class="flex flex-col justify-between gap-12 w-full h-full">
@@ -425,7 +459,9 @@
             </div>
           </div>
         </div>
-        <div class="col-span-1 max-lg:hidden py-6"></div>
+        <div class="col-span-1 max-lg:hidden py-6">
+          <div class="w-full h-full bg-cover bg-right bg-no-repeat" style="background-image: url('/img/external/b07483174922421.64ab19eab6d61.png');"></div>
+        </div>
       </div>
     </section>
   </div>

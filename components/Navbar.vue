@@ -9,7 +9,7 @@
           <h1 class="font-bold text-start line-clamp-1">
             @barjlazuardi
           </h1>
-          <div class="social-media flex flex-wrap gap-x-3 gap-y-1">
+          <div class="social-media flex flex-wrap gap-x-2 gap-y-1">
             <NuxtLink v-for="row in social_media" :key="row.id" :to="row.url" target="_blank" :title="row.name" class="line-clamp-1 hover:text-contessa-700 hover:scale-90 opacity-0">
               <div v-html="row.icon"></div>
             </NuxtLink>
@@ -128,7 +128,7 @@ export default {
         { id: 4, name: 'facebook', url: 'https://facebook.com/barjlazuardi', title: 'instagram', icon: '<i class="fa-brands fa-facebook"></i>' },
         { id: 5, name: 'threads', url: 'https://threads.net/barjlazuardi', title: 'instagram', icon: '<i class="fa-brands fa-threads"></i>' },
         { id: 6, name: 'discord', url: 'https://discord.com/users/41767866263312793', title: 'instagram', icon: '<i class="fa-brands fa-discord"></i>' },
-        { id: 7, name: 'pinterest', url: 'https://www.pinterest.com/barjlazuardi/', icon: '<i class="fa-brands fa-pinterest"></i>' },
+        // { id: 7, name: 'pinterest', url: 'https://www.pinterest.com/barjlazuardi/', icon: '<i class="fa-brands fa-pinterest"></i>' },
       ],
       selectedLang: localStorage.getItem('selectedLang') ?? 'en',
       isMenuOpen: false,
