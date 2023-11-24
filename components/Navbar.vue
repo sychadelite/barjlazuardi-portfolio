@@ -112,7 +112,7 @@ export default {
         { id: 6, code: 'jp', name: 'japanese', flag: 'jp' },
         { id: 7, code: 'kr', name: 'korean', flag: 'kr' },
         { id: 8, code: 'ru', name: 'russian', flag: 'ru' },
-        { id: 9, code: 'gr', name: 'greece', flag: 'gr' },
+        { id: 9, code: 'gr', name: 'greek', flag: 'gr' },
         { id: 10, code: 'es', name: 'spanish', flag: 'es' },
         { id: 11, code: 'tr', name: 'turkish', flag: 'tr' },
         { id: 12, code: 'de', name: 'german', flag: 'de' },

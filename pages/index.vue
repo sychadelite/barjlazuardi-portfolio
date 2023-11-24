@@ -443,7 +443,7 @@
               </div>
             </div>
             <div class="flex flex-wrap justify-between items-center gap-4">
-              <button class="text-2xl uppercase font-extrabold py-4 hover:tracking-widest transition-all ease-in-out duration-200">
+              <button class="text-2xl uppercase font-extrabold py-4 hover:tracking-widest transition-all ease-in-out duration-200" @click="isOpenDialogSendContact = !isOpenDialogSendContact">
                 {{ $t('send') }}
                 <i class="fa-solid fa-arrow-trend-up"></i>
               </button>
@@ -464,11 +464,50 @@
         </div>
       </div>
     </section>
+
+    <!-- Outer -->
+    <Dialog v-model="isOpenDialogSendContact">
+      <div class="font-space-mono">
+        <div class="mx-auto flex h-12 w-12 items-center justify-center rounded-full text-white bg-primary-600">
+          <i class="fa-solid fa-bomb"></i>
+        </div>
+        <div class="mt-3 text-center sm:mt-5">
+          <h3 class="text-lg font-semibold leading-6 text-gray-900 dark:text-white">
+            🎉 Thank you for Clicking!
+          </h3>
+          <div class="mt-2">
+            <p class="text-sm text-gray-500 dark:text-gray-400">
+              Currently, the functionality of this button is <span class="text-red-600 font-bold uppercase">disabled</span> as I currently lack a private server. 
+            </p>
+            <br>
+            <p class="text-sm text-gray-500 dark:text-gray-400">
+              <small>However, I plan to set up a private server soon, enabling the button's intended functionality in the near future.</small>
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="mt-5 sm:mt-6">
+        <Button
+          type="button"
+          class="w-full font-space-mono"
+          variant="primary"
+          @click="isOpenDialogSendContact = false"
+        >
+          Yeah, now close me.
+        </Button>
+      </div>
+    </Dialog>
+    <!-- Outer -->
   </div>
 </template>
 
 <script>
 import { useIndexStore } from '@/store/index'
+
+import { 
+  Button, 
+  Dialog
+} from '@flavorly/vanilla-components' 
 
 export default {
   setup() {
@@ -485,6 +524,10 @@ export default {
         class: 'index-page'
       }
     })
+  },
+  components: {
+    Button,
+    Dialog
   },
   data() {
     return {
@@ -519,10 +562,10 @@ export default {
         { id: 3, name: 'code and deploy', description: 'When the initial development is done, I start the programming process to achieve goals based on confidentiality, integrity and availability of information in the chosen stack. I connect forms and services, perform basic SEO setup, test and debug the site for errors and deploy it.' },
       ],
       prices: [
-        { id: 1, name: 'Landing', amount: 500, duration: 7, url: '/', description: 'A promo page or landing page will be suitable for selling a small number of products or services. Includes: design, coding, basic SEO optimization.' },
-        { id: 2, name: 'Website', amount: 1000, duration: 10, url: '/', description: 'A multi-page website that will represent the company, its products or service. Includes: design, coding, basic SEO optimization.' },
-        { id: 3, name: 'Shop', amount: 1200, duration: 14, url: '/', description: 'A store will work for a business and provide a wide variety of functions: a shopping cart, online payments and an internal CRM system. Includes: design, coding, basic SEO optimization.' },
-        { id: 4, name: 'Design', amount: 3500, duration: 7, url: '/', description: 'Website design will be developed in figma. Includes: interaction design, adaptive version, illustration and animation development.' },
+        { id: 1, name: 'Landing', amount: 50, duration: 7, url: '/', description: 'A promo page or landing page will be suitable for selling a small number of products or services. Includes: design, coding, basic SEO optimization.' },
+        { id: 2, name: 'Website', amount: 100, duration: 10, url: '/', description: 'A multi-page website that will represent the company, its products or service. Includes: design, coding, basic SEO optimization.' },
+        { id: 3, name: 'E-Commerce', amount: 350, duration: 14, url: '/', description: 'A store will work for a business and provide a wide variety of functions: a shopping cart, online payments and an internal CRM system. Includes: design, coding, basic SEO optimization.' },
+        { id: 4, name: 'Design', amount: 120, duration: 7, url: '/', description: 'Website design will be developed in figma. Includes: interaction design, adaptive version, illustration and animation development.' },
       ],
       payload: {
         contact: {
@@ -532,6 +575,7 @@ export default {
           description: '',
         }
       },
+      isOpenDialogSendContact: false,
     }
   },
   beforeMount() {

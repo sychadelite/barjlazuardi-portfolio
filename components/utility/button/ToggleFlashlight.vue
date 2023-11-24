@@ -1,7 +1,4 @@
 <template>
-  <!-- <button class="fixed bottom-0 right-0 m-5  p-3 bg-gray-400 hover:bg-gray-300 text-sm text-black font-semibold rounded-full z-[70]" @click.prevent="toggleLight">
-    {{ isOn ? 'ON' : 'OFF' }}
-  </button> -->
   <div class="flashlight fixed bottom-0 right-0 w-10 sm:w-14 h-10 sm:h-14 rounded-full cursor-pointer m-5 z-[70]" :class="{ 'on' : isOn }" @click="toggleLight"></div>
 </template>
 
