@@ -188,11 +188,16 @@
                       {{ $t(projects[row+(row-2)]?.description) }}
                     </p>
                   </div>
-                  <div class="flex flex-wrap justify-between">
-                    <p><small class="text-xs sm:text-sm">{{ $timeAgo(projects[row+(row-2)]?.date) }}</small></p>
-                    <NuxtLink :to="projects[row+(row-2)]?.url" target="_blank">
-                      <button class="text-base sm:text-lg font-bold uppercase hover:tracking-widest transition-all ease-in-out duration-200">{{ $t('learn more') }}&nbsp;<i class="fa-solid fa-arrow-right-long -rotate-45"></i></button>
-                    </NuxtLink>
+                  <div class="mt-5">
+                    <div class="flex flex-wrap gap-x-4 gap-y-2 justify-start">
+                      <img v-for="(item, index) in projects[row+(row-2)]?.stacks" :key="index" :src="item" alt="stack" class="h-10">
+                    </div>
+                    <div class="flex flex-wrap justify-between">
+                      <p><small class="text-xs sm:text-sm">{{ $timeAgo(projects[row+(row-2)]?.date) }}</small></p>
+                      <NuxtLink :to="projects[row+(row-2)]?.url" target="_blank">
+                        <button class="text-base sm:text-lg font-bold uppercase hover:tracking-widest transition-all ease-in-out duration-200">{{ $t('learn more') }}&nbsp;<i class="fa-solid fa-arrow-right-long -rotate-45"></i></button>
+                      </NuxtLink>
+                    </div>
                   </div>
                 </div>
               </template>
@@ -211,11 +216,16 @@
                       {{ $t(projects[row+(row-1)]?.description) }}
                     </p>
                   </div>
-                  <div class="flex flex-wrap justify-between">
-                    <p><small class="text-xs sm:text-sm">{{ $timeAgo(projects[row+(row-1)]?.date) }}</small></p>
-                    <NuxtLink :to="projects[row+(row-1)]?.url" target="_blank">
-                      <button class="text-base sm:text-lg font-bold uppercase hover:tracking-widest transition-all ease-in-out duration-200">{{ $t('learn more') }}&nbsp;<i class="fa-solid fa-arrow-right-long -rotate-45"></i></button>
-                    </NuxtLink>
+                  <div class="mt-5">
+                    <div class="flex flex-wrap gap-x-4 gap-y-2 justify-start">
+                      <img v-for="(item, index) in projects[row+(row-1)]?.stacks" :key="index" :src="item" alt="stack" class="h-10">
+                    </div>
+                    <div class="flex flex-wrap justify-between">
+                      <p><small class="text-xs sm:text-sm">{{ $timeAgo(projects[row+(row-1)]?.date) }}</small></p>
+                      <NuxtLink :to="projects[row+(row-1)]?.url" target="_blank">
+                        <button class="text-base sm:text-lg font-bold uppercase hover:tracking-widest transition-all ease-in-out duration-200">{{ $t('learn more') }}&nbsp;<i class="fa-solid fa-arrow-right-long -rotate-45"></i></button>
+                      </NuxtLink>
+                    </div>
                   </div>
                 </div>
               </template>
@@ -547,14 +557,14 @@ export default {
         ]
       },
       projects: [
-        { id: 1, name: 'Find Art Mystery - Apps', country: 'ID', date: '2021-06-19 00:00:00', url: 'https://play.google.com/store/apps/details?id=com.Pradita.Find&hl=en_US&gl=US', description: 'AR-based application that has various features such as indoor navigation, AR object exhibition and AR-based games using the Unity Engine. can be used inside summarecon mall serpong.' },
-        { id: 2, name: 'Wrathnet JD', country: 'ID', date: '2021-10-30 00:00:00', url: 'https://wrathnet.com', description: 'Jade Dynasty Wrathnet portal web game with player\'s CMS and integrated transaction using available payment gateways located in indonesia.' },
-        { id: 3, name: 'Teamremod JD', country: 'VE', date: '2023-01-30 00:00:00', url: 'https://teamremod.com', description: 'Jade Dynasty Teamremod portal web game with player\'s CMS and integrated transaction using available payment gateways located in venezuela.' },
-        { id: 4, name: 'Vengance JD', country: 'US', date: '2023-01-30 00:00:00', url: 'https://vengancejd.com', description: 'Jade Dynasty Vengance portal web game with player\'s CMS and integrated transaction using available payment gateways located in united states.' },
-        { id: 5, name: 'Admin Teamremod JD', country: 'VE', date: '2023-01-30 00:00:00', url: 'https://special.teamremod.com', description: 'Jade Dynasty Teamremod portal web game admin panel with a complex CMS located in venezuela.' },
-        { id: 6, name: 'TPID', country: 'ID', date: '2023-01-09 00:00:00', url: 'http://103.50.218.58/tpid', description: 'The Regional Inflation Control Team website, which was developed by Tangerang City Communications and Information Department. It features a basic CMS and a user-friendly interface, designed for a client located in Indonesia.' },
-        { id: 7, name: 'Kadaku', country: 'ID', date: '2023-02-13 00:00:00', url: 'https://kadaku.id', description: 'Digital invitation website in Indonesia allows users to buy and customize templates to match their preferred designs and formats.' },
-        { id: 8, name: 'Local Champion', country: 'ID', date: '2023-09-25 00:00:00', url: 'https://localchampion.id', description: 'Integrated - sustainable community empowerment platform to bring forth sustainable innovations that benefit both their local communities and the world.' },
+        { id: 1, name: 'Find Art Mystery - Apps', country: 'ID', date: '2021-06-19 00:00:00', stacks: [ '/img/stacks/unity.png', '/img/stacks/laravel.png', '/img/stacks/c-sharp.png' ], url: 'https://play.google.com/store/apps/details?id=com.Pradita.Find&hl=en_US&gl=US', description: 'AR-based application that has various features such as indoor navigation, AR object exhibition and AR-based games using the Unity Engine. can be used inside summarecon mall serpong.' },
+        { id: 2, name: 'Wrathnet JD', country: 'ID', date: '2021-10-30 00:00:00', stacks: [ '/img/stacks/vue.png', '/img/stacks/laravel.png', '/img/stacks/php.png' ], url: 'https://wrathnet.com', description: 'Jade Dynasty Wrathnet portal web game with player\'s CMS and integrated transaction using available payment gateways located in indonesia.' },
+        { id: 3, name: 'Teamremod JD', country: 'VE', date: '2023-01-30 00:00:00', stacks: [ '/img/stacks/vue.png', '/img/stacks/laravel.png', '/img/stacks/php.png' ], url: 'https://teamremod.com', description: 'Jade Dynasty Teamremod portal web game with player\'s CMS and integrated transaction using available payment gateways located in venezuela.' },
+        { id: 4, name: 'Vengance JD', country: 'US', date: '2023-01-30 00:00:00', stacks: [ '/img/stacks/vue.png', '/img/stacks/laravel.png', '/img/stacks/php.png' ], url: 'https://vengancejd.com', description: 'Jade Dynasty Vengance portal web game with player\'s CMS and integrated transaction using available payment gateways located in united states.' },
+        { id: 5, name: 'Admin Teamremod JD', country: 'VE', date: '2023-01-30 00:00:00', stacks: [ '/img/stacks/vue.png', '/img/stacks/laravel.png', '/img/stacks/php.png' ], url: 'https://special.teamremod.com', description: 'Jade Dynasty Teamremod portal web game admin panel with a complex CMS located in venezuela.' },
+        { id: 6, name: 'TPID', country: 'ID', date: '2023-01-09 00:00:00', stacks: [ '/img/stacks/codeigniter.png', '/img/stacks/php.png' ], url: 'http://103.50.218.58/tpid', description: 'The Regional Inflation Control Team website, which was developed by Tangerang City Communications and Information Department. It features a basic CMS and a user-friendly interface, designed for a client located in Indonesia.' },
+        { id: 7, name: 'Kadaku', country: 'ID', date: '2023-02-13 00:00:00', stacks: [ '/img/stacks/nuxt.png', '/img/stacks/laravel.png', '/img/stacks/php.png' ], url: 'https://kadaku.id', description: 'Digital invitation website in Indonesia allows users to buy and customize templates to match their preferred designs and formats.' },
+        { id: 8, name: 'Local Champion', country: 'ID', date: '2023-09-25 00:00:00', stacks: [ '/img/stacks/vue.png', '/img/stacks/laravel.png', '/img/stacks/php.png' ], url: 'https://localchampion.id', description: 'Integrated - sustainable community empowerment platform to bring forth sustainable innovations that benefit both their local communities and the world.' },
       ],
       workflow: [
         { id: 1, name: 'brief and analytics', description: 'We conduct an interview, and then I learn all the details of project and the specific details of a business. I research competitors, collect references, form ideas for a project, and develop a structure for a future site.' },
