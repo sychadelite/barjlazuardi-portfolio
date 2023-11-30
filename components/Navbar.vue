@@ -71,7 +71,7 @@
         <router-link :to="$route.hash" class="anim-multi-underline" :style="isOverlayLangOpen ? 'background-size: 100% 2px; background-position-x: left;' : ''">{{ selectedLang.slice(0, 2) }}&nbsp;<i class="fa-solid fa-caret-down"></i></router-link>
       </li>
       <ul class="nav-overlay-lang grid grid-cols-2 xs:grid-cols-3 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-6 xl:grid-cols-7 2xl:grid-cols-8 gap-4 w-full max-w-3xl -mt-5 mb-5">
-        <li v-for="row in languages" :key="row.id" class="opt-overlay-lang opacity-0 -z-10">
+        <li v-for="row in languages" :key="row.id" class="opt-overlay-lang opacity-0">
           <div class="relative p-4 rounded-sm bg-repeat-round cursor-pointer" :style="`background-image: url('/img/flags/png1000px/${row.flag}.png'); background-position: inherit;`" @click="selectedLang = row.code">
             <div class="absolute inset-0 bg-black transition-all ease-in-out duration-200" :class="selectedLang == row.code ? 'opacity-30' : 'opacity-75'"></div>
             <p class="line-clamp-1">
@@ -259,6 +259,12 @@ export default {
 
         // Overlay Caret -> Language
         var tl_overlayCaretLang = $gsap.timeline({ paused: true })
+        tl_overlayCaretLang.from(ov_lang, {
+          opacity: 0,
+          display: 'none',
+          height: '0px',
+          ease: 'expo.inOut',
+        }, "-=0")
         tl_overlayCaretLang.to(ov_lang, {
           duration: 1,
           opacity: 1,
