@@ -28,7 +28,7 @@ export default {
       innerHeight: 0,
       screenWidth: 0,
       screenHeight: 0,
-      isLoaded: false,
+      isPageRendered: false,
       isCompleteLoaded: false
     }
   },
@@ -85,7 +85,7 @@ export default {
       localStorage.setItem('flashlight', this.flashlight)
     },
     onLoaderState(e) {
-      this.isLoaded = e.isLoaded
+      this.isPageRendered = e.isPageRendered
       this.isCompleteLoaded = e.isCompleteLoaded
     }
   }

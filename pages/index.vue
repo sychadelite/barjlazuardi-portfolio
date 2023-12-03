@@ -601,7 +601,7 @@ export default {
     }
   },
   watch: {
-    'store.index.getLayout.main_layout.isLoaded': {
+    'store.index.getLayout.main_layout.isPageRendered': {
       handler(newVal) {
         this.destroyGsap()
         setTimeout(this.initGsap, 0)
@@ -609,6 +609,8 @@ export default {
     },
     'store.index.getComponent.navbar_component.selectedLang': {
       handler(newVal) {
+        this.store.index.getLayout.main_layout.onLoaderState({ isPageRendered: true, isCompleteLoaded: false })
+        this.splitter.textHero.revert()
         this.destroyGsap()
         setTimeout(this.initGsap, 0)
       }
@@ -633,7 +635,7 @@ export default {
       this.splitter.textHero = new $SplitType('.split-text-hero')
 
       // Gsap logic
-      if (this.store.index.getLayout.main_layout.isLoaded) {        
+      if (this.store.index.getLayout.main_layout.isPageRendered) {        
         $ScrollTrigger.defaults({
           markers: {
             startColor: "green",
