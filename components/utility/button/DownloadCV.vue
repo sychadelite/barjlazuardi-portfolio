@@ -1,9 +1,9 @@
 <template>
-  <div class="fixed bottom-0 left-0 right-0 rounded-full cursor-pointer mb-4 font-space-mono z-[70]">
+  <div class="fixed bottom-0 left-0 right-0 rounded-full cursor-pointer mb-5 font-space-mono z-[70]">
     <div id="glowing-button-download-cv" :class="isGlowing ? 'opacity-100' : 'opacity-0'"></div>
     <a href="/documents/Barj CV - Grey & White Minimalist Resume.pdf" download="">
       <button class="pulse-button" @mouseover="isGlowing = true" @mouseout="isGlowing = false">
-        <small class="max-sm:hidden sm:mr-2">Download CV</small>
+        <small class="mr-2">Download CV</small>
         <i class="fa-solid fa-file-arrow-down"></i>
       </button>
     </a>

@@ -8,6 +8,7 @@ export default defineNuxtPlugin(nuxtApp => {
       classes: {
         wrapper: "fixed inset-0 overflow-y-auto z-[99]",
         overlay: "fixed inset-0 transition-opacity backdrop-blur-sm z-[99]",
+        overlayColor: "bg-black/50 dark:bg-black/80"
       }
     },
   })
