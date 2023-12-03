@@ -62,7 +62,7 @@
     </div>
 
     <!-- OVERLAY -->
-    <ul ref="overlay-menu" class="nav-menu overflow-invisible !hidden" data-lenis-prevent>
+    <ul ref="overlay-menu" data-lenis-prevent class="nav-menu overflow-invisible !hidden">
 			<li><router-link to="#about-me" class="anim-multi-underline" :style="$route.hash == '#about-me' ? 'background-size: 100% 2px; background-position-x: left;' : ''">{{ $t('about me') }}</router-link></li>
       <li><router-link to="#portfolio" class="anim-multi-underline" :style="$route.hash == '#portfolio' ? 'background-size: 100% 2px; background-position-x: left;' : ''">{{ $t('portfolio') }}</router-link></li>
       <li><router-link to="#workflow" class="anim-multi-underline" :style="$route.hash == '#workflow' ? 'background-size: 100% 2px; background-position-x: left;' : ''">{{ $t('process') }}</router-link></li>
@@ -140,6 +140,16 @@ export default {
   watch: {
     isMenuOpen(newStatus) {
       // this.store.index.getLayout.main_layout.scrollerStatus(!newStatus)
+    },
+    'store.index.getLayout.main_layout.innerWidth': {
+      handler(newVal) {
+        if (newVal >= 1024) {
+          this.isMenuOpen = false
+          this.$refs['overlay-menu'].style.display = 'none'
+        } else {
+          this.$refs['overlay-menu'].style.display = 'flex'
+        }
+      }
     },
     'store.index.getLayout.main_layout.lenis': {
       handler(newVal) {
