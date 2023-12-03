@@ -264,6 +264,7 @@ export default {
           opacity: 0,
           display: 'none',
           height: '0px',
+          y: 0,
           ease: 'expo.inOut',
         }, "-=0")
         tl_overlayCaretLang.to(ov_lang, {
@@ -323,21 +324,21 @@ export default {
     handleDocumentClick(event) {
       if (this.isMenuOpen && !this.$refs['overlay-menu'].contains(event.target) && !this.$refs['ham-menu'].contains(event.target)) {
         if (this.store.index.getLayout.main_layout.innerWidth < 1024) {
-          document.querySelector('#ham-menu').click()
+          this.$refs['ham-menu'].click()
           if (this.isOverlayLangOpen) {
-            document.querySelector('#caret-overlay-lang').click()
+            this.$refs['caret-overlay-lang'].click()
           }
         }
       }
       if (this.isLangOpen && !this.$refs['dropdown-lang'].contains(event.target) && !this.$refs['caret-lang'].contains(event.target)) {
         if (this.store.index.getLayout.main_layout.innerWidth >= 1024)
-          document.querySelector('#caret-lang').click()
+          this.$refs['caret-lang'].click()
       }
       if (this.isOverlayLangOpen && !this.$refs['overlay-menu'].contains(event.target) && !this.$refs['caret-overlay-lang'].contains(event.target)) {
         if (this.store.index.getLayout.main_layout.innerWidth < 1024) {
-          document.querySelector('#caret-overlay-lang').click()
+          this.$refs['caret-overlay-lang'].click()
           if (this.isMenuOpen) {
-            document.querySelector('#ham-menu').click()
+            this.$refs['ham-menu'].click()
           }
         }
       }
