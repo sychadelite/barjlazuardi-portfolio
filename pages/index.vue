@@ -588,13 +588,19 @@ export default {
       isOpenDialogSendContact: false,
     }
   },
+  watch: {
+    'store.index.getLayout.main_layout.isLoaded': {
+      handler(newVal) {
+        
+      }
+    }
+  },
   beforeMount() {
     this.store.index.setRootPage('index_page', this)
   },
   mounted() {
     this.$nextTick(() => {
       this.initGsap()
-
       this.initFormDropdown()
     })
   },
