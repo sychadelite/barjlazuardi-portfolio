@@ -9,13 +9,13 @@
           <div class="flex flex-wrap sm:flex-row divide-x divide-black">
             <div class="w-full sm:w-[75%] lg:w-9/12 sm:border-b border-black divide-y divide-black">
               <div class="px-1 md:px-4 py-10 lg:py-12">
-                <h1 class="line-clamp-1">{{ $t('minimalistic') }}</h1>
+                <h1 class="split-text-hero line-clamp-1" style="font-kerning: none;">{{ $t('minimalistic') }}</h1>
               </div>
               <div class="px-1 md:px-4 py-10 lg:py-12">
-                <h1 class="line-clamp-1">& {{ $t('creative') }}</h1>
+                <h1 class="split-text-hero line-clamp-1" style="font-kerning: none;">& {{ $t('creative') }}</h1>
               </div>
               <div class="px-1 md:px-4 py-10 lg:py-12">
-                <h1 class="line-clamp-1">{{ $t('websites') }}</h1>
+                <h1 class="split-text-hero line-clamp-1" style="font-kerning: none;">{{ $t('websites') }}</h1>
               </div>
             </div>
             <div class="w-full sm:w-[25%] lg:w-3/12 border-b border-black divide-y divide-black">
@@ -600,9 +600,17 @@ export default {
   },
   methods: {
     initGsap() {
-      const { $Lenis, $LocomotiveScroll, $gsap, $ScrollTrigger } = useNuxtApp()
+      const { $Lenis, $LocomotiveScroll, $gsap, $ScrollTrigger, $SplitType } = useNuxtApp()
       
       // Gsap logic
+      const textHero = new $SplitType('.split-text-hero')
+
+      $gsap.to('.split-text-hero .char', {
+        y: 0,
+        stagger: 0.05,
+        delay: 0.2,
+        duration: .1,
+      })
     },
     initFormDropdown() {
       /* Dropdown Menu */
@@ -661,4 +669,13 @@ export default {
 </script>
 
 <style lang="scss">
+.split-text-hero {
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+
+  .char {
+    transform: translateY(115px);
+    transition: transform .5s;
+    vertical-align: -webkit-baseline-middle;
+  }
+}
 </style>
