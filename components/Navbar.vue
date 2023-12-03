@@ -62,7 +62,7 @@
     </div>
 
     <!-- OVERLAY -->
-    <ul ref="overlay-menu" class="nav-menu overflow-invisible" data-lenis-prevent :class="{ '!hidden': store.index.getLayout.main_layout.innerWidth >= 1024 }">
+    <ul ref="overlay-menu" class="nav-menu overflow-invisible !hidden" data-lenis-prevent>
 			<li><router-link to="#about-me" class="anim-multi-underline" :style="$route.hash == '#about-me' ? 'background-size: 100% 2px; background-position-x: left;' : ''">{{ $t('about me') }}</router-link></li>
       <li><router-link to="#portfolio" class="anim-multi-underline" :style="$route.hash == '#portfolio' ? 'background-size: 100% 2px; background-position-x: left;' : ''">{{ $t('portfolio') }}</router-link></li>
       <li><router-link to="#workflow" class="anim-multi-underline" :style="$route.hash == '#workflow' ? 'background-size: 100% 2px; background-position-x: left;' : ''">{{ $t('process') }}</router-link></li>
