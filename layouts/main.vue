@@ -1,5 +1,9 @@
 <template>
   <div>
+    <!-- Loader -->
+    <InterfacePageLoadCounter v-if="!isLoaded" @callback="isLoaded = true"/>
+    <!-- Loader -->
+
     <Navbar />
     <slot />
     <Footer />
@@ -24,6 +28,7 @@ export default {
       innerHeight: 0,
       screenWidth: 0,
       screenHeight: 0,
+      isLoaded: false
     }
   },
   beforeMount() {
