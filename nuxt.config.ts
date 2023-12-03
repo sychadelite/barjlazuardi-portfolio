@@ -13,7 +13,9 @@ export default defineNuxtConfig({
         { src: 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/js/all.min.js' },
         { src: 'https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.min.js' }
       ],
-    }
+    },
+    pageTransition: { name: 'page', mode: 'out-in' },
+    layoutTransition: { name: 'page', mode: 'out-in' },
   },
   css: [
     '@/assets/scss/_main.scss',
@@ -46,4 +48,8 @@ export default defineNuxtConfig({
       ['defineStore', 'definePiniaStore'],
     ],
   },
+  devServer: {
+    host: '0.0.0.0',
+    port: 3000,
+  }
 })

@@ -145,11 +145,13 @@ export default {
       handler(newVal) {
         if (newVal) {
           const id = this.$route.hash.replace('#', '')
-          this.store.index.getLayout.main_layout.lenis.scrollTo(document.getElementById(id), {
-            offset: -this.$refs['top-nav'].clientHeight,
-            lerp: .2,
-            duration: 2,
-            lock: true
+          this.$nextTick(() => {
+            this.store.index.getLayout.main_layout.lenis?.scrollTo(document.getElementById(id), {
+              offset: -this.$refs['top-nav'].clientHeight,
+              lerp: .2,
+              duration: 2,
+              lock: true
+            })
           })
         }
       },
@@ -160,7 +162,7 @@ export default {
         if (this.isMenuOpen) this.$refs['ham-menu'].click()
         
         const id = to.hash.replace('#', '')
-        this.store.index.getLayout.main_layout.lenis.scrollTo(document.getElementById(id), {
+        this.store.index.getLayout.main_layout.lenis?.scrollTo(document.getElementById(id), {
           offset: -this.$refs['top-nav'].clientHeight,
           lerp: .2,
           duration: 2,
@@ -173,7 +175,7 @@ export default {
       this.locale = newLang
     }
   },
-  created() {
+  mounted() {
     this.$nextTick(() => {
       this.initGsap()
       this.addClickOutsideListener()
@@ -184,7 +186,7 @@ export default {
   },
   methods: {
     initGsap() {
-      const { $Lenis, $LocomotiveScroll, $gsap, $ScrollTrigger } = useNuxtApp()
+      const { $gsap } = useNuxtApp()
 
       // Gsap logic
       this.$nextTick(() => {

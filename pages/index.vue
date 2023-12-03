@@ -461,7 +461,7 @@
                 <p class="text-xs text-gray-400 uppercase tracking-tighter">
                   {{ $t('by clicking the button you accept') }}
                   <br>
-                  <NuxtLink to="/privacy-policy" class="text-black">
+                  <NuxtLink to="/" class="text-black">
                     {{ $t('the privacy policy.') }}
                   </NuxtLink>
                 </p>
@@ -523,6 +523,15 @@ export default {
   setup() {
     definePageMeta({
       layout: 'main'
+    })
+
+    useSeoMeta({
+      title: 'My amazing portfolio site.',
+      ogTitle: 'My amazing portfolio site.',
+      description: 'This is my amazing portfolio site., let me tell you all about it. I am a full-stack web developer who loves tinkering with technology.',
+      ogDescription: 'This is my amazing portfolio site., let me tell you all about it. I am a full-stack web developer who loves tinkering with technology.',
+      ogImage: '/img/icons/barj-favicon.svg',
+      twitterCard: '/img/icons/barj-favicon.svg',
     })
 
     useHead({
@@ -604,9 +613,14 @@ export default {
       this.initFormDropdown()
     })
   },
+  beforeUnmount() {
+    const { $gsap } = useNuxtApp()
+    
+    $gsap.killTweensOf()
+  },
   methods: {
     initGsap() {
-      const { $Lenis, $LocomotiveScroll, $gsap, $ScrollTrigger, $SplitType } = useNuxtApp()
+      const { $gsap, $SplitType } = useNuxtApp()
       
       // Gsap logic
       const textHero = new $SplitType('.split-text-hero')

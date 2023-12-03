@@ -45,38 +45,49 @@ export default {
       },
     })
   },
+  data() {
+    return {
+      
+    }
+  },
   mounted() {
-    this.initGsap()
+    this.$nextTick(() => {
+      window.scrollTo(0, 0)
+      this.initGsap()
+    })
+  },
+  beforeUnmount() {
+    const { $gsap, $ScrollTrigger } = useNuxtApp()
+
+    $gsap.killTweensOf()
+    $ScrollTrigger.killAll()
   },
   methods: {
     initGsap() {
-      const { $Lenis, $LocomotiveScroll, $gsap, $ScrollTrigger } = useNuxtApp()
-
-      const select = (e) => document.querySelector(e);
-      const selectAll = (e) => document.querySelectorAll(e);
+      const { $gsap, $ScrollTrigger } = useNuxtApp()
 
       // Gsap logic
-      const tracks = selectAll(".sticky-element");
+      const tracks = document.querySelectorAll(".sticky-element")
       tracks.forEach((track, i) => {
-        let trackWrapper = track.querySelectorAll(".track");
-        let allImgs = track.querySelectorAll(".image");
+        let trackWrapper = track.querySelectorAll(".track")
+        let images = track.querySelectorAll(".image")
 
         let trackWrapperWidth = () => {
-          let width = 0;
-          trackWrapper.forEach(el => width += el.offsetWidth);
-          return width;
+          let width = 0
+          trackWrapper.forEach(el => width += el.offsetWidth)
+          return width
         }
 
+        $gsap.defaults({
+          ease: "none"
+        })
+        
         $ScrollTrigger.defaults({
           markers: {
             startColor: "green",
             endColor: "red",
             fontSize: "12px"
           }
-        });
-
-        $gsap.defaults({
-          ease: "none"
         })
 
         let scrollTween = $gsap.to(trackWrapper, {
@@ -91,16 +102,16 @@ export default {
             invalidateOnRefresh: true,
             id: "id-one"
           },
-        });
+        })
 
-        allImgs.forEach((img, i) => {
+        images.forEach((img, i) => {
           // the intended parallax animation
           $gsap.fromTo(img, {
             x: "-20vw"
           }, {
             x: "20vw",
             scrollTrigger: {
-              trigger: img.parentNode, //.panel-wide
+              trigger: img.parentNode, // .panel-wide
               containerAnimation: scrollTween,
               start: "left right",
               end: "right left",
@@ -108,14 +119,14 @@ export default {
               invalidateOnRefresh: true,
               onRefresh: self => {
                 if (self.start < 0) {
-                  self.animation.progress($gsap.utils.mapRange(self.start, self.end, 0, 1, 0));
+                  self.animation.progress($gsap.utils.mapRange(self.start, self.end, 0, 1, 0))
                 }
               },
               id: "id-two"
             },
-          });
-        });
-      });
+          })
+        })
+      })
 
       const tlPin = $gsap.timeline({
         scrollTrigger: {
@@ -125,22 +136,24 @@ export default {
           pin: true,
           scrub: true
         }
-      });
+      })
 
       tlPin.to('.pin-text', {
         scale: 20
       })
-    }
+    },
   }
 }
 </script>
 
 <style lang="scss" scoped>
-header,
-footer {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 100vh;
+.ui-parallax-page {
+  header,
+  footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+  }
 }
 </style>
