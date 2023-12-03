@@ -1,7 +1,7 @@
 <template>
   <div>
     <!-- Loader -->
-    <InterfacePageLoadCounter v-if="!isLoaded" @callback="isLoaded = true"/>
+    <InterfacePageLoadCounter v-if="!isCompleteLoaded" @callback="onLoaderState"/>
     <!-- Loader -->
 
     <Navbar />
@@ -28,7 +28,8 @@ export default {
       innerHeight: 0,
       screenWidth: 0,
       screenHeight: 0,
-      isLoaded: false
+      isLoaded: false,
+      isCompleteLoaded: false
     }
   },
   beforeMount() {
@@ -82,6 +83,10 @@ export default {
     onToggleLight(e) {
       this.flashlight = !this.flashlight
       localStorage.setItem('flashlight', this.flashlight)
+    },
+    onLoaderState(e) {
+      this.isLoaded = e.isLoaded
+      this.isCompleteLoaded = e.isCompleteLoaded
     }
   }
 }

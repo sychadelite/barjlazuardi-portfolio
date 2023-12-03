@@ -169,7 +169,7 @@ export default {
     },
     $route: {
       handler(to, from) {
-        if (this.isMenuOpen) this.$refs['ham-menu'].click()
+        // if (this.isMenuOpen) this.$refs['ham-menu'].click()
         
         const id = to.hash.replace('#', '')
         this.store.index.getLayout.main_layout.lenis?.scrollTo(document.getElementById(id), {
@@ -184,6 +184,9 @@ export default {
       localStorage.setItem('selectedLang', newLang)
       this.locale = newLang
     }
+  },
+  beforeMount() {
+    this.store.index.setRootComponent('navbar_component', this)
   },
   mounted() {
     this.$nextTick(() => {

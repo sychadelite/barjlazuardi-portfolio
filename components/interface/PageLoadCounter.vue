@@ -34,7 +34,10 @@ export default {
 
       $gsap.to('.counter', 0.25, {
         delay: 3.5,
-        opacity: 0
+        opacity: 0,
+        onComplete: () => {
+          this.$emit('callback', { isLoaded: true, isCompleteLoaded: false })
+        }
       })
 
       $gsap.to('.bar', 1.5, {
@@ -45,7 +48,7 @@ export default {
         },
         ease: 'power4.inOut',
         onComplete: () => {
-          this.$emit('callback')
+          this.$emit('callback', { isLoaded: true, isCompleteLoaded: true })
         }
       })
     },

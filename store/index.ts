@@ -8,11 +8,15 @@ interface Page {
 interface Layout {
   newProp?: string;
 }
+interface Component {
+  newProp?: string;
+}
 
 export const useIndexStore = defineStore('index', {
   state: () => ({
     page: {} as Page,
     layout: {} as Layout,
+    component: {} as Component,
   }),
 
   getters: {
@@ -21,6 +25,9 @@ export const useIndexStore = defineStore('index', {
     },
     getPage(): Page {
       return this.page
+    },
+    getComponent(): Component {
+      return this.component
     }
   },
 
@@ -30,6 +37,9 @@ export const useIndexStore = defineStore('index', {
     },
     setRootPage(prop: keyof Page, payload: any) {
       this.page[prop] = payload
+    },
+    setRootComponent(prop: keyof Component, payload: any) {
+      this.component[prop] = payload
     },
   }
 })

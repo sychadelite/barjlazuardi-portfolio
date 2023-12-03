@@ -594,13 +594,23 @@ export default {
           description: '',
         }
       },
+      splitter: {
+        textHero: undefined,
+      },
       isOpenDialogSendContact: false,
     }
   },
   watch: {
     'store.index.getLayout.main_layout.isLoaded': {
       handler(newVal) {
-        
+        this.destroyGsap()
+        setTimeout(this.initGsap, 0)
+      }
+    },
+    'store.index.getComponent.navbar_component.selectedLang': {
+      handler(newVal) {
+        this.destroyGsap()
+        setTimeout(this.initGsap, 0)
       }
     }
   },
@@ -614,23 +624,53 @@ export default {
     })
   },
   beforeUnmount() {
-    const { $gsap } = useNuxtApp()
-    
-    $gsap.killTweensOf()
+    this.destroyGsap()
   },
   methods: {
     initGsap() {
-      const { $gsap, $SplitType } = useNuxtApp()
+      const { $gsap, $ScrollTrigger, $SplitType } = useNuxtApp()
       
-      // Gsap logic
-      const textHero = new $SplitType('.split-text-hero')
+      this.splitter.textHero = new $SplitType('.split-text-hero')
 
-      $gsap.to('.split-text-hero .char', {
-        y: 0,
-        stagger: 0.05,
-        delay: 0.2,
-        duration: .1,
-      })
+      // Gsap logic
+      if (this.store.index.getLayout.main_layout.isLoaded) {        
+        $ScrollTrigger.defaults({
+          markers: {
+            startColor: "green",
+            endColor: "red",
+            fontSize: "12px"
+          }
+        })
+
+        $gsap.to('.split-text-hero', {
+          visibility: 'visible'
+        })
+
+        $gsap.to('.split-text-hero .char', {
+          y: 0,
+          stagger: 0.05,
+          delay: 0.2,
+          duration: .1,
+        })
+
+        // $gsap.from(".line-1", {
+        //   scrollTrigger: {
+        //     trigger: ".line-1",
+        //     scrub: true,
+        //     start: "top bottom",
+        //     end: "top top"
+        //   },
+        //   scaleX: 0,
+        //   transformOrigin: "left center", 
+        //   ease: "none"
+        // });
+      }
+    },
+    destroyGsap() {
+      const { $gsap, $ScrollTrigger } = useNuxtApp()
+
+      $gsap.killTweensOf()
+      $ScrollTrigger.killAll()
     },
     initFormDropdown() {
       /* Dropdown Menu */
@@ -691,6 +731,7 @@ export default {
 <style lang="scss">
 .split-text-hero {
   clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+  visibility: hidden;
 
   .char {
     transform: translateY(115px);
