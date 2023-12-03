@@ -1,5 +1,5 @@
 <template>
-  <div class="fixed bottom-0 left-5 xs:right-0 rounded-full cursor-pointer mb-5 font-space-mono z-[70]">
+  <div class="fixed bottom-0 left-5 xs:left-0 xs:right-0 rounded-full cursor-pointer mb-5 font-space-mono z-[70]">
     <div id="glowing-button-download-cv" :class="isGlowing ? 'opacity-100' : 'opacity-0'"></div>
     <a href="/documents/Barj CV - Grey & White Minimalist Resume.pdf" download="">
       <button class="pulse-button" @mouseover="isGlowing = true" @mouseout="isGlowing = false">
@@ -16,14 +16,6 @@ export default {
     return {
       isGlowing: false
     }
-  },
-  mounted() {
-    this.$nextTick(() => {
-
-    })
-  },
-  methods: {
-
   }
 }
 </script>
