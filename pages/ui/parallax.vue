@@ -7,20 +7,8 @@
     <section class="sticky-element half-height">
       <div class="track">
         <div class="track-flex">
-          <div class="panel-wide">
-            <img class="image" src="https://assets.website-files.com/62f4dd003ef1495b1bb8f3a0/62f4f620fe7a4e4395360bc5_and-machines-mAiFQrt9xMc-unsplash.jpg" alt="">
-          </div>
-          <div class="panel-wide">
-            <img class="image" src="https://assets.website-files.com/62f4dd003ef1495b1bb8f3a0/62f4f6201cd426577274fab1_and-machines-SZd_V4A8gYo-unsplash.jpg" alt="">
-          </div>
-          <div class="panel-wide">
-            <img class="image" src="https://assets.website-files.com/62f4dd003ef1495b1bb8f3a0/62f4f62034d6a56dd03cced8_and-machines-odNU0f3jmUg-unsplash.jpg" alt="">
-          </div>
-          <div class="panel-wide">
-            <img class="image" src="https://assets.website-files.com/62f4dd003ef1495b1bb8f3a0/62f4f620dbc7f7e7db222488_and-machines-YLplJ9m_RKE-unsplash.jpg" alt="">
-          </div>
-          <div class="panel-wide">
-            <img class="image" src="https://assets.website-files.com/62f4dd003ef1495b1bb8f3a0/62f4f62054964a1416e0b3c8_and-machines-vqTWfa4DjEk-unsplash.jpg" alt="">
+          <div v-for="row in images" :key="row" class="panel-wide">
+            <img class="image" :src="row.src" alt="">
           </div>
         </div>
       </div>
@@ -47,7 +35,13 @@ export default {
   },
   data() {
     return {
-      
+      images: [
+        { id: 1, src: '/img/external/parallax/62f4f620fe7a4e4395360bc5_and-machines-mAiFQrt9xMc-unsplash.jpg' },
+        { id: 2, src: '/img/external/parallax/62f4f6201cd426577274fab1_and-machines-SZd_V4A8gYo-unsplash.jpg' },
+        { id: 3, src: '/img/external/parallax/62f4f62034d6a56dd03cced8_and-machines-odNU0f3jmUg-unsplash.jpg' },
+        { id: 4, src: '/img/external/parallax/62f4f620dbc7f7e7db222488_and-machines-YLplJ9m_RKE-unsplash.jpg' },
+        { id: 5, src: '/img/external/parallax/62f4f62054964a1416e0b3c8_and-machines-vqTWfa4DjEk-unsplash.jpg' },
+      ]
     }
   },
   mounted() {
