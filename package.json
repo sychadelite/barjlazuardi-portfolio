@@ -35,7 +35,8 @@
     "sass": "^1.65.1",
     "split-type": "^0.3.4",
     "three": "^0.156.0",
-    "typed.js": "^2.0.16"
+    "typed.js": "^2.0.16",
+    "vue3-lottie": "^3.2.0"
   },
   "overrides": {
     "vue": "latest"

@@ -3,7 +3,7 @@
     <section class="relative xl:container xl:m-auto w-full">
       <div class="grid grid-cols-12 border-x border-x-black lg:divide-x divide-black border-black">
         <div class="col-span-1 max-lg:hidden flex">
-          <div class="w-full h-full bg-cover bg-left bg-no-repeat" style="background-image: url('/img/external/b07483174922421.64ab19eab6d61.png');"></div>
+          <!-- <div class="w-full h-full bg-cover bg-left bg-no-repeat" style="background-image: url('/img/external/b07483174922421.64ab19eab6d61.png');"></div> -->
         </div>
         <div class="col-span-8 max-lg:col-span-12 text-lg xs:text-3xl sm:text-5xl font-dune-rise font-extrabold capitalize">
           <div class="flex flex-wrap sm:flex-row divide-x divide-black">
@@ -20,14 +20,14 @@
             </div>
             <div class="w-full sm:w-[25%] lg:w-3/12 border-b border-black divide-y divide-black">
               <div class="w-full h-full px-4 py-6 lg:py-12">
-                <div class="flex flex-col-reverse sm:flex-col gap-8 sm:gap-2 justify-between w-full text-base sm:text-sm font-space-mono font-normal uppercase" :style="store.index.getLayout.main_layout.innerWidth > 640 ? 'writing-mode: vertical-rl;' : ''">
+                <div class="flex flex-col-reverse sm:flex-col gap-8 sm:gap-2 justify-between w-full text-base sm:text-sm font-space-mono font-normal uppercase" :style="pageSizeInnerWidth > 640 ? 'writing-mode: vertical-rl;' : ''">
                   <div class="flex flex-col sm:flex-row justify-between items-center gap-x-2 gap-y-6">
                     <p class="text-start sm:h-60">
                       {{ $t('my websites embody a minimalistic and creative design, solve business issues, and are user-friendly.') }}
                     </p>
                     <div class="m-auto" style="writing-mode: horizontal-tb;">
                       <img src="/img/icons/sych-base.png" alt="sych" class="h-16 grayscale invert">
-                      <small>{{ store.index.getLayout.main_layout.innerWidth }}</small>
+                      <small>{{ pageSizeInnerWidth }}</small>
                     </div>
                   </div>
                   <div class="flex flex-col sm:flex-row justify-between items-start gap-6 sm:gap-4">
@@ -60,8 +60,8 @@
                     <NuxtLink to="/" class="w-fit h-fit text-base xs:text-xl sm:text-3xl lg:text-lg font-asgard-fat tracking-widest hover:tracking-tight transition-all ease-in-out duration-200">{{ $t('whatsapp') }} &gt;&gt;</NuxtLink>
                     <NuxtLink to="/" class="w-fit h-fit text-base xs:text-xl sm:text-3xl lg:text-lg font-asgard-fat tracking-widest hover:tracking-tight transition-all ease-in-out duration-200">{{ $t('telegram') }} &gt;&gt;</NuxtLink>
                   </div>
-                  <div class="max-xs:hidden h-fit my-auto" :style="`${store.index.getLayout.main_layout.innerWidth >= 1024  ? 'writing-mode: horizontal-tb;' : 'writing-mode: vertical-rl;'}`">
-                    <p class="lg:h-11 text-6xl xs:text-7xl font-libre-barcode font-normal">{{ store.index.getLayout.main_layout.innerWidth >= 1024 ? 'nice&nbsp;to&nbsp;meet&nbsp;you' : 'thank&nbsp;you' }}</p>
+                  <div class="max-xs:hidden h-fit my-auto" :style="`${pageSizeInnerWidth >= 1024  ? 'writing-mode: horizontal-tb;' : 'writing-mode: vertical-rl;'}`">
+                    <p class="lg:h-11 text-6xl xs:text-7xl font-libre-barcode font-normal">{{ pageSizeInnerWidth >= 1024 ? 'nice&nbsp;to&nbsp;meet&nbsp;you' : 'thank&nbsp;you' }}</p>
                   </div>
                 </div>
               </div>
@@ -82,12 +82,12 @@
           </div>
         </div>
         <div class="col-span-1 max-lg:hidden flex">
-          <div class="w-full h-full bg-cover bg-right bg-no-repeat" style="background-image: url('/img/external/b07483174922421.64ab19eab6d61.png');"></div>
+          <!-- <div class="w-full h-full bg-cover bg-right bg-no-repeat" style="background-image: url('/img/external/b07483174922421.64ab19eab6d61.png');"></div> -->
         </div>
       </div>
 
       <!-- BROADCAST -->
-      <section id="broadcast" class="relative xl:container xl:m-auto w-full">
+      <!-- <section id="broadcast" class="relative xl:container xl:m-auto w-full">
         <div class="grid grid-cols-12 border-x border-x-black lg:divide-x divide-black border-black">
           <div class="col-span-1 max-lg:hidden flex">
             <div class="w-full h-full bg-cover bg-left bg-no-repeat" style="background-image: url('/img/external/free-palestine-cave-pov-jet.jpg');"></div>
@@ -101,14 +101,14 @@
             <div class="w-full h-full bg-cover bg-right bg-no-repeat" style="background-image: url('/img/external/free-palestine-cave-pov-jet.jpg');"></div>
           </div>
         </div>
-      </section>
+      </section> -->
       <!-- BROADCAST -->
     </section>
 
     <section id="about-me" class="relative xl:container xl:m-auto w-full">
       <div class="grid grid-cols-12 border-x border-x-black lg:divide-x divide-black border-black">
         <div class="col-span-1 order-4 lg:order-1 max-lg:hidden py-6">
-          <div class="w-full h-full bg-cover bg-left bg-no-repeat" style="background-image: url('/img/external/b07483174922421.64ab19eab6d61.png');"></div>
+          <!-- <div class="w-full h-full bg-cover bg-left bg-no-repeat" style="background-image: url('/img/external/b07483174922421.64ab19eab6d61.png');"></div> -->
         </div>
         <div class="col-span-5 order-3 lg:order-2 max-lg:col-span-12 text-lg xs:text-3xl sm:text-5xl text-start font-space-mono font-normal capitalize border-b border-black">
           <div class="px-4 lg:px-8 py-6 lg:py-12">
@@ -136,7 +136,7 @@
           <div class="w-full h-full min-h-[20rem] bg-center bg-cover bg-no-repeat" style="background-image: url('/img/profile/1637566473719-grayscale.jpeg');"></div>
         </div>
         <div class="col-span-1 order-1 lg:order-4 max-lg:hidden py-6">
-          <div class="w-full h-full bg-cover bg-right bg-no-repeat" style="background-image: url('/img/external/b07483174922421.64ab19eab6d61.png');"></div>
+          <!-- <div class="w-full h-full bg-cover bg-right bg-no-repeat" style="background-image: url('/img/external/b07483174922421.64ab19eab6d61.png');"></div> -->
         </div>
       </div>
     </section>
@@ -144,7 +144,7 @@
     <section id="portfolio" class="relative xl:container xl:m-auto w-full">
       <div class="grid grid-cols-12 border-x border-x-black lg:divide-x divide-black border-black">
         <div class="col-span-1 max-lg:hidden py-6">
-          <div class="w-full h-full bg-cover bg-left bg-no-repeat" style="background-image: url('/img/external/b07483174922421.64ab19eab6d61.png');"></div>
+          <!-- <div class="w-full h-full bg-cover bg-left bg-no-repeat" style="background-image: url('/img/external/b07483174922421.64ab19eab6d61.png');"></div> -->
         </div>
         <div class="col-span-10 max-lg:col-span-12 text-lg xs:text-3xl sm:text-5xl text-start font-space-mono font-normal capitalize border-b border-black">
           <div class="px-4 lg:px-8 py-6 lg:py-12">
@@ -164,7 +164,7 @@
           </div>
         </div>
         <div class="col-span-1 max-lg:hidden py-6">
-          <div class="w-full h-full bg-cover bg-right bg-no-repeat" style="background-image: url('/img/external/b07483174922421.64ab19eab6d61.png');"></div>
+          <!-- <div class="w-full h-full bg-cover bg-right bg-no-repeat" style="background-image: url('/img/external/b07483174922421.64ab19eab6d61.png');"></div> -->
         </div>
       </div>
     </section>
@@ -173,7 +173,7 @@
       <template v-for="row in Math.round(projects.length / 2)" :key="row">
         <div class="grid grid-cols-12 border-x border-x-black lg:divide-x divide-black border-black">
           <div class="col-span-1 max-lg:hidden py-6">
-            <div class="w-full h-full bg-cover bg-left bg-no-repeat" style="background-image: url('/img/external/b07483174922421.64ab19eab6d61.png');"></div>
+            <!-- <div class="w-full h-full bg-cover bg-left bg-no-repeat" style="background-image: url('/img/external/b07483174922421.64ab19eab6d61.png');"></div> -->
           </div>
           <div class="col-span-5 max-lg:col-span-12 text-lg xs:text-3xl sm:text-5xl text-start font-space-mono font-normal capitalize border-b border-black">
             <div class="px-4 lg:px-8 py-6 lg:py-12 h-full">
@@ -183,6 +183,18 @@
                     <div class="flex flex-wrap gap-2 justify-between mb-5">
                       <h4 class="text-2xl sm:text-3xl font-bold">{{ projects[row+(row-2)]?.name }}</h4>
                       <p class="inline-flex items-center text-sm">{{ projects[row+(row-2)]?.country }}</p>
+                    </div>
+                    <div ref="project-cover-figure" class="flex flex-col justify-center mb-5">
+                      <figure v-if="projects[row+(row-2)].cover" class="rounded-2xl">
+                        <img :src="projects[row+(row-2)].cover" alt="" class="h-auto max-w-full">
+                      </figure>
+                      <client-only v-else>
+                        <Vue3Lottie
+                          animationLink="https://lottie.host/5662a8f8-dd88-42c1-91cb-f168bd03a938/KxEkSR3UBK.json"
+                          :height="150"
+                          :width="150"
+                        />
+                      </client-only>
                     </div>
                     <p class="text-base xs:text-lg font-normal">
                       {{ $t(projects[row+(row-2)]?.description) }}
@@ -212,6 +224,18 @@
                       <h4 class="text-2xl sm:text-3xl font-bold">{{ projects[row+(row-1)]?.name }}</h4>
                       <p class="inline-flex items-center text-sm">{{ projects[row+(row-1)]?.country }}</p>
                     </div>
+                    <div ref="project-cover-figure" class="mb-5">
+                      <figure v-if="projects[row+(row-1)].cover" class="rounded-2xl">
+                        <img :src="projects[row+(row-1)].cover" alt="" class="h-auto max-w-full">
+                      </figure>
+                      <client-only v-else>
+                        <Vue3Lottie
+                          animationLink="https://lottie.host/5662a8f8-dd88-42c1-91cb-f168bd03a938/KxEkSR3UBK.json"
+                          :height="150"
+                          :width="150"
+                        />
+                      </client-only>
+                    </div>
                     <p class="text-base xs:text-lg font-normal">
                       {{ $t(projects[row+(row-1)]?.description) }}
                     </p>
@@ -232,7 +256,7 @@
             </div>
           </div>
           <div class="col-span-1 max-lg:hidden py-6">
-            <div class="w-full h-full bg-cover bg-right bg-no-repeat" style="background-image: url('/img/external/b07483174922421.64ab19eab6d61.png');"></div>
+            <!-- <div class="w-full h-full bg-cover bg-right bg-no-repeat" style="background-image: url('/img/external/b07483174922421.64ab19eab6d61.png');"></div> -->
           </div>
         </div>
       </template>
@@ -241,7 +265,7 @@
     <section id="workflow" class="relative xl:container xl:m-auto w-full">
       <div class="grid grid-cols-12 border-x border-x-black lg:divide-x divide-black border-black">
         <div class="col-span-1 max-lg:hidden py-6">
-          <div class="w-full h-full bg-cover bg-left bg-no-repeat" style="background-image: url('/img/external/b07483174922421.64ab19eab6d61.png');"></div>
+          <!-- <div class="w-full h-full bg-cover bg-left bg-no-repeat" style="background-image: url('/img/external/b07483174922421.64ab19eab6d61.png');"></div> -->
         </div>
         <div class="col-span-10 max-lg:col-span-12 text-lg xs:text-3xl sm:text-5xl text-start font-space-mono font-normal capitalize border-b border-black">
           <div class="px-4 lg:px-8 py-6 lg:py-12">
@@ -254,7 +278,7 @@
           </div>
         </div>
         <div class="col-span-1 max-lg:hidden py-6">
-          <div class="w-full h-full bg-cover bg-right bg-no-repeat" style="background-image: url('/img/external/b07483174922421.64ab19eab6d61.png');"></div>
+          <!-- <div class="w-full h-full bg-cover bg-right bg-no-repeat" style="background-image: url('/img/external/b07483174922421.64ab19eab6d61.png');"></div> -->
         </div>
       </div>
     </section>
@@ -263,7 +287,7 @@
       <template v-for="(row, index) in workflow" :key="row.id">
         <div class="grid grid-cols-12 border-x border-x-black lg:divide-x divide-black border-black">
           <div class="col-span-1 max-lg:hidden py-6">
-            <div class="w-full h-full bg-cover bg-left bg-no-repeat" style="background-image: url('/img/external/b07483174922421.64ab19eab6d61.png');"></div>
+            <!-- <div class="w-full h-full bg-cover bg-left bg-no-repeat" style="background-image: url('/img/external/b07483174922421.64ab19eab6d61.png');"></div> -->
           </div>
           <div class="col-span-10 max-lg:col-span-12 text-lg xs:text-3xl sm:text-5xl text-start font-space-mono font-normal capitalize border-b border-black">
             <div class="px-4 lg:px-8 py-6 lg:py-12">
@@ -283,7 +307,7 @@
             </div>
           </div>
           <div class="col-span-1 max-lg:hidden py-6">
-            <div class="w-full h-full bg-cover bg-right bg-no-repeat" style="background-image: url('/img/external/b07483174922421.64ab19eab6d61.png');"></div>
+            <!-- <div class="w-full h-full bg-cover bg-right bg-no-repeat" style="background-image: url('/img/external/b07483174922421.64ab19eab6d61.png');"></div> -->
           </div>
         </div>
       </template>
@@ -292,7 +316,7 @@
     <section id="price" class="relative xl:container xl:m-auto w-full">
       <div class="grid grid-cols-12 border-x border-x-black lg:divide-x divide-black border-black">
         <div class="col-span-1 max-lg:hidden py-6">
-          <div class="w-full h-full bg-cover bg-left bg-no-repeat" style="background-image: url('/img/external/b07483174922421.64ab19eab6d61.png');"></div>
+          <!-- <div class="w-full h-full bg-cover bg-left bg-no-repeat" style="background-image: url('/img/external/b07483174922421.64ab19eab6d61.png');"></div> -->
         </div>
         <div class="col-span-10 max-lg:col-span-12 text-lg xs:text-3xl sm:text-5xl text-start font-space-mono font-normal capitalize border-b border-black">
           <div class="px-4 lg:px-8 py-6 lg:py-12">
@@ -311,7 +335,7 @@
           </div>
         </div>
         <div class="col-span-1 max-lg:hidden py-6">
-          <div class="w-full h-full bg-cover bg-right bg-no-repeat" style="background-image: url('/img/external/b07483174922421.64ab19eab6d61.png');"></div>
+          <!-- <div class="w-full h-full bg-cover bg-right bg-no-repeat" style="background-image: url('/img/external/b07483174922421.64ab19eab6d61.png');"></div> -->
         </div>
       </div>
     </section>
@@ -320,7 +344,7 @@
       <template v-for="row in Math.round(prices.length / 2)" :key="row">
         <div class="grid grid-cols-12 border-x border-x-black lg:divide-x divide-black border-black">
           <div class="col-span-1 max-lg:hidden py-6">
-            <div class="w-full h-full bg-cover bg-left bg-no-repeat" style="background-image: url('/img/external/b07483174922421.64ab19eab6d61.png');"></div>
+            <!-- <div class="w-full h-full bg-cover bg-left bg-no-repeat" style="background-image: url('/img/external/b07483174922421.64ab19eab6d61.png');"></div> -->
           </div>
           <div class="col-span-5 max-lg:col-span-12 text-lg xs:text-3xl sm:text-5xl text-start font-space-mono font-normal capitalize border-b border-black">
             <div class="px-4 lg:px-8 py-6 lg:py-12 h-full">
@@ -369,7 +393,7 @@
             </div>
           </div>
           <div class="col-span-1 max-lg:hidden py-6">
-            <div class="w-full h-full bg-cover bg-right bg-no-repeat" style="background-image: url('/img/external/b07483174922421.64ab19eab6d61.png');"></div>
+            <!-- <div class="w-full h-full bg-cover bg-right bg-no-repeat" style="background-image: url('/img/external/b07483174922421.64ab19eab6d61.png');"></div> -->
           </div>
         </div>
       </template>
@@ -378,7 +402,7 @@
     <section id="contact" class="relative xl:container xl:m-auto w-full">
       <div class="grid grid-cols-12 border-x border-x-black lg:divide-x divide-black border-black">
         <div class="col-span-1 max-lg:hidden py-6">
-          <div class="w-full h-full bg-cover bg-left bg-no-repeat" style="background-image: url('/img/external/b07483174922421.64ab19eab6d61.png');"></div>
+          <!-- <div class="w-full h-full bg-cover bg-left bg-no-repeat" style="background-image: url('/img/external/b07483174922421.64ab19eab6d61.png');"></div> -->
         </div>
         <div class="col-span-10 max-lg:col-span-12 text-lg xs:text-3xl sm:text-5xl text-start font-space-mono font-normal capitalize border-b border-black">
           <div class="sm:relative px-4 lg:px-8 py-6 lg:py-12">
@@ -399,7 +423,7 @@
           </div>
         </div>
         <div class="col-span-1 max-lg:hidden py-6">
-          <div class="w-full h-full bg-cover bg-right bg-no-repeat" style="background-image: url('/img/external/b07483174922421.64ab19eab6d61.png');"></div>
+          <!-- <div class="w-full h-full bg-cover bg-right bg-no-repeat" style="background-image: url('/img/external/b07483174922421.64ab19eab6d61.png');"></div> -->
         </div>
       </div>
     </section>
@@ -407,7 +431,7 @@
     <section class="relative xl:container xl:m-auto w-full">
       <div class="grid grid-cols-12 border-x border-x-black lg:divide-x divide-black border-black">
         <div class="col-span-1 max-lg:hidden py-6">
-          <div class="w-full h-full bg-cover bg-left bg-no-repeat" style="background-image: url('/img/external/b07483174922421.64ab19eab6d61.png');"></div>
+          <!-- <div class="w-full h-full bg-cover bg-left bg-no-repeat" style="background-image: url('/img/external/b07483174922421.64ab19eab6d61.png');"></div> -->
         </div>
         <div class="col-span-5 max-lg:col-span-12 text-lg xs:text-3xl sm:text-5xl text-start font-space-mono font-normal capitalize border-b border-black">
           <div class="px-4 lg:px-8 py-6 lg:py-12 h-full">
@@ -470,7 +494,7 @@
           </div>
         </div>
         <div class="col-span-1 max-lg:hidden py-6">
-          <div class="w-full h-full bg-cover bg-right bg-no-repeat" style="background-image: url('/img/external/b07483174922421.64ab19eab6d61.png');"></div>
+          <!-- <div class="w-full h-full bg-cover bg-right bg-no-repeat" style="background-image: url('/img/external/b07483174922421.64ab19eab6d61.png');"></div> -->
         </div>
       </div>
     </section>
@@ -566,14 +590,14 @@ export default {
         ]
       },
       projects: [
-        { id: 1, name: 'Find Art Mystery - Apps', country: 'ID', date: '2021-06-19 00:00:00', stacks: [ '/img/stacks/unity.png', '/img/stacks/laravel.png', '/img/stacks/c-sharp.png' ], url: 'https://play.google.com/store/apps/details?id=com.Pradita.Find&hl=en_US&gl=US', description: 'AR-based application that has various features such as indoor navigation, AR object exhibition and AR-based games using the Unity Engine. can be used inside summarecon mall serpong.' },
-        { id: 2, name: 'Wrathnet JD', country: 'ID', date: '2021-10-30 00:00:00', stacks: [ '/img/stacks/vue.png', '/img/stacks/laravel.png', '/img/stacks/php.png' ], url: 'https://wrathnet.com', description: 'Jade Dynasty Wrathnet portal web game with player\'s CMS and integrated transaction using available payment gateways located in indonesia.' },
-        { id: 3, name: 'Teamremod JD', country: 'VE', date: '2023-01-30 00:00:00', stacks: [ '/img/stacks/vue.png', '/img/stacks/laravel.png', '/img/stacks/php.png' ], url: 'https://teamremod.com', description: 'Jade Dynasty Teamremod portal web game with player\'s CMS and integrated transaction using available payment gateways located in venezuela.' },
-        { id: 4, name: 'Vengance JD', country: 'US', date: '2023-01-30 00:00:00', stacks: [ '/img/stacks/vue.png', '/img/stacks/laravel.png', '/img/stacks/php.png' ], url: 'https://vengancejd.com', description: 'Jade Dynasty Vengance portal web game with player\'s CMS and integrated transaction using available payment gateways located in united states.' },
-        { id: 5, name: 'Admin Teamremod JD', country: 'VE', date: '2023-01-30 00:00:00', stacks: [ '/img/stacks/vue.png', '/img/stacks/laravel.png', '/img/stacks/php.png' ], url: 'https://special.teamremod.com', description: 'Jade Dynasty Teamremod portal web game admin panel with a complex CMS located in venezuela.' },
-        { id: 6, name: 'TPID', country: 'ID', date: '2023-01-09 00:00:00', stacks: [ '/img/stacks/codeigniter.png', '/img/stacks/php.png' ], url: 'http://103.50.218.58/tpid', description: 'The Regional Inflation Control Team website, which was developed by Tangerang City Communications and Information Department. It features a basic CMS and a user-friendly interface, designed for a client located in Indonesia.' },
-        { id: 7, name: 'Kadaku', country: 'ID', date: '2023-02-13 00:00:00', stacks: [ '/img/stacks/nuxt.png', '/img/stacks/laravel.png', '/img/stacks/php.png' ], url: 'https://kadaku.id', description: 'Digital invitation website in Indonesia allows users to buy and customize templates to match their preferred designs and formats.' },
-        { id: 8, name: 'Local Champion', country: 'ID', date: '2023-09-25 00:00:00', stacks: [ '/img/stacks/vue.png', '/img/stacks/laravel.png', '/img/stacks/php.png' ], url: 'https://localchampion.id', description: 'Integrated - sustainable community empowerment platform to bring forth sustainable innovations that benefit both their local communities and the world.' },
+        { id: 1, name: 'Find Art Mystery - Apps', country: 'ID', date: '2021-06-19 00:00:00', cover: '/img/web/find.png', stacks: [ '/img/stacks/unity.png', '/img/stacks/laravel.png', '/img/stacks/c-sharp.png' ], url: 'https://play.google.com/store/apps/details?id=com.Pradita.Find&hl=en_US&gl=US', description: 'AR-based application that has various features such as indoor navigation, AR object exhibition and AR-based games using the Unity Engine. can be used inside summarecon mall serpong.' },
+        { id: 2, name: 'Wrathnet JD', country: 'ID', date: '2021-10-30 00:00:00', cover: '/img/web/wrathnet.png', stacks: [ '/img/stacks/vue.png', '/img/stacks/laravel.png', '/img/stacks/php.png' ], url: 'https://wrathnet.com', description: 'Jade Dynasty Wrathnet portal web game with player\'s CMS and integrated transaction using available payment gateways located in indonesia.' },
+        { id: 3, name: 'Teamremod JD', country: 'VE', date: '2023-01-30 00:00:00', cover: '', stacks: [ '/img/stacks/laravel.png', '/img/stacks/php.png' ], url: 'https://teamremod.com', description: 'Jade Dynasty Teamremod portal web game with player\'s CMS and integrated transaction using available payment gateways located in venezuela.' },
+        { id: 4, name: 'Vengance JD', country: 'US', date: '2023-01-30 00:00:00', cover: '', stacks: [ '/img/stacks/laravel.png', '/img/stacks/php.png' ], url: 'https://vengancejd.com', description: 'Jade Dynasty Vengance portal web game with player\'s CMS and integrated transaction using available payment gateways located in united states.' },
+        { id: 5, name: 'Admin Teamremod JD', country: 'VE', date: '2023-01-30 00:00:00', cover: '', stacks: [ '/img/stacks/vue.png', '/img/stacks/laravel.png', '/img/stacks/php.png' ], url: 'https://special.teamremod.com', description: 'Jade Dynasty Teamremod portal web game admin panel with a complex CMS located in venezuela.' },
+        { id: 6, name: 'TPID', country: 'ID', date: '2023-01-09 00:00:00', cover: '/img/web/tpid.png', stacks: [ '/img/stacks/codeigniter.png', '/img/stacks/php.png' ], url: 'http://103.50.218.58/tpid', description: 'The Regional Inflation Control Team website, which was developed by Tangerang City Communications and Information Department. It features a basic CMS and a user-friendly interface, designed for a client located in Indonesia.' },
+        { id: 7, name: 'Kadaku', country: 'ID', date: '2023-02-13 00:00:00', cover: '/img/web/kadaku.png', stacks: [ '/img/stacks/nuxt.png', '/img/stacks/laravel.png', '/img/stacks/php.png' ], url: 'https://kadaku.id', description: 'Digital invitation website in Indonesia allows users to buy and customize templates to match their preferred designs and formats.' },
+        { id: 8, name: 'Local Champion', country: 'ID', date: '2023-09-25 00:00:00', cover: '/img/web/local-champion.png', stacks: [ '/img/stacks/vue.png', '/img/stacks/laravel.png', '/img/stacks/php.png' ], url: 'https://localchampion.id', description: 'Integrated - sustainable community empowerment platform to bring forth sustainable innovations that benefit both their local communities and the world.' },
       ],
       workflow: [
         { id: 1, name: 'brief and analytics', description: 'We conduct an interview, and then I learn all the details of project and the specific details of a business. I research competitors, collect references, form ideas for a project, and develop a structure for a future site.' },
@@ -600,12 +624,29 @@ export default {
       isOpenDialogSendContact: false,
     }
   },
+  computed: {
+    pageSizeInnerWidth() {
+      return this.store.index.getLayout.main_layout.pageSize.innerWidth
+    }
+  },
   watch: {
     'store.index.getLayout.main_layout.isPageRendered': {
       handler(newVal) {
         this.destroyGsap()
         setTimeout(this.initGsap, 0)
       }
+    },
+    'store.index.getLayout.main_layout.pageSize': {
+      handler(newVal) {
+        var vm = this
+        if (newVal.innerWidth >= 1024) {
+          setTimeout(() => {
+            const dom = vm.getClientDOM('project-cover-figure')
+            vm.matchOffsetDOM(dom)
+          }, 0)
+        }
+      },
+      deep: true
     },
     'store.index.getComponent.navbar_component.selectedLang': {
       handler(newVal) {
@@ -726,6 +767,40 @@ export default {
         isSliding = false;
       });
     },
+    getClientDOM(reference) {
+      const ref = this.$refs[reference]
+      let result = null
+
+      if (Array.isArray(ref)) {
+        result = ref.map((el, index) => {
+          let offset = {
+            element: el,
+            width: el.offsetWidth,
+            height: el.offsetHeight
+          }
+          return offset
+        })
+      }
+
+      return result
+    },
+    matchOffsetDOM(dom) {
+      this.$nextTick(() => {
+        if (Array.isArray(dom)) {          
+          dom.forEach((item, index) => {
+            const isAvailable = item.element.querySelector('figure')
+  
+            if (!isAvailable) {
+              const next = dom[index+1]
+              const prev = dom[index-1]
+              const renderHeight = index % 2 == 0 ? next.height : prev.height ?? 0
+              
+              item.element.style.height = renderHeight + 'px'
+            }
+          })
+        }
+      })
+    }
   }
 }
 </script>
@@ -739,6 +814,36 @@ export default {
     transform: translateY(115px);
     transition: transform .5s;
     vertical-align: -webkit-baseline-middle;
+  }
+}
+
+figure {
+  position: relative;
+  display: inline-block;
+  width: fit-content;
+  height: fit-content;
+  overflow: hidden;
+  // box-shadow: -5px 5px rgba(0, 0, 0, 0.4), 
+  //             -10px 10px rgba(0, 0, 0, 0.3), 
+  //             -15px 15px rgba(0, 0, 0, 0.2), 
+  //             -20px 20px rgba(0, 0, 0, 0.1), 
+  //             -25px 25px rgba(0, 0, 0, 0.05);
+  box-shadow: 4.0px 8.0px 8.0px rgba(0,0,0,0.38);
+  cursor: help;
+
+  img {
+    transition: all 0.5s linear;
+    -webkit-transition: all 0.3s linear;
+    transform: scale3d(1, 1, 1);
+    -webkit-transform: scale3d(1, 1, 1);
+  }
+
+  &:hover {
+    img {
+      transform: scale3d(1.2, 1.2, 1);
+      -webkit-transform: scale3d(1.2, 1.2, 1);
+      filter: grayscale(0.8);
+    }
   }
 }
 </style>

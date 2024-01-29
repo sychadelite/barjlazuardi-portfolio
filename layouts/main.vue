@@ -24,10 +24,12 @@ export default {
       },
       flashlight: localStorage.getItem('flashlight') == 'true' ?? false,
       lenis: null,
-      innerWidth: 0,
-      innerHeight: 0,
-      screenWidth: 0,
-      screenHeight: 0,
+      pageSize: {
+        innerWidth: 0,
+        innerHeight: 0,
+        screenWidth: 0,
+        screenHeight: 0,
+      },
       isPageRendered: false,
       isCompleteLoaded: false
     }
@@ -68,10 +70,10 @@ export default {
       $gsap.ticker.lagSmoothing(0)
     },
     handleResize() {
-      this.innerWidth = window.innerWidth
-      this.innerHeight = window.innerHeight
-      this.screenWidth = window.screen.width
-      this.screenHeight = window.screen.height
+      this.pageSize.innerWidth = window.innerWidth
+      this.pageSize.innerHeight = window.innerHeight
+      this.pageSize.screenWidth = window.screen.width
+      this.pageSize.screenHeight = window.screen.height
     },
     scrollerStatus(status) {
       if (!status) {

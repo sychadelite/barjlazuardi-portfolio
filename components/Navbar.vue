@@ -25,7 +25,7 @@
               {{ selectedLang.slice(0, 2) }}&nbsp;<i class="fa-solid fa-caret-down"></i>
             </a>
             <div ref="dropdown-lang" data-lenis-prevent class="dropdown-lang absolute top-10 left-0 opacity-0 h-0 max-h-56 bg-black text-white ring-1 ring-offset-4 ring-black overflow-y-auto overflow-invisible">
-              <ul class="text-start" :class="{ 'hidden': store.index.getLayout.main_layout.innerWidth < 1024 }">
+              <ul class="text-start" :class="{ 'hidden': pageSizeInnerWidth < 1024 }">
                 <li v-for="row in languages" :key="row.id" class="flex gap-2 pl-4 pr-8 py-2 hover:bg-gray-700 capitalize cursor-pointer" :class="{ 'bg-gray-700' : selectedLang == row.code }" @click="selectedLang = row.code">
                   <img :src="`/img/flags/svg/${row.flag}.svg`" :alt="row.flag" class="w-4">
                   {{ row.name }}
@@ -137,11 +137,16 @@ export default {
       isOverlayLangOpen: false,
     }
   },
+  computed: {
+    pageSizeInnerWidth() {
+      return this.store.index.getLayout.main_layout.pageSize.innerWidth
+    }
+  },
   watch: {
     isMenuOpen(newStatus) {
       // this.store.index.getLayout.main_layout.scrollerStatus(!newStatus)
     },
-    'store.index.getLayout.main_layout.innerWidth': {
+    'store.index.getLayout.main_layout.pageSize': {
       handler(newVal) {
         if (newVal >= 1024) {
           this.isMenuOpen = false
@@ -149,7 +154,8 @@ export default {
         } else {
           this.$refs['overlay-menu'].style.display = 'flex'
         }
-      }
+      },
+      deep: true
     },
     'store.index.getLayout.main_layout.lenis': {
       handler(newVal) {
@@ -169,9 +175,11 @@ export default {
     },
     $route: {
       handler(to, from) {
-        // if (this.isMenuOpen) this.$refs['ham-menu'].click()
-        
         const id = to.hash.replace('#', '')
+
+        if (id && this.isMenuOpen)
+          this.$refs['ham-menu'].click()
+        
         this.store.index.getLayout.main_layout.lenis?.scrollTo(document.getElementById(id), {
           offset: -this.$refs['top-nav'].clientHeight,
           lerp: .2,
@@ -334,7 +342,7 @@ export default {
     },
     handleDocumentClick(event) {
       if (this.isMenuOpen && !this.$refs['overlay-menu'].contains(event.target) && !this.$refs['ham-menu'].contains(event.target)) {
-        if (this.store.index.getLayout.main_layout.innerWidth < 1024) {
+        if (this.pageSizeInnerWidth < 1024) {
           this.$refs['ham-menu'].click()
           if (this.isOverlayLangOpen) {
             this.$refs['caret-overlay-lang'].click()
@@ -342,11 +350,11 @@ export default {
         }
       }
       if (this.isLangOpen && !this.$refs['dropdown-lang'].contains(event.target) && !this.$refs['caret-lang'].contains(event.target)) {
-        if (this.store.index.getLayout.main_layout.innerWidth >= 1024)
+        if (this.pageSizeInnerWidth >= 1024)
           this.$refs['caret-lang'].click()
       }
       if (this.isOverlayLangOpen && !this.$refs['overlay-menu'].contains(event.target) && !this.$refs['caret-overlay-lang'].contains(event.target)) {
-        if (this.store.index.getLayout.main_layout.innerWidth < 1024) {
+        if (this.pageSizeInnerWidth < 1024) {
           this.$refs['caret-overlay-lang'].click()
           if (this.isMenuOpen) {
             this.$refs['ham-menu'].click()
