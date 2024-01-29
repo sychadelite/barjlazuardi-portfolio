@@ -1,7 +1,7 @@
 <template>
   <nav ref="top-nav" class="sticky top-0 xl:container xl:m-auto grid grid-cols-12 bg-white border-x border-x-black divide-x divide-black border-b border-black uppercase text-sm xs:text-base z-40">
     <div class="col-span-1 max-lg:hidden flex">
-      <div class="w-full h-full bg-cover bg-center bg-no-repeat" style="background-image: url('/img/external/netanyahu-face-as-hitler.png');"></div>
+      <!-- <div class="w-full h-full bg-cover bg-center bg-no-repeat" style="background-image: url('/img/external/netanyahu-face-as-hitler.png');"></div> -->
     </div>
     <div class="col-span-8 max-lg:col-span-9 max-sm:col-span-8 flex justify-start py-2 lg:py-6">
       <div class="flex flex-wrap gap-4 justify-between items-center w-full h-full px-2 sm:px-6">
@@ -58,7 +58,7 @@
       </div>
     </div>
     <div class="col-span-1 max-lg:hidden flex">
-      <div class="w-full h-full bg-cover bg-center bg-no-repeat" style="background-image: url('/img/external/free-palestine-cave-pov-jet.jpg');"></div>
+      <!-- <div class="w-full h-full bg-cover bg-center bg-no-repeat" style="background-image: url('/img/external/free-palestine-cave-pov-jet.jpg');"></div> -->
     </div>
 
     <!-- OVERLAY -->
