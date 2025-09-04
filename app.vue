@@ -1,4 +1,5 @@
 <template>
+  <Analytics />
   <div>
     <!-- <NuxtWelcome /> -->
     <NuxtLayout>
@@ -7,6 +8,10 @@
     </NuxtLayout>
   </div>
 </template>
+
+<script setup lang="ts">
+import { Analytics } from '@vercel/analytics/nuxt';
+</script>
 
 <style lang="scss">
 .page-enter-active,
