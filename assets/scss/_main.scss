@@ -1,10 +1,10 @@
-@import '@/assets/scss/variables';
+@use '@/assets/scss/variables' as *;
 
-@import '@/assets/scss/utils/font';
-@import '@/assets/scss/utils/gsap';
-@import '@/assets/scss/utils/input';
-@import '@/assets/scss/utils/lenis';
-@import '@/assets/scss/utils/shape';
+@use '@/assets/scss/utils/font' as *;
+@use '@/assets/scss/utils/gsap' as *;
+@use '@/assets/scss/utils/input' as *;
+@use '@/assets/scss/utils/lenis' as *;
+@use '@/assets/scss/utils/shape' as *;
 
 * {
   box-sizing: border-box;

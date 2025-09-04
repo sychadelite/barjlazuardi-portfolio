@@ -8,7 +8,7 @@
     <slot />
     <Footer />
     <UtilityFlashlight v-if="flashlight" />
-    <UtilityButtonDownloadCv />
+    <UtilityButtonDownloadCV />
     <UtilityButtonToggleFlashlight :isOn="flashlight" @callback="onToggleLight" />
   </div>
 </template>

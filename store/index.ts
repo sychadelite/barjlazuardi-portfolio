@@ -1,3 +1,5 @@
+import { defineStore } from 'pinia'
+
 import axios from "axios"
 
 import { setCookie, getCookie, clearCookie } from '~/utils/cookies'
