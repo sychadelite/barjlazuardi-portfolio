@@ -1,10 +1,10 @@
 <template>
   <div class="fixed bottom-0 left-5 rounded-full cursor-pointer mb-5 font-space-mono z-[70]">
-    <div id="glowing-button-download-cv" :class="isGlowing ? 'opacity-100' : 'opacity-0'"></div>
+    <div id="glowing-button-download-cv" :class="isGlowing ? 'opacity-100' : 'opacity-0'"/>
     <a href="/documents/Barj CV - Grey & White Minimalist Resume.pdf" download="">
       <button class="pulse-button" @mouseover="isGlowing = true" @mouseout="isGlowing = false">
         <small class="mr-2 max-xs:text-xs">Download CV</small>
-        <i class="fa-solid fa-file-arrow-down"></i>
+        <i class="fa-solid fa-file-arrow-down"/>
       </button>
     </a>
   </div>

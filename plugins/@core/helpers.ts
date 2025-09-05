@@ -1,7 +1,7 @@
-export default defineNuxtPlugin((nuxtApp) => {
+export default defineNuxtPlugin(() => {
   const convertToCamelCase = (str: string) => {
-    var words = str.split('-')
-    var capitalizedWords = words.map(function (word: string) {
+    const words = str.split('-')
+    const capitalizedWords = words.map(function (word: string) {
       return word.charAt(0).toUpperCase() + word.slice(1)
     })
     return capitalizedWords.join('')
@@ -9,7 +9,7 @@ export default defineNuxtPlugin((nuxtApp) => {
 
   return {
     provide: {
-      convertToCamelCase: (str: string) => convertToCamelCase(str),
+      convertToCamelCase: (str: string) => convertToCamelCase(str)
     }
   }
 })

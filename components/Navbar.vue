@@ -11,7 +11,8 @@
           </h1>
           <div class="social-media flex flex-wrap gap-x-2 gap-y-1">
             <NuxtLink v-for="row in social_media" :key="row.id" :to="row.url" target="_blank" :title="row.name" class="line-clamp-1 hover:text-contessa-700 hover:scale-90 opacity-0">
-              <div v-html="row.icon"></div>
+              <!-- eslint-disable-next-line vue/no-v-html -->
+              <div v-html="row.icon" />
             </NuxtLink>
           </div>
         </div>
@@ -21,8 +22,8 @@
           <li><router-link to="#workflow" class="anim-multi-underline" :style="$route.hash == '#workflow' ? 'background-size: 100% 2px; background-position-x: left;' : ''">{{ $t('process') }}</router-link></li>
           <li><router-link to="#price" class="anim-multi-underline" :style="$route.hash == '#price' ? 'background-size: 100% 2px; background-position-x: left;' : ''">{{ $t('prices') }}</router-link></li>
           <li class="relative">
-            <a ref="caret-lang" id="caret-lang" class="anim-multi-underline block min-w-[3rem] uppercase cursor-pointer" :style="isLangOpen ? 'background-size: 100% 2px; background-position-x: left;' : ''" @click="toggleLang">
-              {{ selectedLang.slice(0, 2) }}&nbsp;<i class="fa-solid fa-caret-down"></i>
+            <a id="caret-lang" ref="caret-lang" class="anim-multi-underline block min-w-[3rem] uppercase cursor-pointer" :style="isLangOpen ? 'background-size: 100% 2px; background-position-x: left;' : ''" @click="toggleLang">
+              {{ selectedLang.slice(0, 2) }}&nbsp;<i class="fa-solid fa-caret-down"/>
             </a>
             <div ref="dropdown-lang" data-lenis-prevent class="dropdown-lang absolute top-10 left-0 opacity-0 h-0 max-h-56 bg-black text-white ring-1 ring-offset-4 ring-black whitespace-nowrap overflow-y-auto overflow-invisible">
               <ul class="text-start" :class="{ 'hidden': pageSizeInnerWidth < 1024 }">
@@ -44,17 +45,17 @@
           </h1>
         </router-link>
       </div>
-      <div ref="ham-menu" id="ham-menu" class="lg:hidden" :class="{ 'open' : isMenuOpen }" @click="toggleMenu">
-        <span></span>
-        <span></span>
-        <span class="!w-0"></span>
-        <span class="!w-3/4"></span>
-        <span></span>
-        <span></span>
-        <span class="!w-1/2 !translate-x-[8px] !-translate-y-[11px] !-scale-[1] !-rotate-[45deg]" :class="{ '!opacity-0' : !isMenuOpen }"></span>
-        <span class="!w-1/2 !translate-x-[13px] !translate-y-[10px] !scale-[1] !rotate-[45deg]" :class="{ '!opacity-0' : !isMenuOpen }"></span>
-        <span class="!w-1/2 !-translate-x-[14px] !translate-y-[25px] !scale-[1] !rotate-[45deg]" :class="{ '!opacity-0' : !isMenuOpen }"></span>
-        <span class="!w-1/2 !-translate-x-[8px] !translate-y-[47px] !scale-[1] !rotate-[135deg]" :class="{ '!opacity-0' : !isMenuOpen }"></span>
+      <div id="ham-menu" ref="ham-menu" class="lg:hidden" :class="{ 'open' : isMenuOpen }" @click="toggleMenu">
+        <span/>
+        <span/>
+        <span class="!w-0"/>
+        <span class="!w-3/4"/>
+        <span/>
+        <span/>
+        <span class="!w-1/2 !translate-x-[8px] !-translate-y-[11px] !-scale-[1] !-rotate-[45deg]" :class="{ '!opacity-0' : !isMenuOpen }"/>
+        <span class="!w-1/2 !translate-x-[13px] !translate-y-[10px] !scale-[1] !rotate-[45deg]" :class="{ '!opacity-0' : !isMenuOpen }"/>
+        <span class="!w-1/2 !-translate-x-[14px] !translate-y-[25px] !scale-[1] !rotate-[45deg]" :class="{ '!opacity-0' : !isMenuOpen }"/>
+        <span class="!w-1/2 !-translate-x-[8px] !translate-y-[47px] !scale-[1] !rotate-[135deg]" :class="{ '!opacity-0' : !isMenuOpen }"/>
       </div>
     </div>
     <div class="col-span-1 max-lg:hidden flex">
@@ -67,13 +68,13 @@
       <li><router-link to="#portfolio" class="anim-multi-underline" :style="$route.hash == '#portfolio' ? 'background-size: 100% 2px; background-position-x: left;' : ''">{{ $t('portfolio') }}</router-link></li>
       <li><router-link to="#workflow" class="anim-multi-underline" :style="$route.hash == '#workflow' ? 'background-size: 100% 2px; background-position-x: left;' : ''">{{ $t('process') }}</router-link></li>
       <li><router-link to="#price" class="anim-multi-underline" :style="$route.hash == '#price' ? 'background-size: 100% 2px; background-position-x: left;' : ''">{{ $t('prices') }}</router-link></li>
-      <li ref="caret-overlay-lang" id="caret-overlay-lang" @click="toggleOverlayLang">
-        <router-link :to="$route.hash" class="anim-multi-underline" :style="isOverlayLangOpen ? 'background-size: 100% 2px; background-position-x: left;' : ''">{{ selectedLang.slice(0, 2) }}&nbsp;<i class="fa-solid fa-caret-down"></i></router-link>
+      <li id="caret-overlay-lang" ref="caret-overlay-lang" @click="toggleOverlayLang">
+        <router-link :to="$route.hash" class="anim-multi-underline" :style="isOverlayLangOpen ? 'background-size: 100% 2px; background-position-x: left;' : ''">{{ selectedLang.slice(0, 2) }}&nbsp;<i class="fa-solid fa-caret-down"/></router-link>
       </li>
       <ul class="nav-overlay-lang grid grid-cols-2 xs:grid-cols-3 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-6 xl:grid-cols-7 2xl:grid-cols-8 gap-4 w-full max-w-3xl -mt-5 mb-5">
         <li v-for="row in locales" :key="row.id" class="opt-overlay-lang opacity-0" @click="switchLanguage(row.code)">
           <div class="relative p-4 rounded-sm bg-repeat-round cursor-pointer" :style="`background-image: url('/img/flags/png1000px/${row.flag}.png'); background-position: inherit;`">
-            <div class="absolute inset-0 bg-black transition-all ease-in-out duration-200" :class="selectedLang == row.code ? 'opacity-30' : 'opacity-75'"></div>
+            <div class="absolute inset-0 bg-black transition-all ease-in-out duration-200" :class="selectedLang == row.code ? 'opacity-30' : 'opacity-75'"/>
             <p class="line-clamp-1">
               <router-link to="" class="anim-multi-underline font-medium text-[10px] xs:text-xs" :style="selectedLang == row.code ? 'background-size: 100% 2px; background-position-x: left;' : ''">
                 {{ row.name }}
@@ -113,13 +114,13 @@ export default {
         { id: 4, name: 'facebook', url: 'https://facebook.com/barjlazuardi', title: 'instagram', icon: '<i class="fa-brands fa-facebook"></i>' },
         { id: 5, name: 'threads', url: 'https://threads.net/barjlazuardi', title: 'instagram', icon: '<i class="fa-brands fa-threads"></i>' },
         { id: 6, name: 'discord', url: 'https://discord.com/users/41767866263312793', title: 'instagram', icon: '<i class="fa-brands fa-discord"></i>' },
-        { id: 7, name: 'linkedin', url: 'https://www.linkedin.com/in/barjlazuardi/', icon: '<i class="fa-brands fa-linkedin"></i>' },
+        { id: 7, name: 'linkedin', url: 'https://www.linkedin.com/in/barjlazuardi/', icon: '<i class="fa-brands fa-linkedin"></i>' }
         // { id: 8, name: 'pinterest', url: 'https://www.pinterest.com/barjlazuardi/', icon: '<i class="fa-brands fa-pinterest"></i>' },
       ],
       selectedLang: 'en',
       isMenuOpen: false,
       isLangOpen: false,
-      isOverlayLangOpen: false,
+      isOverlayLangOpen: false
     }
   },
   computed: {
@@ -128,9 +129,6 @@ export default {
     }
   },
   watch: {
-    isMenuOpen(newStatus) {
-      // this.store.index.getLayout.main_layout.scrollerStatus(!newStatus)
-    },
     'store.index.getLayout.main_layout.pageSize': {
       handler(newVal) {
         if (newVal >= 1024) {
@@ -167,7 +165,7 @@ export default {
       immediate: true
     },
     $route: {
-      handler(to, from) {
+      handler(to) {
         const id = to.hash.replace('#', '')
 
         if (id && this.isMenuOpen)
@@ -180,7 +178,7 @@ export default {
           lock: true
         })
       }
-    },
+    }
   },
   beforeMount() {
     this.store.index.setRootComponent('navbar_component', this)
@@ -200,44 +198,44 @@ export default {
 
       // Gsap logic
       this.$nextTick(() => {
-        const ham = document.querySelector("#ham-menu")
+        const ham = document.querySelector('#ham-menu')
         const menu = document.querySelector('ul.nav-menu')
         const links = menu.querySelectorAll('li:not(.opt-overlay-lang)')
 
-        const links_excl_caret_lang = menu.querySelectorAll('li:not(.opt-overlay-lang, #caret-overlay-lang)')
+        // const links_excl_caret_lang = menu.querySelectorAll('li:not(.opt-overlay-lang, #caret-overlay-lang)')
 
-        const caret_lang = document.querySelector("#caret-lang")
+        const caret_lang = document.querySelector('#caret-lang')
         const lang = document.querySelector('div.dropdown-lang')
         const opts_lang = lang.querySelectorAll('li')
         
-        const ov_caret_lang = document.querySelector("#caret-overlay-lang")
+        const ov_caret_lang = document.querySelector('#caret-overlay-lang')
         const ov_lang = document.querySelector('ul.nav-overlay-lang')
         const opts_ov_lang = menu.querySelectorAll('li.opt-overlay-lang')
-        const opts_ov_lang_reversed = Array.from(menu.querySelectorAll('li.opt-overlay-lang')).reverse()
+        // const opts_ov_lang_reversed = Array.from(menu.querySelectorAll('li.opt-overlay-lang')).reverse()
 
         const sm_links = document.querySelectorAll('.social-media a')
         
         const topnav_height = this.$refs['top-nav'].clientHeight
         
         // Hamburger -> Menu
-        var tl_hamMenu = $gsap.timeline({ paused: true })
+        const tl_hamMenu = $gsap.timeline({ paused: true })
         tl_hamMenu.to(menu, {
           duration: 0.75,
           opacity: 1,
           height: `calc(100vh - ${topnav_height}px)`,
           overflow: 'auto',
           zIndex: 10,
-          ease: 'expo.inOut',
+          ease: 'expo.inOut'
         })
         tl_hamMenu.from(links, {
           duration: 1,
           opacity: 0,
           y: 20,
           stagger: 0.1,
-          ease: 'expo.inOut',
-        }, "-=0.5")
+          ease: 'expo.inOut'
+        }, '-=0.5')
         tl_hamMenu.reverse()
-        tl_hamMenu.reverse().eventCallback("onReverseComplete", () => {
+        tl_hamMenu.reverse().eventCallback('onReverseComplete', () => {
           menu.classList.add('!hidden')
         })
         ham.addEventListener('click', () => {
@@ -246,23 +244,23 @@ export default {
         })
 
         // Caret -> Language
-        var tl_caretLang = $gsap.timeline({ paused: true })
+        const tl_caretLang = $gsap.timeline({ paused: true })
         tl_caretLang.to(lang, {
           duration: 1,
           opacity: 1,
           zIndex: 10,
           height: 40 * this.locales.length,
-          ease: 'expo.inOut',
+          ease: 'expo.inOut'
         })
         tl_caretLang.from(opts_lang, {
           duration: 1,
           opacity: 0,
           y: 20,
           stagger: 0.1,
-          ease: 'expo.inOut',
-        }, "-=0.5")
+          ease: 'expo.inOut'
+        }, '-=0.5')
         tl_caretLang.reverse()
-        tl_caretLang.reverse().eventCallback("onReverseComplete", () => {
+        tl_caretLang.reverse().eventCallback('onReverseComplete', () => {
           lang.classList.add('hidden')
         })
         caret_lang.addEventListener('click', () => {
@@ -271,18 +269,18 @@ export default {
         })
 
         // Overlay Caret -> Language
-        var tl_overlayCaretLang = $gsap.timeline({ paused: true })
+        const tl_overlayCaretLang = $gsap.timeline({ paused: true })
         tl_overlayCaretLang.from(ov_lang, {
           opacity: 0,
           display: 'none',
-          ease: 'expo.inOut',
-        }, "-=0")
+          ease: 'expo.inOut'
+        }, '-=0')
         tl_overlayCaretLang.to(ov_lang, {
           duration: 1,
           opacity: 1,
           height: 'fit-content',
-          ease: 'expo.inOut',
-        }, "-=0.5")
+          ease: 'expo.inOut'
+        }, '-=0.5')
         tl_overlayCaretLang.to(opts_ov_lang, {
           duration: 1,
           opacity: 1,
@@ -290,9 +288,9 @@ export default {
           y: 20,
           stagger: 0.1,
           ease: 'expo.inOut'
-        }, "-=1")
+        }, '-=1')
         tl_overlayCaretLang.reverse()
-        tl_overlayCaretLang.reverse().eventCallback("onReverseComplete", () => {
+        tl_overlayCaretLang.reverse().eventCallback('onReverseComplete', () => {
           opts_ov_lang.forEach(el => el.classList.add('hidden'))
           ov_lang.classList.add('hidden')
         })
@@ -303,14 +301,14 @@ export default {
         })
       
         // Reveal -> Social Media
-        var tl_socialMedia = $gsap.timeline({ paused: true })
+        const tl_socialMedia = $gsap.timeline({ paused: true })
         tl_socialMedia.to(sm_links, {
           duration: .5,
           opacity: 1,
           transition: 'all .3s',
           stagger: 0.3,
-          ease: "power4.in",
-        }, "-=0.5")
+          ease: 'power4.in'
+        }, '-=0.5')
         tl_socialMedia.play()
       })
     },
@@ -353,7 +351,7 @@ export default {
           }
         }
       }
-    },
+    }
   }
 }
 </script>

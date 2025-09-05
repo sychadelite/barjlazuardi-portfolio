@@ -8,8 +8,8 @@
           </NuxtLink>
         </div>
         <div class="max-sm:hidden sm:w-2/12 h-full">
-          <button @click="scrollTo('top')" class="border border-white w-14 h-fit p-4 m-auto rounded-full hover:bg-white hover:text-black active:bg-gray-300 transition-all ease-in-out duration-200">
-            <i class="fa-solid fa-arrow-up-long"></i>
+          <button class="border border-white w-14 h-fit p-4 m-auto rounded-full hover:bg-white hover:text-black active:bg-gray-300 transition-all ease-in-out duration-200" @click="scrollTo('top')">
+            <i class="fa-solid fa-arrow-up-long"/>
           </button>
         </div>
         <div class="sm:w-5/12 h-full">
@@ -23,11 +23,11 @@
       </div>
       <div class="sm:hidden w-full h-full mt-10">
         <div class="flex flex-row items-center justify-around gap-4 w-full h-full px-4">
-          <div class="border-t border-white w-full"></div>
-          <button @click="scrollTo('top')" class="border border-white w-24 h-fit p-4 m-auto rounded-full hover:bg-white hover:text-black active:bg-gray-300 transition-all ease-in-out duration-200">
-            <i class="fa-solid fa-arrow-up-long"></i>
+          <div class="border-t border-white w-full"/>
+          <button class="border border-white w-24 h-fit p-4 m-auto rounded-full hover:bg-white hover:text-black active:bg-gray-300 transition-all ease-in-out duration-200" @click="scrollTo('top')">
+            <i class="fa-solid fa-arrow-up-long"/>
           </button>
-          <div class="border-t border-white w-full"></div>
+          <div class="border-t border-white w-full"/>
         </div>
       </div>
       <div class="w-full mt-12 border-t border-white px-2">

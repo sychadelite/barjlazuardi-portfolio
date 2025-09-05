@@ -12,7 +12,7 @@
     <Footer />
     <UtilityFlashlight v-if="flashlight" />
     <UtilityButtonDownloadCV />
-    <UtilityButtonToggleFlashlight :isOn="flashlight" @callback="onToggleLight" />
+    <UtilityButtonToggleFlashlight :is-on="flashlight" @callback="onToggleLight" />
   </div>
 </template>
 
@@ -25,13 +25,13 @@ export default {
       store: {
         index: useIndexStore()
       },
-      flashlight: localStorage.getItem('flashlight') == 'true' ?? false,
+      flashlight: localStorage.getItem('flashlight') === 'true',
       lenis: null,
       pageSize: {
         innerWidth: 0,
         innerHeight: 0,
         screenWidth: 0,
-        screenHeight: 0,
+        screenHeight: 0
       },
       isPageRendered: false,
       isCompleteLoaded: false
@@ -60,7 +60,7 @@ export default {
       // Scroll smooth
       this.lenis = $Lenis()
 
-      this.lenis.on('scroll', (e) => {
+      this.lenis.on('scroll', () => {
         $ScrollTrigger.update()
       })
 
@@ -85,7 +85,7 @@ export default {
         this.lenis.start()
       }
     },
-    onToggleLight(e) {
+    onToggleLight() {
       this.flashlight = !this.flashlight
       localStorage.setItem('flashlight', this.flashlight)
     },

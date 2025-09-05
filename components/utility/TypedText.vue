@@ -1,17 +1,24 @@
 <template>
   <div class="typing-animation">
-    <div :id="`typed-output-${id}`"></div>
+    <div :id="`typed-output-${id}`"/>
   </div>
 </template>
 
 <script>
-import Typed from 'typed.js';
+import Typed from 'typed.js'
 
 export default {
-  props: [
-    'id',
-    'options'
-  ],
+  props: {
+    id: {
+      type: [String, Number], // adjust type depending on usage
+      required: true
+    },
+    options: {
+      type: Array, // or more specific: Array<{ label: string, value: any }>
+      required: false,
+      default: () => []
+    }
+  },
   mounted() {
     const options = {
       strings: this.options,
@@ -20,15 +27,15 @@ export default {
       startDelay: 500,     // Delay before typing starts in milliseconds
       backDelay: 1000,     // Delay before backspacing starts in milliseconds
       loop: true,          // Whether to loop the animation
-      showCursor: true,    // Whether to display the blinking cursor
-    };
+      showCursor: true    // Whether to display the blinking cursor
+    }
 
-    this.typed = new Typed(`#typed-output-${this.id}`, options);
+    this.typed = new Typed(`#typed-output-${this.id}`, options)
   },
-  beforeDestroy() {
-    this.typed.destroy();
-  },
-};
+  beforeUnmount() {
+    this.typed.destroy()
+  }
+}
 </script>
 
 <style scoped>

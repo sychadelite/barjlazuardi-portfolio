@@ -31,9 +31,9 @@
                     </div>
                   </div>
                   <div class="flex flex-col sm:flex-row justify-between items-start gap-6 sm:gap-4">
-                    <div class="w-full sm:h-48 p-2 border border-black rounded-2xl"></div>
+                    <div class="w-full sm:h-48 p-2 border border-black rounded-2xl"/>
                     <div class="flex flex-row justify-between items-center gap-4 xs:gap-12 sm:gap-6">
-                      <div v-for="row in 4" :key="row" class="w-1.5 h-1.5 rounded-full" :class="row % 2 == 0 ? 'bg-black' : 'bg-gray-500'"></div>
+                      <div v-for="row in 4" :key="row" class="w-1.5 h-1.5 rounded-full" :class="row % 2 == 0 ? 'bg-black' : 'bg-gray-500'"/>
                     </div>
                   </div>
                 </div>
@@ -52,7 +52,7 @@
                   </div>
                   <img src="/img/icons/barj-illuminate.png" alt="barj" class="h-24 my-auto">   
                 </div>
-                <div class="w-full h-12 lg:hidden"></div>
+                <div class="w-full h-12 lg:hidden"/>
                 <div class="flex flex-wrap lg:flex-col justify-start xs:justify-around lg:justify-evenly gap-y-8 max-xs:pl-4">
                   <div class="flex flex-col lg:flex-row justify-around gap-x-4 gap-y-8 max-lg:text-start uppercase"> 
                     <NuxtLink to="https://vuejs.org/" target="_blank" class="w-fit h-fit text-base xs:text-xl sm:text-3xl lg:text-lg font-asgard-fat tracking-widest hover:tracking-tight transition-all ease-in-out duration-200">{{ $t('vue.experts') }} &gt;&gt;</NuxtLink>
@@ -128,12 +128,12 @@
             </p>
             <button class="text-lg uppercase font-extrabold py-4 hover:tracking-widest transition-all ease-in-out duration-200">
               {{ $t('contact with me') }}
-              <i class="fa-solid fa-arrow-trend-up"></i>
+              <i class="fa-solid fa-arrow-trend-up"/>
             </button>
           </div>
         </div>
         <div class="col-span-5 order-2 lg:order-3 max-lg:col-span-12 text-lg xs:text-3xl sm:text-5xl text-start font-middle-earth font-normal capitalize border-b border-black">
-          <div class="w-full h-full min-h-[20rem] bg-center bg-cover bg-no-repeat" style="background-image: url('/img/profile/1637566473719-grayscale.jpeg');"></div>
+          <div class="w-full h-full min-h-[20rem] bg-center bg-cover bg-no-repeat" style="background-image: url('/img/profile/1637566473719-grayscale.jpeg');"/>
         </div>
         <div class="col-span-1 order-1 lg:order-4 max-lg:hidden py-6">
           <!-- <div class="w-full h-full bg-cover bg-right bg-no-repeat" style="background-image: url('/img/external/b07483174922421.64ab19eab6d61.png');"></div> -->
@@ -153,11 +153,11 @@
               <div class="flex flex-row items-start gap-4 h-20 sm:h-28">
                 <div class="flex flex-col justify-between h-full">
                   <p class="text-lg font-bold tracking-tighter">{{ $t('projects') }}</p>
-                  <i class="fa-solid fa-timeline"></i>
+                  <i class="fa-solid fa-timeline"/>
                 </div>
                 <div class="flex flex-col justify-between h-full">
-                  <i class="fa-brands fa-linode"></i>
-                  <i class="fa-regular fa-life-ring"></i>
+                  <i class="fa-brands fa-linode"/>
+                  <i class="fa-regular fa-life-ring"/>
                 </div>
               </div>
             </div>
@@ -190,7 +190,7 @@
                       </figure>
                       <client-only v-else>
                         <Vue3Lottie
-                          animationLink="https://lottie.host/5662a8f8-dd88-42c1-91cb-f168bd03a938/KxEkSR3UBK.json"
+                          animation-link="https://lottie.host/5662a8f8-dd88-42c1-91cb-f168bd03a938/KxEkSR3UBK.json"
                           :height="150"
                           :width="150"
                         />
@@ -207,7 +207,7 @@
                     <div class="flex flex-wrap justify-between">
                       <p><small class="text-xs sm:text-sm">{{ $timeAgo(projects[row+(row-2)]?.date) }}</small></p>
                       <NuxtLink :to="projects[row+(row-2)]?.url" target="_blank">
-                        <button class="text-base sm:text-lg font-bold uppercase hover:tracking-widest transition-all ease-in-out duration-200">{{ $t('learn more') }}&nbsp;<i class="fa-solid fa-arrow-right-long -rotate-45"></i></button>
+                        <button class="text-base sm:text-lg font-bold uppercase hover:tracking-widest transition-all ease-in-out duration-200">{{ $t('learn more') }}&nbsp;<i class="fa-solid fa-arrow-right-long -rotate-45"/></button>
                       </NuxtLink>
                     </div>
                   </div>
@@ -230,7 +230,7 @@
                       </figure>
                       <client-only v-else>
                         <Vue3Lottie
-                          animationLink="https://lottie.host/5662a8f8-dd88-42c1-91cb-f168bd03a938/KxEkSR3UBK.json"
+                          animation-link="https://lottie.host/5662a8f8-dd88-42c1-91cb-f168bd03a938/KxEkSR3UBK.json"
                           :height="150"
                           :width="150"
                         />
@@ -247,7 +247,7 @@
                     <div class="flex flex-wrap justify-between">
                       <p><small class="text-xs sm:text-sm">{{ $timeAgo(projects[row+(row-1)]?.date) }}</small></p>
                       <NuxtLink :to="projects[row+(row-1)]?.url" target="_blank">
-                        <button class="text-base sm:text-lg font-bold uppercase hover:tracking-widest transition-all ease-in-out duration-200">{{ $t('learn more') }}&nbsp;<i class="fa-solid fa-arrow-right-long -rotate-45"></i></button>
+                        <button class="text-base sm:text-lg font-bold uppercase hover:tracking-widest transition-all ease-in-out duration-200">{{ $t('learn more') }}&nbsp;<i class="fa-solid fa-arrow-right-long -rotate-45"/></button>
                       </NuxtLink>
                     </div>
                   </div>
@@ -272,7 +272,7 @@
             <div class="flex flex-wrap-reverse justify-between items-end gap-2 w-full h-fit">
               <h2 class="text-2xl xs:text-4xl xl:text-5xl uppercase font-bold tracking-widest">{{ $t('work process') }}</h2>
               <div class="flex flex-row items-start gap-4">
-                <div v-for="row in 4" :key="row" class="w-8 h-32 border border-black rounded-[50px/200px]" :class="{ '-ml-6' : row > 1}"></div>
+                <div v-for="row in 4" :key="row" class="w-8 h-32 border border-black rounded-[50px/200px]" :class="{ '-ml-6' : row > 1}"/>
               </div>
             </div>
           </div>
@@ -325,7 +325,7 @@
               <div class="text-end">
                 <small class="text-xs font-semibold tracking-tighter">// {{ $t('23.349124') }}, {{ $t('13.184303') }}</small>
                 <div class="flex flex-row justify-end items-start gap-4 my-5">
-                  <div v-for="row in 7" :key="row" class="arrow arrow--left" :class="{ '-mr-3' : row <= 7}"></div>
+                  <div v-for="row in 7" :key="row" class="arrow arrow--left" :class="{ '-mr-3' : row <= 7}"/>
                 </div>
                 <p class="text-base xs:text-lg sm:text-2xl font-semibold tracking-tighter mt-5">
                   {{ $t('50% of prepayment is required') }}
@@ -362,7 +362,7 @@
                   <div class="flex flex-wrap justify-between gap-4">
                     <p><small class="text-sm sm:text-base tracking-tight uppercase">{{ $t('from') }} {{ prices[row+(row-2)]?.duration }} {{ $t('business days') }}</small></p>
                     <NuxtLink :to="prices[row+(row-2)]?.url" target="_blank">
-                      <button class="text-lg font-bold uppercase hover:tracking-wide transition-all ease-in-out duration-200">{{ $t('create') }} {{ $t(prices[row+(row-2)]?.name) }}&nbsp;<i class="fa-solid fa-arrow-right-long -rotate-45"></i></button>
+                      <button class="text-lg font-bold uppercase hover:tracking-wide transition-all ease-in-out duration-200">{{ $t('create') }} {{ $t(prices[row+(row-2)]?.name) }}&nbsp;<i class="fa-solid fa-arrow-right-long -rotate-45"/></button>
                     </NuxtLink>
                   </div>
                 </div>
@@ -385,7 +385,7 @@
                   <div class="flex flex-wrap justify-between gap-4">
                     <p><small class="text-sm sm:text-base tracking-tight uppercase">{{ $t('from') }} {{ prices[row+(row-1)]?.duration }} {{ $t('business days') }}</small></p>
                     <NuxtLink :to="prices[row+(row-1)]?.url" target="_blank">
-                      <button class="text-base sm:text-lg font-bold uppercase hover:tracking-wide transition-all ease-in-out duration-200">{{ $t('create') }} {{ $t(prices[row+(row-1)]?.name) }}&nbsp;<i class="fa-solid fa-arrow-right-long -rotate-45"></i></button>
+                      <button class="text-base sm:text-lg font-bold uppercase hover:tracking-wide transition-all ease-in-out duration-200">{{ $t('create') }} {{ $t(prices[row+(row-1)]?.name) }}&nbsp;<i class="fa-solid fa-arrow-right-long -rotate-45"/></button>
                     </NuxtLink>
                   </div>
                 </div>
@@ -409,7 +409,7 @@
             <div class="flex flex-col-reverse sm:flex-row sm:justify-between sm:items-end gap-y-12 gap-x-8 w-full h-fit">
               <h2 class="w-full sm:w-2/4 text-2xl xs:text-4xl xl:text-5xl uppercase font-bold tracking-widest">{{ $t('contacts') }}</h2>
               <div class="max-sm:relative w-full sm:w-2/4 h-40 text-end">
-                <div class="absolute top-0 right-0 w-16 h-2/4 bg-black"></div>
+                <div class="absolute top-0 right-0 w-16 h-2/4 bg-black"/>
                 <svg class="absolute bottom-0 right-0 w-full xs:w-2/4 h-4/5" x="0" y="0">
                   <defs>
                     <pattern id="diagonalHatch" patternUnits="userSpaceOnUse" width="5" height="14" patternTransform="rotate(-45 2 2)">
@@ -450,18 +450,18 @@
           <div class="px-4 lg:px-8 py-6 lg:py-12 h-full">
             <div class="flex flex-col justify-start gap-4 w-full text-5xl">
               <div class="form__group field">
-                <input id="name" name="name" type="text" class="form__field tracking-wide" :placeholder="$t('name')" required />
+                <input id="name" name="name" type="text" class="form__field tracking-wide" :placeholder="$t('name')" required >
                 <label for="name" class="form__label uppercase">{{ $t('name') }}</label>
               </div>
               <div class="form__group field">
-                <input id="email" name="email" type="email" class="form__field tracking-wide" :placeholder="$t('email')" required />
+                <input id="email" name="email" type="email" class="form__field tracking-wide" :placeholder="$t('email')" required >
                 <label for="email" class="form__label uppercase">{{ $t('email') }}</label>
               </div>
               <div class="form__group field">
                 <div id="web-type" class="form__field dropdown">
                   <div class="flex flex-row justify-between items-center py-2 cursor-pointer">
                     <span>{{ $t('website type') }}</span>
-                    <i class="fa fa-chevron-left dropdown-icon text-xs"></i>
+                    <i class="fa fa-chevron-left dropdown-icon text-xs"/>
                   </div>
                   <input type="hidden" name="web-type">
                   <ul class="dropdown-menu absolute left-0 hidden w-full max-h-[160px] mt-3 ring-2 ring-offset-4 ring-black overflow-y-auto bg-black z-10" data-lenis-prevent>
@@ -472,14 +472,14 @@
                 </div>
               </div>
               <div class="form__group field py-6">
-                <textarea id="description" name="description" type="text" class="form__field tracking-wide min-h-[100px]" :placeholder="$t('description')" required rows="8"></textarea>
+                <textarea id="description" name="description" type="text" class="form__field tracking-wide min-h-[100px]" :placeholder="$t('description')" required rows="8"/>
                 <label for="description" class="form__label uppercase">{{ $t('tell about your project') }}</label>
               </div>
             </div>
             <div class="flex flex-wrap justify-between items-center gap-4">
               <button class="text-2xl uppercase font-extrabold py-4 hover:tracking-widest transition-all ease-in-out duration-200" @click="isOpenDialogSendContact = !isOpenDialogSendContact">
                 {{ $t('send') }}
-                <i class="fa-solid fa-arrow-trend-up"></i>
+                <i class="fa-solid fa-arrow-trend-up"/>
               </button>
               <div>
                 <p class="text-xs text-gray-400 uppercase tracking-tighter">
@@ -500,10 +500,10 @@
     </section>
 
     <!-- Outer -->
-    <Dialog v-model="isOpenDialogSendContact">
+    <VanillaDialog v-model="isOpenDialogSendContact">
       <div class="font-space-mono">
         <div class="mx-auto flex h-12 w-12 items-center justify-center rounded-full text-white bg-primary-600">
-          <i class="fa-solid fa-bomb"></i>
+          <i class="fa-solid fa-bomb"/>
         </div>
         <div class="mt-3 text-center sm:mt-5">
           <h3 class="text-lg font-semibold leading-6 text-gray-900 dark:text-white">
@@ -521,16 +521,16 @@
         </div>
       </div>
       <div class="mt-5 sm:mt-6">
-        <Button
+        <VanillaButton
           type="button"
           class="w-full font-space-mono"
           variant="primary"
           @click="isOpenDialogSendContact = false"
         >
           Yeah, now close me.
-        </Button>
+        </VanillaButton>
       </div>
-    </Dialog>
+    </VanillaDialog>
     <!-- Outer -->
   </div>
 </template>
@@ -539,11 +539,15 @@
 import { useIndexStore } from '@/store/index'
 
 import { 
-  Button, 
-  Dialog
+  Button as VanillaButton, 
+  Dialog as VanillaDialog
 } from '@flavorly/vanilla-components' 
 
 export default {
+  components: {
+    VanillaButton,
+    VanillaDialog
+  },
   setup() {
     definePageMeta({
       layout: 'main'
@@ -555,7 +559,7 @@ export default {
       description: 'This is my amazing portfolio site., let me tell you all about it. I am a full-stack web developer who loves tinkering with technology.',
       ogDescription: 'This is my amazing portfolio site., let me tell you all about it. I am a full-stack web developer who loves tinkering with technology.',
       ogImage: '/img/icons/barj-favicon.svg',
-      twitterCard: '/img/icons/barj-favicon.svg',
+      twitterCard: '/img/icons/barj-favicon.svg'
     })
 
     useHead({
@@ -567,10 +571,6 @@ export default {
         class: 'index-page'
       }
     })
-  },
-  components: {
-    Button,
-    Dialog
   },
   data() {
     return {
@@ -586,7 +586,7 @@ export default {
           { id: 5, image: '/img/external/the-hitler-mary-jane.jpg' },
           { id: 6, image: '/img/external/free-palestine-cave-pov-jet.jpg' },
           { id: 7, image: '/img/external/34ce61181231207.65185d614c717.jpg' },
-          { id: 8, image: '/gif/resistance-gaza.gif' },
+          { id: 8, image: '/gif/resistance-gaza.gif' }
         ]
       },
       projects: [
@@ -598,31 +598,31 @@ export default {
         { id: 6, name: 'TPID', country: 'ID', date: '2023-01-09 00:00:00', cover: '/img/web/resized/tpid.png', stacks: [ '/img/stacks/codeigniter.png', '/img/stacks/php.png', '/img/stacks/mysql.png' ], url: 'http://103.50.218.58/tpid', description: 'The Regional Inflation Control Team website, which was developed by Tangerang City Communications and Information Department. It features a basic CMS and a user-friendly interface, designed for a client located in Indonesia.' },
         { id: 7, name: 'Kadaku', country: 'ID', date: '2023-02-13 00:00:00', cover: '/img/web/resized/kadaku.png', stacks: [ '/img/stacks/nuxt.png', '/img/stacks/laravel.png', '/img/stacks/php.png', '/img/stacks/mysql.png' ], url: 'https://kadaku.id', description: 'Digital invitation website in Indonesia allows users to buy and customize templates to match their preferred designs and formats.' },
         { id: 8, name: 'Local Champion', country: 'ID', date: '2023-09-25 00:00:00', cover: '/img/web/resized/local-champion.png', stacks: [ '/img/stacks/vue.png', '/img/stacks/laravel.png', '/img/stacks/php.png', '/img/stacks/mysql.png' ], url: 'https://localchampion.id', description: 'Integrated - sustainable community empowerment platform to bring forth sustainable innovations that benefit both their local communities and the world.' },
-        { id: 9, name: 'Lapak Satwa', country: 'ID', date: '2024-01-19 00:00:00', cover: '/img/web/resized/lapaksatwa.png', stacks: [ '/img/stacks/laravel.png', '/img/stacks/php.png', '/img/stacks/mysql.png' ], url: 'https://lapaksatwa.co.id', description: 'Lapak Satwa is an official, secure marketplace and auction platform for buying and selling pets, ensuring safety and trust in every transaction.' },
+        { id: 9, name: 'Lapak Satwa', country: 'ID', date: '2024-01-19 00:00:00', cover: '/img/web/resized/lapaksatwa.png', stacks: [ '/img/stacks/laravel.png', '/img/stacks/php.png', '/img/stacks/mysql.png' ], url: 'https://lapaksatwa.co.id', description: 'Lapak Satwa is an official, secure marketplace and auction platform for buying and selling pets, ensuring safety and trust in every transaction.' }
       ],
       workflow: [
         { id: 1, name: 'brief and analytics', description: 'We conduct an interview, and then I learn all the details of project and the specific details of a business. I research competitors, collect references, form ideas for a project, and develop a structure for a future site.' },
         { id: 2, name: 'design and implementation', description: 'I designed a responsive interface in order to improve the quality of the user experience when using the website / app that will be built. The system and data flow mapping diagram also needs to be designed to make it easier for stakeholders and technicians to understand the architecture. Then, I started to carry out initial development by implementing every agreed detail.' },
-        { id: 3, name: 'code and deploy', description: 'When the initial development is done, I start the programming process to achieve goals based on confidentiality, integrity and availability of information in the chosen stack. I connect forms and services, perform basic SEO setup, test and debug the site for errors and deploy it.' },
+        { id: 3, name: 'code and deploy', description: 'When the initial development is done, I start the programming process to achieve goals based on confidentiality, integrity and availability of information in the chosen stack. I connect forms and services, perform basic SEO setup, test and debug the site for errors and deploy it.' }
       ],
       prices: [
         { id: 1, name: 'Landing', amount: 50, duration: 7, url: '/', description: 'A promo page or landing page will be suitable for selling a small number of products or services. Includes: design, coding, basic SEO optimization.' },
         { id: 2, name: 'Website', amount: 100, duration: 10, url: '/', description: 'A multi-page website that will represent the company, its products or service. Includes: design, coding, basic SEO optimization.' },
         { id: 3, name: 'E-Commerce', amount: 350, duration: 14, url: '/', description: 'A store will work for a business and provide a wide variety of functions: a shopping cart, online payments and an internal CRM system. Includes: design, coding, basic SEO optimization.' },
-        { id: 4, name: 'Design', amount: 120, duration: 7, url: '/', description: 'Website design will be developed in figma. Includes: interaction design, adaptive version, illustration and animation development.' },
+        { id: 4, name: 'Design', amount: 120, duration: 7, url: '/', description: 'Website design will be developed in figma. Includes: interaction design, adaptive version, illustration and animation development.' }
       ],
       payload: {
         contact: {
           name: '',
           email: '',
           web_type: '',
-          description: '',
+          description: ''
         }
       },
       splitter: {
-        textHero: undefined,
+        textHero: undefined
       },
-      isOpenDialogSendContact: false,
+      isOpenDialogSendContact: false
     }
   },
   computed: {
@@ -632,14 +632,14 @@ export default {
   },
   watch: {
     'store.index.getLayout.main_layout.isPageRendered': {
-      handler(newVal) {
+      handler() {
         this.destroyGsap()
         setTimeout(this.initGsap, 0)
       }
     },
     'store.index.getLayout.main_layout.pageSize': {
       handler(newVal) {
-        var vm = this
+        const vm = this
         if (newVal.innerWidth >= 1024) {
           setTimeout(() => {
             const dom = vm.getClientDOM('project-cover-figure')
@@ -650,7 +650,7 @@ export default {
       deep: true
     },
     'store.index.getComponent.navbar_component.selectedLang': {
-      handler(newVal) {
+      handler() {
         this.store.index.getLayout.main_layout.onLoaderState({ isPageRendered: true, isCompleteLoaded: false })
         this.splitter.textHero.revert()
         this.destroyGsap()
@@ -680,9 +680,9 @@ export default {
       if (this.store.index.getLayout.main_layout.isPageRendered) {        
         $ScrollTrigger.defaults({
           markers: {
-            startColor: "green",
-            endColor: "red",
-            fontSize: "12px"
+            startColor: 'green',
+            endColor: 'red',
+            fontSize: '12px'
           }
         })
 
@@ -694,7 +694,7 @@ export default {
           y: 0,
           stagger: 0.05,
           delay: 0.2,
-          duration: .1,
+          duration: .1
         })
 
         // $gsap.from(".line-1", {
@@ -718,63 +718,63 @@ export default {
     },
     initFormDropdown() {
       /* Dropdown Menu */
-      let isSliding = false;
+      let isSliding = false
 
       $('.form__group .dropdown').click(function () {
-        if (isSliding) return; // Return if already sliding
-        isSliding = true;
+        if (isSliding) return // Return if already sliding
+        isSliding = true
         
-        const $this = $(this);
-        $this.find('.dropdown-icon').toggleClass('-rotate-90');
-        $this.attr('tabindex', 1).focus();
-        $this.toggleClass('active');
+        const $this = $(this)
+        $this.find('.dropdown-icon').toggleClass('-rotate-90')
+        $this.attr('tabindex', 1).focus()
+        $this.toggleClass('active')
         $this.find('.dropdown-menu').slideToggle(300, function () {
-          isSliding = false;
-        });
-      });
+          isSliding = false
+        })
+      })
 
       $('.form__group .dropdown').focusout(function () {
-        if (isSliding) return; // Return if already sliding
-        isSliding = true;
+        if (isSliding) return // Return if already sliding
+        isSliding = true
         
-        const $this = $(this);
-        $this.removeClass('active');
+        const $this = $(this)
+        $this.removeClass('active')
         $this.find('.dropdown-menu').slideUp(300, function () {
-          isSliding = false;
-        });
-      });
+          isSliding = false
+        })
+      })
 
       $('.form__group .dropdown .dropdown-menu li').click(function () {
-        if (isSliding) return; // Return if already sliding
-        isSliding = true;
+        if (isSliding) return // Return if already sliding
+        isSliding = true
         
-        const $this = $(this);
-        const parentDropdown = $this.parents('.form__group .dropdown');
-        parentDropdown.find('span').text($this.text());
-        parentDropdown.find('input').attr('value', $this.attr('id'));
-        isSliding = false;
-      });
+        const $this = $(this)
+        const parentDropdown = $this.parents('.form__group .dropdown')
+        parentDropdown.find('span').text($this.text())
+        parentDropdown.find('input').attr('value', $this.attr('id'))
+        isSliding = false
+      })
 
       /* End Dropdown Menu */
 
       $('.dropdown-menu li').click(function () {
-        if (isSliding) return; // Return if already sliding
-        isSliding = true;
+        if (isSliding) return // Return if already sliding
+        isSliding = true
         
-        const $this = $(this);
-        const input = '<strong>' + $this.parents('.form__group .dropdown').find('input').val() + '</strong>';
-        const msg = '<span class="msg">Hidden input value: ';
-        $('.msg').html(msg + input + '</span');
-        isSliding = false;
-      });
+        const $this = $(this)
+        const input = '<strong>' + $this.parents('.form__group .dropdown').find('input').val() + '</strong>'
+        const msg = '<span class="msg">Hidden input value: '
+        $('.msg').html(msg + input + '</span')
+        isSliding = false
+      })
     },
     getClientDOM(reference) {
       const ref = this.$refs[reference]
       let result = null
 
       if (Array.isArray(ref)) {
-        result = ref.map((el, index) => {
-          let offset = {
+        result = ref.map((el) => {
+          const offset = {
             element: el,
             width: el.offsetWidth,
             height: el.offsetHeight

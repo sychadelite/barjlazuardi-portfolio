@@ -1,11 +1,11 @@
 <template>
   <div>
-    <div id="flashlight" ref="flashlight" class="z-[60]"></div>
+    <div id="flashlight" ref="flashlight" class="z-[60]"/>
   </div>
 </template>
 
 <script>
-import { ref, onMounted } from 'vue';
+import { ref, onMounted } from 'vue'
 
 export default {
   setup() {
@@ -22,50 +22,50 @@ export default {
     }
 
     const mousemove = (event) => {
-      const mouse_x = event.clientX;
-      const mouse_y = event.clientY;
-      status = `x = ${mouse_x}, y = ${mouse_y}`;
+      const mouse_x = event.clientX
+      const mouse_y = event.clientY
+      // const currentStatus = `x = ${mouse_x}, y = ${mouse_y}`
 
-      const fl = flashlight.value;
-      const centerX = window.innerWidth / 2;
-      const centerY = window.innerHeight / 2;
-      const distanceToCenter = Math.sqrt((mouse_x - centerX) ** 2 + (mouse_y - centerY) ** 2);
+      const fl = flashlight.value
+      // const centerX = window.innerWidth / 2
+      // const centerY = window.innerHeight / 2
+      // const distanceToCenter = Math.sqrt((mouse_x - centerX) ** 2 + (mouse_y - centerY) ** 2)
 
-      const maxDistance = Math.sqrt(centerX ** 2 + centerY ** 2);
+      // const maxDistance = Math.sqrt(centerX ** 2 + centerY ** 2)
       // const scale = 1 - distanceToCenter / maxDistance;
-      const scale = 1;
+      const scale = 1
 
-      fl.style.transform = `translate(calc(${mouse_x}px - 50vw), calc(${mouse_y}px - 50vh)) scale(${scale})`;
+      fl.style.transform = `translate(calc(${mouse_x}px - 50vw), calc(${mouse_y}px - 50vh)) scale(${scale})`
 
       // The rest of your logic here...
     }
 
-    const touchmove = (event) => {
-      if (event.touches.length > 0) {
-        const touch_x = event.touches[0].clientX;
-        const touch_y = event.touches[0].clientY;
+    // const touchmove = (event) => {
+    //   if (event.touches.length > 0) {
+    //     const touch_x = event.touches[0].clientX
+    //     const touch_y = event.touches[0].clientY
 
-        const fl = flashlight.value;
-        const centerX = window.innerWidth / 2;
-        const centerY = window.innerHeight / 2;
-        const distanceToCenter = Math.sqrt((touch_x - centerX) ** 2 + (touch_y - centerY) ** 2);
+    //     const fl = flashlight.value
+    //     // const centerX = window.innerWidth / 2
+    //     // const centerY = window.innerHeight / 2
+    //     // const distanceToCenter = Math.sqrt((touch_x - centerX) ** 2 + (touch_y - centerY) ** 2)
 
-        const maxDistance = Math.sqrt(centerX ** 2 + centerY ** 2);
-        const scale = 1;
+    //     // const maxDistance = Math.sqrt(centerX ** 2 + centerY ** 2)
+    //     const scale = 1
 
-        fl.style.transform = `translate(calc(${touch_x}px - 50vw), calc(${touch_y}px - 50vh)) scale(${scale})`;
+    //     fl.style.transform = `translate(calc(${touch_x}px - 50vw), calc(${touch_y}px - 50vh)) scale(${scale})`
 
-        // The rest of your logic here...
-      }
-    }
+    //     // The rest of your logic here...
+    //   }
+    // }
 
     onMounted(init)
     onBeforeUnmount(finish)
 
     return {
-      flashlight,
+      flashlight
     }
-  },
+  }
 }
 </script>
 

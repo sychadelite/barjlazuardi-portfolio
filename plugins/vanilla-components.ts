@@ -1,4 +1,4 @@
-import { VanillaComponents } from "@flavorly/vanilla-components";
+import { VanillaComponents } from '@flavorly/vanilla-components'
 
 export default defineNuxtPlugin(nuxtApp => {
   // You can also override the default options here
@@ -6,10 +6,10 @@ export default defineNuxtPlugin(nuxtApp => {
   nuxtApp.vueApp.use(VanillaComponents, {
     Dialog: {
       classes: {
-        wrapper: "fixed inset-0 overflow-y-auto z-[99]",
-        overlay: "fixed inset-0 transition-opacity backdrop-blur-sm z-[99]",
-        overlayColor: "bg-black/50 dark:bg-black/80"
+        wrapper: 'fixed inset-0 overflow-y-auto z-[99]',
+        overlay: 'fixed inset-0 transition-opacity backdrop-blur-sm z-[99]',
+        overlayColor: 'bg-black/50 dark:bg-black/80'
       }
-    },
+    }
   })
 })

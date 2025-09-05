@@ -1,8 +1,12 @@
 import type { Config } from 'tailwindcss'
 
+import typography from '@tailwindcss/typography'
+import aspectRatio from '@tailwindcss/aspect-ratio'
+import forms from '@tailwindcss/forms'
+
 export default <Partial<Config>>{
   content: [
-    './node_modules/@flavorly/vanilla-components/dist/presets/tailwind/all.json', 
+    './node_modules/@flavorly/vanilla-components/dist/presets/tailwind/all.json' 
   ],
   theme: {
     extend: {
@@ -20,7 +24,7 @@ export default <Partial<Config>>{
           '700': '#6374ae',
           '800': '#4a5989',
           '900': '#414e6e',
-          '950': '#262c40',
+          '950': '#262c40'
         },
         secondary: {
           '50': '#fbf6f5',
@@ -33,7 +37,7 @@ export default <Partial<Config>>{
           '700': '#8e5347',
           '800': '#77463d',
           '900': '#643f38',
-          '950': '#351e1a',
+          '950': '#351e1a'
         },
         'waikawa-gray': {
           '50': '#f2f7fb',
@@ -46,7 +50,7 @@ export default <Partial<Config>>{
           '700': '#6374ae',
           '800': '#4a5989',
           '900': '#414e6e',
-          '950': '#262c40',
+          '950': '#262c40'
         },
         'contessa': {
           '50': '#fbf6f5',
@@ -59,8 +63,8 @@ export default <Partial<Config>>{
           '700': '#8e5347',
           '800': '#77463d',
           '900': '#643f38',
-          '950': '#351e1a',
-        },      
+          '950': '#351e1a'
+        }      
       }
     },
     screens: {
@@ -77,10 +81,10 @@ export default <Partial<Config>>{
     }
   },
   plugins: [
-    require('@tailwindcss/typography'),
-    require('@tailwindcss/aspect-ratio'),
+    typography,
+    aspectRatio,
 
     // Forms plugin is required if you are using the tailwind preset
-    require('@tailwindcss/forms'), 
-  ],
+    forms
+  ]
 }

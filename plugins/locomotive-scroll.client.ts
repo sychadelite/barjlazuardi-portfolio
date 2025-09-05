@@ -1,9 +1,9 @@
 import LocomotiveScroll from 'locomotive-scroll'
 
-export default defineNuxtPlugin((nuxtApp) => {
+export default defineNuxtPlugin(() => {
   return {
     provide: {
       LocomotiveScroll: () => new LocomotiveScroll()
-    },
+    }
   }
 })

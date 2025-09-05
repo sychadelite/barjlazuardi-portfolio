@@ -1,5 +1,5 @@
 <template>
-  <div class="flashlight fixed bottom-0 right-0 w-10 sm:w-14 h-10 sm:h-14 rounded-full cursor-pointer m-5 z-[70]" :class="{ 'on' : isOn }" @click="toggleLight"></div>
+  <div class="flashlight fixed bottom-0 right-0 w-10 sm:w-14 h-10 sm:h-14 rounded-full cursor-pointer m-5 z-[70]" :class="{ 'on' : isOn }" @click="toggleLight"/>
 </template>
 
 <script>
@@ -8,14 +8,14 @@ export default {
     isOn: {
       type: Boolean,
       default: false
-    },
+    }
   },
   emits: [
     'callback'
   ],
   methods: {
     toggleLight(e) {
-      e.target.classList.toggle("on")
+      e.target.classList.toggle('on')
       this.$emit('callback', this.isOn)
     }
   }

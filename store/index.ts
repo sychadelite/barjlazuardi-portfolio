@@ -1,9 +1,5 @@
 import { defineStore } from 'pinia'
 
-import axios from "axios"
-
-import { setCookie, getCookie, clearCookie } from '~/utils/cookies'
-
 interface Page {
   newProp?: string;
 }
@@ -18,7 +14,7 @@ export const useIndexStore = defineStore('index', {
   state: () => ({
     page: {} as Page,
     layout: {} as Layout,
-    component: {} as Component,
+    component: {} as Component
   }),
 
   getters: {
@@ -34,14 +30,14 @@ export const useIndexStore = defineStore('index', {
   },
 
   actions: {
-    setRootLayout(prop: keyof Layout, payload: any) {
+    setRootLayout(prop: keyof Layout, payload: string) {
       this.layout[prop] = payload
     },
-    setRootPage(prop: keyof Page, payload: any) {
+    setRootPage(prop: keyof Page, payload: string) {
       this.page[prop] = payload
     },
-    setRootComponent(prop: keyof Component, payload: any) {
+    setRootComponent(prop: keyof Component, payload: string) {
       this.component[prop] = payload
-    },
+    }
   }
 })

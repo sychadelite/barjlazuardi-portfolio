@@ -1,11 +1,11 @@
 <template>
-  <div ref="three-lod"></div>
+  <div ref="three-lod"/>
 </template>
 
 <script>
-import * as THREE from 'three';
+import * as THREE from 'three'
 
-import { FlyControls } from 'three/addons/controls/FlyControls.js';
+import { FlyControls } from 'three/addons/controls/FlyControls.js'
 
 export default {
   mounted() {
@@ -15,32 +15,32 @@ export default {
   },
   methods: {
     initThreeLoad() {
-      var vm = this;
-      let container;
-			let camera, scene, renderer, controls;
+      const vm = this
+      let container
+			let camera, scene, renderer, controls
 
-			const clock = new THREE.Clock();
+			const clock = new THREE.Clock()
 
-			init();
-			animate();
+			init()
+			animate()
 
 			function init() {
-				container = document.createElement( 'div' );
-				vm.$refs['three-lod'].appendChild( container );
+				container = document.createElement( 'div' )
+				vm.$refs['three-lod'].appendChild( container )
 
-				camera = new THREE.PerspectiveCamera( 45, window.innerWidth / window.innerHeight, 1, 15000 );
-				camera.position.z = 1000;
+				camera = new THREE.PerspectiveCamera( 45, window.innerWidth / window.innerHeight, 1, 15000 )
+				camera.position.z = 1000
 
-				scene = new THREE.Scene();
-				scene.fog = new THREE.Fog( 0x000000, 1, 8000 );
+				scene = new THREE.Scene()
+				scene.fog = new THREE.Fog( 0x000000, 1, 8000 )
 
-				const pointLight = new THREE.PointLight( 0xff2200, 3, 0, 0 );
-				pointLight.position.set( 0, 0, 0 );
-				scene.add( pointLight );
+				const pointLight = new THREE.PointLight( 0xff2200, 3, 0, 0 )
+				pointLight.position.set( 0, 0, 0 )
+				scene.add( pointLight )
 
-				const dirLight = new THREE.DirectionalLight( 0xffffff, 3 );
-				dirLight.position.set( 0, 0, 1 ).normalize();
-				scene.add( dirLight );
+				const dirLight = new THREE.DirectionalLight( 0xffffff, 3 )
+				dirLight.position.set( 0, 0, 1 ).normalize()
+				scene.add( dirLight )
 
 				const geometry = [
 					[ new THREE.IcosahedronGeometry( 100, 16 ), 50 ],
@@ -48,53 +48,53 @@ export default {
 					[ new THREE.IcosahedronGeometry( 100, 4 ), 1000 ],
 					[ new THREE.IcosahedronGeometry( 100, 2 ), 2000 ],
 					[ new THREE.IcosahedronGeometry( 100, 1 ), 8000 ]
-				];
-				const material = new THREE.MeshLambertMaterial( { color: 0xffffff, wireframe: true } );
+				]
+				const material = new THREE.MeshLambertMaterial( { color: 0xffffff, wireframe: true } )
 
 				for ( let j = 0; j < 1000; j ++ ) {
-					const lod = new THREE.LOD();
+					const lod = new THREE.LOD()
 					for ( let i = 0; i < geometry.length; i ++ ) {
-						const mesh = new THREE.Mesh( geometry[ i ][ 0 ], material );
-						mesh.scale.set( 1.5, 1.5, 1.5 );
-						mesh.updateMatrix();
-						mesh.matrixAutoUpdate = false;
-						lod.addLevel( mesh, geometry[ i ][ 1 ] );
+						const mesh = new THREE.Mesh( geometry[ i ][ 0 ], material )
+						mesh.scale.set( 1.5, 1.5, 1.5 )
+						mesh.updateMatrix()
+						mesh.matrixAutoUpdate = false
+						lod.addLevel( mesh, geometry[ i ][ 1 ] )
 					}
 
-					lod.position.x = 10000 * ( 0.5 - Math.random() );
-					lod.position.y = 7500 * ( 0.5 - Math.random() );
-					lod.position.z = 10000 * ( 0.5 - Math.random() );
-					lod.updateMatrix();
-					lod.matrixAutoUpdate = false;
-					scene.add( lod );
+					lod.position.x = 10000 * ( 0.5 - Math.random() )
+					lod.position.y = 7500 * ( 0.5 - Math.random() )
+					lod.position.z = 10000 * ( 0.5 - Math.random() )
+					lod.updateMatrix()
+					lod.matrixAutoUpdate = false
+					scene.add( lod )
 				}
 
-				renderer = new THREE.WebGLRenderer( { antialias: true } );
-				renderer.setPixelRatio( window.devicePixelRatio );
-				renderer.setSize( window.innerWidth, window.innerHeight );
-				container.appendChild( renderer.domElement );
+				renderer = new THREE.WebGLRenderer( { antialias: true } )
+				renderer.setPixelRatio( window.devicePixelRatio )
+				renderer.setSize( window.innerWidth, window.innerHeight )
+				container.appendChild( renderer.domElement )
 
-				controls = new FlyControls( camera, renderer.domElement );
-				controls.movementSpeed = 1000;
-				controls.rollSpeed = Math.PI / 10;
-				window.addEventListener( 'resize', onWindowResize );
+				controls = new FlyControls( camera, renderer.domElement )
+				controls.movementSpeed = 1000
+				controls.rollSpeed = Math.PI / 10
+				window.addEventListener( 'resize', onWindowResize )
 			}
 
 			function onWindowResize() {
-				camera.aspect = window.innerWidth / window.innerHeight;
-				camera.updateProjectionMatrix();
+				camera.aspect = window.innerWidth / window.innerHeight
+				camera.updateProjectionMatrix()
 
-				renderer.setSize( window.innerWidth, window.innerHeight );
+				renderer.setSize( window.innerWidth, window.innerHeight )
 			}
 
 			function animate() {
-				requestAnimationFrame( animate );
-				render();
+				requestAnimationFrame( animate )
+				render()
 			}
 
 			function render() {
-				controls.update( clock.getDelta() );
-				renderer.render( scene, camera );
+				controls.update( clock.getDelta() )
+				renderer.render( scene, camera )
 			}
     }
   }

@@ -1,9 +1,9 @@
 import SplitType from 'split-type'
 
-export default defineNuxtPlugin((nuxtApp) => {
+export default defineNuxtPlugin(() => {
   return {
     provide: {
       SplitType
-    },
+    }
   }
 })

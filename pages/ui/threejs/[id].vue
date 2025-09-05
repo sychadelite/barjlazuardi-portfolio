@@ -1,11 +1,7 @@
 <template>
   <div>
     <template v-if="pageIsFound">
-      <component 
-        :is="$convertToCamelCase($route.params.id)" 
-        :class="'w-full h-screen m-auto'"
-      >
-      </component>
+      <component :is="$convertToCamelCase($route.params.id)" :class="'w-full h-screen m-auto'" />
     </template>
   </div>
 </template>
@@ -17,22 +13,24 @@ import SheenChair from '@/components/threejs/SheenChair'
 import Lod from '@/components/threejs/Lod'
 
 export default {
-  setup() {
-    useHead({
-      title: 'Barjlazuardi | UI - ' + useNuxtApp().$convertToCamelCase(this.$route.params.id),
-      meta: [
-        { name: 'description', content: `My amazing ui threejs ${this.$route.params.id} site.` }
-      ],
-      bodyAttrs: {
-        class: 'ui-threejs-page'
-      },
-    })
-  },
   components: {
     Examples,
     LittlestTokyo,
     SheenChair,
-    Lod,
+    Lod
+  },
+  setup() {
+    const route = useRoute()
+
+    useHead({
+      title: 'Barjlazuardi | UI - ' + useNuxtApp().$convertToCamelCase(route.params.id),
+      meta: [
+        { name: 'description', content: `My amazing ui threejs ${route.params.id} site.` }
+      ],
+      bodyAttrs: {
+        class: 'ui-threejs-page'
+      }
+    })
   },
   data() {
     return {
@@ -40,9 +38,9 @@ export default {
         'examples',
         'littlest-tokyo',
         'sheen-chair',
-        'lod',
+        'lod'
       ],
-      pageIsFound: false,
+      pageIsFound: false
     }
   },
   mounted() {
@@ -63,6 +61,4 @@ export default {
 }
 </script>
 
-<style lang="scss" scoped>
-
-</style>
+<style lang="scss" scoped></style>

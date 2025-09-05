@@ -1,10 +1,10 @@
-import { defineNuxtPlugin, useRequestHeaders } from '#app';
-import MobileDetect from 'mobile-detect';
+import { defineNuxtPlugin, useRequestHeaders } from '#app'
+import MobileDetect from 'mobile-detect'
 
 export default defineNuxtPlugin(() => {
-  let headers = useRequestHeaders()
+  const headers = useRequestHeaders()
 
-  const md = process.server ? new MobileDetect(headers['user-agent']) : new MobileDetect(navigator.userAgent)
+  const md = import.meta.server ? new MobileDetect(headers['user-agent']) : new MobileDetect(navigator.userAgent)
   const isMobile = md.phone() !== null || md.mobile() === 'UnknownMobile'
   const isTablet = md.tablet() !== null || md.mobile() === 'UnknownTablet'
   const isDesktop = !isMobile && !isTablet
@@ -14,6 +14,6 @@ export default defineNuxtPlugin(() => {
       isMobile: () => isMobile,
       isTablet: () => isTablet,
       isDesktop: () => isDesktop
-    },
-  };
+    }
+  }
 })

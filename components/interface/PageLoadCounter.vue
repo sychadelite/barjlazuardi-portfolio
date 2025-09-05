@@ -6,7 +6,7 @@
     </div>
     <h1 ref="counter" class="counter font-frigate" :class="{ 'opacity-0': isPageRendered }">{{ counter }}</h1>
     <div class="overlay">
-      <div v-for="row in 10" :key="row" class="bar"></div>
+      <div v-for="row in 10" :key="row" class="bar"/>
     </div>
   </div>
 </template>
@@ -59,13 +59,13 @@ export default {
           y: 0,
           stagger: 0.05,
           delay: 0,
-          duration: 0.2,
+          duration: 0.2
         })
       }
 
       $gsap.to('.content', 0.25, {
         delay: 3.5,
-        opacity: 0,
+        opacity: 0
       })
 
       $gsap.to('.counter', 0.25, {
@@ -91,7 +91,7 @@ export default {
             y: -125,
             stagger: 0.05,
             delay: 0,
-            duration: 0.2,
+            duration: 0.2
           })
         }
       })
@@ -107,7 +107,7 @@ export default {
         this.counter = 100
       }
 
-      let delay = Math.floor(Math.random() * 200) + 50
+      const delay = Math.floor(Math.random() * 200) + 50
       setTimeout(this.initCounter, delay)
     }
   }

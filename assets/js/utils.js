@@ -1,6 +1,6 @@
 import imagesLoaded from 'imagesloaded'
 
-const lerp = (a, b, n) => (1 - n) * a + n * b;
+const lerp = (a, b, n) => (1 - n) * a + n * b
 
 /**
  * Preload images
@@ -8,11 +8,11 @@ const lerp = (a, b, n) => (1 - n) * a + n * b;
  */
 const preloadImages = (selector = 'img') => {
   return new Promise((resolve) => {
-    imagesLoaded(document.querySelectorAll(selector), { background: true }, resolve);
-  });
-};
+    imagesLoaded(document.querySelectorAll(selector), { background: true }, resolve)
+  })
+}
 
 export {
   lerp,
   preloadImages
-};
+}
