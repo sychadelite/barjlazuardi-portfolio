@@ -24,9 +24,9 @@
             <a ref="caret-lang" id="caret-lang" class="anim-multi-underline block min-w-[3rem] uppercase cursor-pointer" :style="isLangOpen ? 'background-size: 100% 2px; background-position-x: left;' : ''" @click="toggleLang">
               {{ selectedLang.slice(0, 2) }}&nbsp;<i class="fa-solid fa-caret-down"></i>
             </a>
-            <div ref="dropdown-lang" data-lenis-prevent class="dropdown-lang absolute top-10 left-0 opacity-0 h-0 max-h-56 bg-black text-white ring-1 ring-offset-4 ring-black overflow-y-auto overflow-invisible">
+            <div ref="dropdown-lang" data-lenis-prevent class="dropdown-lang absolute top-10 left-0 opacity-0 h-0 max-h-56 bg-black text-white ring-1 ring-offset-4 ring-black whitespace-nowrap overflow-y-auto overflow-invisible">
               <ul class="text-start" :class="{ 'hidden': pageSizeInnerWidth < 1024 }">
-                <li v-for="row in languages" :key="row.id" class="flex gap-2 pl-4 pr-8 py-2 hover:bg-gray-700 capitalize cursor-pointer" :class="{ 'bg-gray-700' : selectedLang == row.code }" @click="selectedLang = row.code">
+                <li v-for="row in locales" :key="row.id" class="flex gap-2 pl-4 pr-8 py-2 hover:bg-gray-700 capitalize cursor-pointer" :class="{ 'bg-gray-700' : selectedLang == row.code }" @click="switchLanguage(row.code)">
                   <img :src="`/img/flags/svg/${row.flag}.svg`" :alt="row.flag" class="w-4">
                   {{ row.name }}
                 </li>
@@ -71,7 +71,7 @@
         <router-link :to="$route.hash" class="anim-multi-underline" :style="isOverlayLangOpen ? 'background-size: 100% 2px; background-position-x: left;' : ''">{{ selectedLang.slice(0, 2) }}&nbsp;<i class="fa-solid fa-caret-down"></i></router-link>
       </li>
       <ul class="nav-overlay-lang grid grid-cols-2 xs:grid-cols-3 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-6 xl:grid-cols-7 2xl:grid-cols-8 gap-4 w-full max-w-3xl -mt-5 mb-5">
-        <li v-for="row in languages" :key="row.id" class="opt-overlay-lang opacity-0" @click="selectedLang = row.code">
+        <li v-for="row in locales" :key="row.id" class="opt-overlay-lang opacity-0" @click="switchLanguage(row.code)">
           <div class="relative p-4 rounded-sm bg-repeat-round cursor-pointer" :style="`background-image: url('/img/flags/png1000px/${row.flag}.png'); background-position: inherit;`">
             <div class="absolute inset-0 bg-black transition-all ease-in-out duration-200" :class="selectedLang == row.code ? 'opacity-30' : 'opacity-75'"></div>
             <p class="line-clamp-1">
@@ -88,14 +88,17 @@
 </template>
 
 <script>
+import { useI18n } from 'vue-i18n'
+
 import { useIndexStore } from '@/store/index'
 
 export default {
   setup() {
-    const { locale } = useI18n()
+    const { locale, locales } = useI18n()
 
     return {
-      locale
+      locale,
+      locales
     }
   },
   data() {
@@ -103,24 +106,6 @@ export default {
       store: {
         index: useIndexStore()
       },
-      languages: [
-        { id: 1, code: 'id', name: 'indonesian', flag: 'id' },
-        { id: 2, code: 'en', name: 'english', flag: 'gb' },
-        { id: 3, code: 'fr', name: 'french', flag: 'fr' },
-        { id: 4, code: 'ar', name: 'arabic', flag: 'sa' },
-        { id: 5, code: 'cn', name: 'mandarin', flag: 'cn' },
-        { id: 6, code: 'jp', name: 'japanese', flag: 'jp' },
-        { id: 7, code: 'kr', name: 'korean', flag: 'kr' },
-        { id: 8, code: 'ru', name: 'russian', flag: 'ru' },
-        { id: 9, code: 'gr', name: 'greek', flag: 'gr' },
-        { id: 10, code: 'es', name: 'spanish', flag: 'es' },
-        { id: 11, code: 'tr', name: 'turkish', flag: 'tr' },
-        { id: 12, code: 'de', name: 'german', flag: 'de' },
-        { id: 13, code: 'it', name: 'italian', flag: 'it' },
-        { id: 14, code: 'th', name: 'thai', flag: 'th' },
-        { id: 15, code: 'du', name: 'dutch', flag: 'nl' },
-        { id: 16, code: 'he', name: 'hebrew', flag: 'il' },
-      ],
       social_media: [
         { id: 1, name: 'github', url: 'https://github.com/sychadelite', title: 'github', icon: '<i class="fa-brands fa-github"></i>' },
         { id: 2, name: 'instagram', url: 'https://instagram.com/barjlazuardi', title: 'instagram', icon: '<i class="fa-brands fa-instagram"></i>' },
@@ -131,7 +116,7 @@ export default {
         { id: 7, name: 'linkedin', url: 'https://www.linkedin.com/in/barjlazuardi/', icon: '<i class="fa-brands fa-linkedin"></i>' },
         // { id: 8, name: 'pinterest', url: 'https://www.pinterest.com/barjlazuardi/', icon: '<i class="fa-brands fa-pinterest"></i>' },
       ],
-      selectedLang: localStorage.getItem('selectedLang') ?? 'en',
+      selectedLang: 'en',
       isMenuOpen: false,
       isLangOpen: false,
       isOverlayLangOpen: false,
@@ -173,6 +158,14 @@ export default {
       },
       immediate: true
     },
+    '$i18n.locale': {
+      handler(newVal) {
+        if (newVal) {
+          this.selectedLang = newVal
+        }
+      },
+      immediate: true
+    },
     $route: {
       handler(to, from) {
         const id = to.hash.replace('#', '')
@@ -188,10 +181,6 @@ export default {
         })
       }
     },
-    selectedLang(newLang) {
-      localStorage.setItem('selectedLang', newLang)
-      this.locale = newLang
-    }
   },
   beforeMount() {
     this.store.index.setRootComponent('navbar_component', this)
@@ -262,7 +251,7 @@ export default {
           duration: 1,
           opacity: 1,
           zIndex: 10,
-          height: 40 * this.languages.length,
+          height: 40 * this.locales.length,
           ease: 'expo.inOut',
         })
         tl_caretLang.from(opts_lang, {
@@ -333,6 +322,9 @@ export default {
     },
     toggleOverlayLang() {
       this.isOverlayLangOpen = !this.isOverlayLangOpen
+    },
+    switchLanguage(code) {
+      this.$i18n.setLocale(code)
     },
     addClickOutsideListener() {
       document.addEventListener('click', this.handleDocumentClick)

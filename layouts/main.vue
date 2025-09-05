@@ -1,11 +1,14 @@
 <template>
-  <div>
+  <div class="layout">
     <!-- Loader -->
     <InterfacePageLoadCounter v-if="!isCompleteLoaded" @callback="onLoaderState"/>
     <!-- Loader -->
-
     <Navbar />
-    <slot />
+
+    <main class="page-content">
+      <slot />
+    </main>
+
     <Footer />
     <UtilityFlashlight v-if="flashlight" />
     <UtilityButtonDownloadCV />
@@ -93,3 +96,14 @@ export default {
   }
 }
 </script>
+
+<style scoped>
+.layout {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* full screen height */
+}
+.page-content {
+  flex: 1; /* push footer down */
+}
+</style>

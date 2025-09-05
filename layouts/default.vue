@@ -1,6 +1,8 @@
 <template>
-  <div>
-    <slot />
+  <div class="layout">
+    <main class="page-content">
+      <slot />
+    </main>
   </div>
 </template>
 
@@ -11,3 +13,14 @@ export default {
   }
 }
 </script>
+
+<style scoped>
+.layout {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* full screen height */
+}
+.page-content {
+  flex: 1; /* push footer down */
+}
+</style>
